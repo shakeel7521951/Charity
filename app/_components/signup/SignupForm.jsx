@@ -1,20 +1,31 @@
 "use client";
 import { FaUser, FaLock, FaEnvelope, FaEye, FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16 py-32 bg-[#8A1538]">
+    <div
+      className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16 py-32 bg-[#8A1538]"
+     
+    >
       {/* Luxury Card */}
       <div className="w-full max-w-3xl bg-white shadow-xl rounded-lg overflow-hidden border border-gray-900">
-        
         {/* Gold Header */}
         <div className="bg-[#8214351d] py-6 px-4 sm:px-8 text-center">
-          <h1 className="text-gray-900 font-serif text-2xl sm:text-3xl font-bold">
+          <h1
+            className="text-gray-900 font-serif text-2xl sm:text-3xl font-bold"
+            data-aos="zoom-out-up"
+          >
             Create Hope Today
           </h1>
         </div>
@@ -23,7 +34,10 @@ export default function SignupForm() {
         <div className="p-6 sm:p-8">
           {/* Full Name */}
           <div className="mb-4">
-            <label className="block text-gray-900 font-semibold mb-2">
+            <label
+              className="block text-gray-900 font-semibold mb-2"
+              data-aos="zoom-in-up"
+            >
               Full Name
             </label>
             <div className="relative">
@@ -41,7 +55,10 @@ export default function SignupForm() {
 
           {/* Email Field */}
           <div className="mb-4">
-            <label className="block text-gray-900 font-semibold mb-2">
+            <label
+              className="block text-gray-900 font-semibold mb-2"
+              data-aos="zoom-in-up"
+            >
               Email Address
             </label>
             <div className="relative">
@@ -59,7 +76,10 @@ export default function SignupForm() {
 
           {/* Password Field */}
           <div className="mb-4">
-            <label className="block text-gray-900 font-semibold mb-2">
+            <label
+              className="block text-gray-900 font-semibold mb-2"
+              data-aos="zoom-in-up"
+            >
               Password
             </label>
             <div className="relative">
@@ -84,7 +104,10 @@ export default function SignupForm() {
 
           {/* Confirm Password Field */}
           <div className="mb-6">
-            <label className="block text-gray-900 font-semibold mb-2">
+            <label
+              className="block text-gray-900 font-semibold mb-2"
+              data-aos="zoom-in-up"
+            >
               Confirm Password
             </label>
             <div className="relative">
@@ -113,7 +136,9 @@ export default function SignupForm() {
           </button>
 
           {/* Login Link */}
-          <div className="mt-6 text-center text-gray-900">
+          <div
+            className="mt-6 text-center text-gray-900"
+          >
             <span>Already have an account? </span>
             <Link
               href="/login"
