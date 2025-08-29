@@ -68,7 +68,7 @@ export default function OversightCompliance() {
       </motion.h2>
 
       <div className="relative flex items-center justify-center">
-        {/* Left button */}
+        {/* Left buttons */}
         <button
           onClick={prevSlide}
           className="hidden md:flex absolute left-1 md:left-6 z-30 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
