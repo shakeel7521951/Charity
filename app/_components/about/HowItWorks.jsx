@@ -1,14 +1,9 @@
 "use client";
 import React from "react";
 import { Users, HeartHandshake, ShieldCheck, Eye } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 
 export default function HowItWorks() {
-  React.useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
   const steps = [
     {
       icon: <Users className="w-10 h-10 text-[#8A1538]" />,
@@ -34,12 +29,16 @@ export default function HowItWorks() {
 
   return (
     <section className="py-20 px-6 bg-gray-50 relative overflow-hidden">
-      <h2
+      {/* Heading */}
+      <motion.h2
         className="text-3xl md:text-4xl font-bold text-center text-[#8A1538]"
-        data-aos="fade-up"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
       >
         How It Works
-      </h2>
+      </motion.h2>
 
       {/* Timeline / Process Flow */}
       <div className="mt-16 relative max-w-6xl mx-auto">
@@ -47,11 +46,13 @@ export default function HowItWorks() {
 
         <div className="grid md:grid-cols-4 gap-12 md:gap-6">
           {steps.map((step, i) => (
-            <div
+            <motion.div
               key={i}
               className="flex flex-col items-center text-center relative"
-              data-aos="zoom-in"
-              data-aos-delay={i * 200}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              viewport={{ once: true }}
             >
               <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#8A1538]/10 border-4 border-[#8A1538] shadow-lg transition-transform hover:scale-110">
                 {step.icon}
@@ -65,7 +66,7 @@ export default function HowItWorks() {
               {i !== steps.length - 1 && (
                 <div className="md:hidden w-1 h-12 bg-[#8A1538]/30 mt-6"></div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

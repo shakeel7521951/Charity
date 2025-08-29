@@ -1,14 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Shield, Users, HeartHandshake } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 
 export default function WhoWeAre() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
   const values = [
     {
       icon: Shield,
@@ -30,37 +25,65 @@ export default function WhoWeAre() {
     },
   ];
 
+  // Framer Motion variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay },
+    }),
+  };
+
+  const zoomIn = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, delay },
+    }),
+  };
+
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2
-          className="text-4xl md:text-5xl font-bold text-[#8A1538]"
-          data-aos="fade-up"
+        <motion.h2
+          className="text-4xl font-bold text-[#723134]"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.1}
         >
           Who We Are
-        </h2>
-        <p
-          className="mt-4 max-w-2xl mx-auto text-gray-700 leading-relaxed"
-          data-aos="fade-up"
-          data-aos-delay="200"
+        </motion.h2>
+        <motion.p
+          className="mt-4 max-w-2xl mx-auto text-gray-700"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.3}
         >
           We are Qatar’s trusted national donation platform, dedicated to
-          building <span className="font-semibold text-[#8A1538]">secure</span>,{" "}
-          <span className="font-semibold text-[#8A1538]">transparent</span>, and{" "}
-          <span className="font-semibold text-[#8A1538]">impactful</span> giving
-          experiences.
-        </p>
+          building <span className="font-semibold">secure</span>,{" "}
+          <span className="font-semibold">transparent</span>, and{" "}
+          <span className="font-semibold">impactful</span> giving experiences.
+        </motion.p>
       </div>
 
       {/* Cards */}
       <div className="grid md:grid-cols-3 gap-8">
         {values.map((v, i) => (
-          <div
+          <motion.div
             key={i}
             className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-500"
-            data-aos="zoom-in"
-            data-aos-delay={i * 200}
+            variants={zoomIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={i * 0.2}
           >
             {/* Background Image */}
             <div
@@ -68,34 +91,36 @@ export default function WhoWeAre() {
               style={{ backgroundImage: `url(${v.bg})` }}
             />
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#8A1538]/80 to-[#543D2E]/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#543D2E]/70 to-[#723134]/80" />
             {/* Content */}
             <div className="relative p-8 text-center text-white">
               <v.icon className="mx-auto w-14 h-14 mb-4" />
               <h3 className="text-2xl font-semibold">{v.title}</h3>
               <p className="mt-3 text-sm leading-relaxed">{v.desc}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Mission Statement */}
-      <div
-        className="mt-16 text-center bg-[#F9F7F4] p-10 rounded-2xl shadow-lg"
-        data-aos="fade-up"
+      <motion.div
+        className="mt-16 text-center bg-[#F2EDE9] p-8 rounded-2xl shadow-lg"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={0.5}
       >
-        <h3 className="text-2xl md:text-3xl font-bold text-[#8A1538]">
-          Our Mission
-        </h3>
-        <p className="mt-3 text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        <h3 className="text-2xl font-bold text-[#543D2E]">Our Mission</h3>
+        <p className="mt-3 text-gray-700 max-w-3xl mx-auto">
           To revolutionize charitable giving in Qatar by combining innovation,
           compliance, and compassion — ensuring that every contribution reaches
           those in need with maximum impact.
         </p>
-        <button className="mt-6 px-8 py-3 rounded-lg bg-[#8A1538] text-white font-semibold shadow hover:bg-[#543D2E] transition">
+        <button className="mt-6 px-8 py-3 rounded-lg bg-[#723134] text-white font-semibold shadow hover:bg-[#543D2E] transition">
           Learn More
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }
