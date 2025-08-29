@@ -124,7 +124,7 @@ const ImpactShowcase = () => {
     <section className="py-20 bg-gradient-to-br from-[#F0EBE6] relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-72 bg-[#821435] opacity-5"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#821435] rounded-full opacity-5 transform translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#e992ac] rounded-full opacity-5 transform translate-x-1/2 translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
