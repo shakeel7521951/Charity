@@ -110,7 +110,7 @@ export default function HeroSection() {
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
                   <button className="bg-white text-[#8a1538] hover:bg-gray-100 font-semibold py-3 px-10 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
                     {slide.ctaPrimary}
                   </button>
@@ -215,7 +215,7 @@ export default function HeroSection() {
       </button>
 
       {/* Indicator dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
