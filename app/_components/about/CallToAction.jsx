@@ -46,7 +46,7 @@ export default function CallToAction() {
 
       {/* Buttons */}
       <motion.div
-        className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 relative z-10"
+        className="mt-8 flex md:flex-row items-center justify-center gap-4 relative z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
