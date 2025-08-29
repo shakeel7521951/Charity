@@ -1,30 +1,182 @@
-import React from "react";
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import { FileCheck, Scale, ShieldCheck } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function OversightCompliance() {
   const points = [
-    { icon: FileCheck, title: "Campaign Approval", desc: "Every campaign reviewed by RACA." },
-    { icon: Scale, title: "Compliance", desc: "Financial monitoring & anti-fraud checks." },
-    { icon: ShieldCheck, title: "Transparency", desc: "Blockchain ensures tamper-proof records." },
+    {
+      icon: FileCheck,
+      title: "Campaign Approval",
+      desc: "Every campaign is reviewed and verified by RACA before launch.",
+    },
+    {
+      icon: Scale,
+      title: "Compliance",
+      desc: "Strict financial monitoring & anti-fraud mechanisms ensure trust.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Transparency",
+      desc: "Blockchain provides tamper-proof donation and fund tracking.",
+    },
   ];
 
+  const [current, setCurrent] = useState(0);
+
+  const prevSlide = () =>
+    setCurrent((prev) => (prev === 0 ? points.length - 1 : prev - 1));
+  const nextSlide = () =>
+    setCurrent((prev) => (prev === points.length - 1 ? 0 : prev + 1));
+
+  // --- Swipe logic ---
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 75) {
+      nextSlide(); // swipe left → next
+    }
+    if (touchEndX.current - touchStartX.current > 75) {
+      prevSlide(); // swipe right → prev
+    }
+  };
+
+  // --- Init AOS ---
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-out-cubic",
+      once: true,
+    });
+  }, []);
+
   return (
-    <section className="py-16 px-6 bg-gray-50 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-[#8A1538]">
+    <section
+      className="relative py-20 px-4 md:px-8 bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      {/* Background Accent */}
+      <div className="absolute inset-0 bg-[url('/bg-pattern.png')] opacity-5 bg-cover bg-center"></div>
+
+      <h2
+        className="text-3xl md:text-4xl font-bold text-center text-[#8A1538] mb-12 relative z-10"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
         Oversight & Compliance
       </h2>
-      <div className="grid md:grid-cols-3 gap-8 mt-12">
-        {points.map((p, i) => (
-          <div
-            key={i}
-            className="p-6 border rounded-xl shadow hover:shadow-lg transition text-center"
-          >
-            <p.icon className="mx-auto w-12 h-12 text-[#8A1538]" />
-            <h3 className="mt-4 text-xl font-semibold">{p.title}</h3>
-            <p className="mt-2 text-gray-600">{p.desc}</p>
-          </div>
-        ))}
+
+      <div className="relative flex items-center justify-center">
+        {/* Left button (outside card, near edge) */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-1 md:left-6 z-20 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
+        >
+          ‹
+        </button>
+
+        {/* Carousel wrapper */}
+        <div
+          className="flex items-center justify-center w-full max-w-4xl h-[380px] md:h-[420px] relative overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {points.map((p, index) => {
+            let position = "nextSlide";
+            if (index === current) position = "activeSlide";
+            if (
+              index === current - 1 ||
+              (current === 0 && index === points.length - 1)
+            )
+              position = "lastSlide";
+
+            return (
+              <AnimatePresence key={index}>
+                {position === "activeSlide" && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: 60 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.8, y: -60 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="absolute hover:bg-[#FDECEC] w-[85%] md:w-[65%] h-full bg-white border rounded-2xl shadow-2xl flex flex-col items-center justify-center text-center p-8 z-20"
+                  >
+                    <p.icon className="w-16 h-16 text-[#8A1538]" />
+                    <h3 className="mt-6 text-2xl font-semibold text-[#8A1538]">
+                      {p.title}
+                    </h3>
+                    <p className="mt-3 text-gray-600 text-lg leading-relaxed">
+                      {p.desc}
+                    </p>
+                  </motion.div>
+                )}
+
+                {position === "lastSlide" && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 0.5,
+                      scale: 0.85,
+                      x: -150,
+                      rotateY: 15,
+                    }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="absolute w-[70%] md:w-[50%] h-4/5 bg-white/90 border rounded-2xl shadow-xl flex items-center justify-center text-center p-6 z-10"
+                  >
+                    <p.icon className="w-12 h-12 text-[#8A1538]/70" />
+                  </motion.div>
+                )}
+
+                {position === "nextSlide" && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 0.5,
+                      scale: 0.85,
+                      x: 150,
+                      rotateY: -15,
+                    }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="absolute w-[70%] md:w-[50%] h-4/5 bg-white/90 border rounded-2xl shadow-xl flex items-center justify-center text-center p-6 z-10"
+                  >
+                    <p.icon className="w-12 h-12 text-[#8A1538]/70" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            );
+          })}
+        </div>
+
+        {/* Right button (outside card, near edge) */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-1 md:right-6 z-20 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
+        >
+          ›
+        </button>
       </div>
+
+      <p
+        className="text-center text-gray-500 mt-10 text-lg relative z-10"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Ensuring accountability, compliance, and trust at every step.
+      </p>
     </section>
   );
 }
