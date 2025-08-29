@@ -1,9 +1,7 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { FileCheck, Scale, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function OversightCompliance() {
   const points = [
@@ -44,45 +42,36 @@ export default function OversightCompliance() {
   };
 
   const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 75) {
-      nextSlide(); // swipe left → next
-    }
-    if (touchEndX.current - touchStartX.current > 75) {
-      prevSlide(); // swipe right → prev
-    }
+    if (touchStartX.current - touchEndX.current > 75) nextSlide();
+    if (touchEndX.current - touchStartX.current > 75) prevSlide();
   };
 
-  // --- Init AOS ---
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      easing: "ease-out-cubic",
-      once: true,
-    });
-  }, []);
-
   return (
-    <section
+    <motion.section
       className="relative py-20 px-4 md:px-8 bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden"
-      data-aos="fade-up"
-      data-aos-delay="100"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       {/* Background Accent */}
       <div className="absolute inset-0 bg-[url('/bg-pattern.png')] opacity-5 bg-cover bg-center"></div>
 
-      <h2
+      <motion.h2
         className="text-3xl md:text-4xl font-bold text-center text-[#8A1538] mb-12 relative z-10"
-        data-aos="zoom-in"
-        data-aos-delay="200"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
       >
         Oversight & Compliance
-      </h2>
+      </motion.h2>
 
       <div className="relative flex items-center justify-center">
-        {/* Left button (outside card, near edge) */}
+        {/* Left button */}
         <button
           onClick={prevSlide}
-          className="absolute left-1 md:left-6 z-20 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
+          className="hidden md:flex absolute left-1 md:left-6 z-30 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
         >
           ‹
         </button>
@@ -161,22 +150,24 @@ export default function OversightCompliance() {
           })}
         </div>
 
-        {/* Right button (outside card, near edge) */}
+        {/* Right button */}
         <button
           onClick={nextSlide}
-          className="absolute right-1 md:right-6 z-20 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
+          className="hidden md:flex absolute right-1 md:right-6 z-20 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
         >
           ›
         </button>
       </div>
 
-      <p
+      <motion.p
         className="text-center text-gray-500 mt-10 text-lg relative z-10"
-        data-aos="fade-up"
-        data-aos-delay="300"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ once: true }}
       >
         Ensuring accountability, compliance, and trust at every step.
-      </p>
-    </section>
+      </motion.p>
+    </motion.section>
   );
 }

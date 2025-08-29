@@ -6,7 +6,6 @@ import SandiInfo from "../_components/about/SandiInfo";
 import MissionVisionValues from "../_components/about/MissionVisionValues";
 import HowItWorks from "../_components/about/HowItWorks";
 import OversightCompliance from "../_components/about/OversightCompliance";
-import Impact from "../_components/about/Impact";
 import CallToAction from "../_components/about/CallToAction";
 
 export default function AboutPage() {
@@ -18,7 +17,6 @@ export default function AboutPage() {
       <MissionVisionValues />
       <HowItWorks />
       <OversightCompliance />
-      <Impact />
       <CallToAction />
     </main>
   );
