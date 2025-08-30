@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 
 export default function CallToAction() {
   return (
-    <section className="relative py-20 px-6 text-center bg-gradient-to-r from-[#8A1538] via-[#a62d4c] to-[#8A1538] text-white overflow-hidden">
+    <section style={{
+    backgroundImage: "linear-gradient(to right, rgba(138, 21, 56, 0.3), rgba(166, 45, 76, 0.6), rgba(138, 21, 56, 0.3)), url('about/CallToAction.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundBlendMode: "overlay",
+  }}
+   className="py-20 px-6 text-center bg-[#8A153] text-white overflow-hidden">
       {/* Background decorative shapes */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -46,7 +52,7 @@ export default function CallToAction() {
 
       {/* Buttons */}
       <motion.div
-        className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 relative z-10"
+        className="mt-8 flex md:flex-row items-center justify-center gap-4 relative z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
