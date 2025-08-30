@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 
 export default function CallToAction() {
   return (
-    <section className="relative py-20 px-6 text-center bg-gradient-to-r from-[#8A1538] via-[#a62d4c] to-[#8A1538] text-white overflow-hidden">
+    <section style={{
+    backgroundImage: "url('about/CallToAction.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundBlendMode: "overlay"
+  }}
+   className="relative py-20 px-6 text-center bg-gradient-to-r from-[#8A1538] via-[#a62d4c] to-[#8A1538] text-white overflow-hidden">
       {/* Background decorative shapes */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}

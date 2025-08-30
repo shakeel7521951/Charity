@@ -9,16 +9,19 @@ export default function OversightCompliance() {
       icon: FileCheck,
       title: "Campaign Approval",
       desc: "Every campaign is reviewed and verified by RACA before launch.",
+      img: "/about/Insights-Compaign.jpg",
     },
     {
       icon: Scale,
       title: "Compliance",
       desc: "Strict financial monitoring & anti-fraud mechanisms ensure trust.",
+      img: "/about/Insights-Compliance.jpg",
     },
     {
       icon: ShieldCheck,
       title: "Transparency",
       desc: "Blockchain provides tamper-proof donation and fund tracking.",
+      img: "/about/Insights-Transparency.jpg",
     },
   ];
 
@@ -78,7 +81,7 @@ export default function OversightCompliance() {
 
         {/* Carousel wrappers */}
         <div
-          className="flex items-center justify-center w-full max-w-4xl h-[380px] md:h-[420px] relative overflow-hidden"
+          className="flex items-center justify-center w-full max-w-4xl h-[380px] md:h-[420px] relative overflow-hidden "
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -100,15 +103,26 @@ export default function OversightCompliance() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8, y: -60 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="absolute hover:bg-[#FDECEC] w-[85%] md:w-[65%] h-full bg-white border rounded-2xl shadow-2xl flex flex-col items-center justify-center text-center p-8 z-20"
+                    className="absolute w-[85%] md:w-[65%] h-full rounded-2xl shadow-2xl overflow-hidden z-20 "
                   >
-                    <p.icon className="w-16 h-16 text-[#8A1538]" />
-                    <h3 className="mt-6 text-2xl font-semibold text-[#8A1538]">
-                      {p.title}
-                    </h3>
-                    <p className="mt-3 text-gray-600 text-lg leading-relaxed">
-                      {p.desc}
-                    </p>
+                    {/* Background image */}
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${p.img})` }}
+                    ></div>
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-[#8A1538]/40"></div>
+
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 h-full text-white">
+                      <p.icon className="w-16 h-16 text-[#F2EDE9]" />
+                      <h3 className="mt-6 text-2xl font-semibold">
+                        {p.title}
+                      </h3>
+                      <p className="mt-3 text-lg leading-relaxed max-w-md opacity-90">
+                        {p.desc}
+                      </p>
+                    </div>
                   </motion.div>
                 )}
 
@@ -123,9 +137,12 @@ export default function OversightCompliance() {
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="absolute w-[70%] md:w-[50%] h-4/5 bg-white/90 border rounded-2xl shadow-xl flex items-center justify-center text-center p-6 z-10"
+                    className="absolute w-[70%] md:w-[50%] h-4/5 rounded-2xl shadow-xl overflow-hidden bg-[#8A1538]/10"
                   >
-                    <p.icon className="w-12 h-12 text-[#8A1538]/70" />
+                    <div
+                      className="absolute inset-0 bg-cover bg-center opacity-70"
+                      style={{ backgroundImage: `url(${p.img})` }}
+                    ></div>
                   </motion.div>
                 )}
 
@@ -140,9 +157,12 @@ export default function OversightCompliance() {
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="absolute w-[70%] md:w-[50%] h-4/5 bg-white/90 border rounded-2xl shadow-xl flex items-center justify-center text-center p-6 z-10"
+                    className="absolute w-[70%] md:w-[50%] h-4/5 rounded-2xl shadow-xl overflow-hidden"
                   >
-                    <p.icon className="w-12 h-12 text-[#8A1538]/70" />
+                    <div
+                      className="absolute inset-0 bg-cover bg-center opacity-70"
+                      style={{ backgroundImage: `url(${p.img})` }}
+                    ></div>
                   </motion.div>
                 )}
               </AnimatePresence>
