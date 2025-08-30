@@ -27,7 +27,7 @@ export default function Hero() {
       }}
     >
       {/* Dark overlay with brand gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#543D2E]/60 via-[#723134]/75 to-[#543D2E]/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#8A1538]/60 via-[#723134]/75 to-[#8A1538]/60"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl text-white px-4">
