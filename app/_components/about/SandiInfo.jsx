@@ -100,7 +100,7 @@ export default function SandiInfo() {
       </div>
 
       {/* Features Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8 mt-20 max-w-7xl mx-auto">
         {features.map((f, i) => (
           <motion.div
             key={i}
