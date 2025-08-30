@@ -116,6 +116,7 @@ const Navbar = () => {
           <a href="#" className="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-[#821435] to-[#B62F5E] text-white">
             Donate Now
           </a>
+       
         </div>
       </div>
     </nav>
