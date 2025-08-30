@@ -27,7 +27,7 @@ export default function Hero() {
       }}
     >
       {/* Dark overlay with brand gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#8A1538]/60 via-[#723134]/75 to-[#8A1538]/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#8A1538]/50 via-[#723134]/65 to-[#8A1538]/50"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl text-white px-4">
@@ -66,7 +66,7 @@ export default function Hero() {
           animate="visible"
           custom={0.6}
         >
-          <button className="bg-[#723134] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#543D2E] hover:text-white transition-all duration-300">
+          <button className="bg-gradient-to-r from-[#B62F5E] to-[#821435] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#543D2E] hover:text-white hover:bg-gradient-to-r hover:from-[#821435] hover:to-[#B62F5E] duration-400">
             Donate Now
           </button>
           <button className="border-2 border-[#F2EDE9] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#F2EDE9] hover:text-[#723134] transition-all duration-300">
