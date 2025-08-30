@@ -76,7 +76,7 @@ export default function OversightCompliance() {
           ‹
         </button>
 
-        {/* Carousel wrapper */}
+        {/* Carousel wrappers */}
         <div
           className="flex items-center justify-center w-full max-w-4xl h-[380px] md:h-[420px] relative overflow-hidden"
           onTouchStart={handleTouchStart}
