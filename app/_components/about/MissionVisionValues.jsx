@@ -25,25 +25,14 @@ export default function MissionVisionValues() {
     },
   ];
 
-  // Reusable animation variants
+  // Simple fade up animation
   const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-  };
-
-  const fadeRight = {
-    hidden: { opacity: 0, x: -50 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-  };
-
-  const fadeLeft = {
-    hidden: { opacity: 0, x: 50 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-  };
-
-  const zoomIn = {
-    hidden: { opacity: 0, scale: 0.9 },
-    show: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+    hidden: { opacity: 0, y: 40 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay },
+    }),
   };
 
   return (
@@ -53,15 +42,16 @@ export default function MissionVisionValues() {
         className="text-center max-w-3xl mx-auto"
         variants={fadeUp}
         initial="hidden"
-        whileInView="show"
+        whileInView="visible"
         viewport={{ once: true }}
+        custom={0}
       >
         <h2 className="text-4xl md:text-5xl font-bold text-[#8A1538]">
           Mission, Vision & Values
         </h2>
         <p className="mt-4 text-lg text-gray-600">
-          Guided by integrity, innovation, and compliance, we’re building
-          Qatar’s most trusted and impactful digital donation ecosystem.
+          Guided by integrity, innovation, and compliance, we're building
+          Qatar's most trusted and impactful digital donation ecosystem.
         </p>
       </motion.div>
 
@@ -69,10 +59,11 @@ export default function MissionVisionValues() {
       <div className="mt-12 grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
         <motion.div
           className="p-8 bg-white/90 backdrop-blur-lg rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl transition transform hover:-translate-y-2 duration-500"
-          variants={fadeRight}
+          variants={fadeUp}
           initial="hidden"
-          whileInView="show"
+          whileInView="visible"
           viewport={{ once: true }}
+          custom={0.1}
         >
           <h3 className="text-2xl font-semibold text-[#8A1538]">Mission</h3>
           <p className="mt-3 text-gray-600 leading-relaxed">
@@ -87,10 +78,11 @@ export default function MissionVisionValues() {
 
         <motion.div
           className="p-8 bg-white/90 backdrop-blur-lg rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl transition transform hover:-translate-y-2 duration-500"
-          variants={fadeLeft}
+          variants={fadeUp}
           initial="hidden"
-          whileInView="show"
+          whileInView="visible"
           viewport={{ once: true }}
+          custom={0.2}
         >
           <h3 className="text-2xl font-semibold text-[#8A1538]">Vision</h3>
           <p className="mt-3 text-gray-600 leading-relaxed">
@@ -112,10 +104,11 @@ export default function MissionVisionValues() {
               bg-gradient-to-br ${v.gradient} 
               overflow-hidden group transform transition duration-700 
               hover:-translate-y-3 hover:shadow-2xl`}
-            variants={zoomIn}
+            variants={fadeUp}
             initial="hidden"
-            whileInView="show"
+            whileInView="visible"
             viewport={{ once: true }}
+            custom={0.3 + i * 0.1}
           >
             {/* Animated Overlay */}
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition duration-500"></div>

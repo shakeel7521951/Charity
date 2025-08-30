@@ -35,14 +35,22 @@ export default function WhoWeAre() {
     }),
   };
 
-  const zoomIn = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.8, delay },
-    }),
-  };
+const zoomIn = {
+  hidden: { opacity: 0, scale: 0.8 }, // start smaller & invisible
+  visible: (delay = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      delay,
+      ease: [0.22, 1, 0.36, 1], // cubic-bezier ease-out for realism
+      type: "spring", // spring makes it more natural
+      stiffness: 120,
+      damping: 12,
+    },
+  }),
+};
+
 
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto">
