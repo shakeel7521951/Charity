@@ -11,7 +11,7 @@ const FeaturedCampaignsSection = () => {
       donors: 1245,
       daysLeft: 12,
       verified: true,
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+      image: "https://media.gettyimages.com/id/2120554524/photo/hospital-holding-hands-and-kid-in-bed-with-love-support-and-care-in-clinic-after-surgery.jpg?s=612x612&w=0&k=20&c=VSnDhLLZI1j4UdxTbGlyZOzMGCSo3w2Yj1CvaJsLmUA="
     },
     {
       category: "Education",
@@ -35,7 +35,7 @@ const FeaturedCampaignsSection = () => {
       donors: 1567,
       daysLeft: 5,
       verified: true,
-      image: "https://images.unsplash.com/photo-1577896851231-70ef18861754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+      image: "https://media.gettyimages.com/id/530930529/photo/little-girl-trying-on-coat-at-winter-clothing-donation-drive.jpg?s=612x612&w=0&k=20&c=bFskyDKmdlt2JLs7uZ6m2rss4VZRkijhdkUs_CFVn-s="
     }
   ];
 
