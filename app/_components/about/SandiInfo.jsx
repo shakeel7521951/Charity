@@ -65,21 +65,21 @@ export default function SandiInfo() {
           custom={0.2}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#543D2E] leading-tight">
-            What is <span className="text-[#723134]">Sandi?</span>
+            What is <span className="text-[#821435]">Sandi?</span>
           </h2>
           <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-            <span className="font-semibold">Sandi</span> is Qatar’s{" "}
-            <span className="text-[#723134] font-semibold">
+            <span className="font-semibold text-[#821435]">Sandi</span> is Qatar’s{" "}
+            <span className="text-[#821435] font-semibold">
               national platform
             </span>{" "}
             for charitable and social aid management. It ensures{" "}
-            <span className="text-[#8A1538] font-semibold">
+            <span className="text-[#821435] font-semibold">
               fairness, security, and transparency
             </span>{" "}
             in donations by unifying data across organizations, preventing fraud,
             and building trust between donors, charities, and beneficiaries.
           </p>
-          <button className="mt-8 px-8 py-3 rounded-full bg-gradient-to-r from-[#723134] to-[#8A1538] text-white font-semibold shadow-lg hover:scale-105 transition-transform">
+          <button className="mt-8 px-8 py-3 rounded-full hover:bg-[#B62F5E] bg-[#821435] text-white font-semibold shadow-lg hover:scale-105 transition-transform">
             Learn More
           </button>
         </motion.div>
