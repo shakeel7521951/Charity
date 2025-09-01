@@ -1,14 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Eye, Target, Lightbulb } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 
 export default function MissionVisionValues() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
   const values = [
     {
       icon: Target,
@@ -30,24 +25,45 @@ export default function MissionVisionValues() {
     },
   ];
 
+  // Simple fade up animation
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay },
+    }),
+  };
+
   return (
     <section className="relative py-20 px-6 bg-gray-50">
       {/* Section Title */}
-      <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
+      <motion.div
+        className="text-center max-w-3xl mx-auto"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={0}
+      >
         <h2 className="text-4xl md:text-5xl font-bold text-[#8A1538]">
           Mission, Vision & Values
         </h2>
         <p className="mt-4 text-lg text-gray-600">
-          Guided by integrity, innovation, and compliance, we’re building
-          Qatar’s most trusted and impactful digital donation ecosystem.
+          Guided by integrity, innovation, and compliance, we're building
+          Qatar's most trusted and impactful digital donation ecosystem.
         </p>
-      </div>
+      </motion.div>
 
       {/* Mission & Vision */}
       <div className="mt-12 grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-        <div
+        <motion.div
           className="p-8 bg-white/90 backdrop-blur-lg rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl transition transform hover:-translate-y-2 duration-500"
-          data-aos="fade-right"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.1}
         >
           <h3 className="text-2xl font-semibold text-[#8A1538]">Mission</h3>
           <p className="mt-3 text-gray-600 leading-relaxed">
@@ -58,11 +74,15 @@ export default function MissionVisionValues() {
             digital donation system that ensures fairness and accountability
             across Qatar.
           </p>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
           className="p-8 bg-white/90 backdrop-blur-lg rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl transition transform hover:-translate-y-2 duration-500"
-          data-aos="fade-left"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.2}
         >
           <h3 className="text-2xl font-semibold text-[#8A1538]">Vision</h3>
           <p className="mt-3 text-gray-600 leading-relaxed">
@@ -72,19 +92,23 @@ export default function MissionVisionValues() {
             </span>{" "}
             — driving social progress in Qatar and beyond.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Values */}
       <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto">
         {values.map((v, i) => (
-          <div
+          <motion.div
             key={i}
             className={`relative p-8 rounded-2xl shadow-lg cursor-pointer text-white 
               bg-gradient-to-br ${v.gradient} 
               overflow-hidden group transform transition duration-700 
               hover:-translate-y-3 hover:shadow-2xl`}
-            data-aos="zoom-in"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0.3 + i * 0.1}
           >
             {/* Animated Overlay */}
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition duration-500"></div>
@@ -97,7 +121,7 @@ export default function MissionVisionValues() {
                 {v.desc}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

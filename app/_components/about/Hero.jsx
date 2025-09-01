@@ -1,58 +1,104 @@
 "use client";
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
-  }, []);
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    }),
+  };
 
   return (
     <section
-      className="relative h-screen w-full flex items-center justify-center text-center text-white px-6"
+      className="relative min-h-screen w-full flex items-center justify-center text-center px-6 pt-24 md:pt-32"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')", // replace with Qatar charity/abstract bg
+          "url('about/Hero.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay for color filter */}
-      <div className="absolute inset-0 bg-[#723134]/80 mix-blend-multiply"></div>
+      {/* Dark overlay with brand gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#8A1538]/50 via-[#723134]/65 to-[#8A1538]/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-3xl">
-        <h1
-          className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg"
-          data-aos="fade-up"
+      <div className="relative z-10 max-w-4xl text-white px-4">
+        {/* Heading */}
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-snug md:leading-tight drop-shadow-lg"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.2}
         >
-          About the Donation & Charity <br /> Management Platform
-        </h1>
+          <span className="text-[#F2EDE9]">Together We Rise</span> <br />
+          Building Hope Through Charity
+        </motion.h1>
 
-        <p
-          className="mt-6 text-lg md:text-xl text-[#F2EDE9] leading-relaxed"
-          data-aos="fade-up"
-          data-aos-delay="200"
+        {/* Subheading */}
+        <motion.p
+          className="mt-6 text-base sm:text-lg md:text-xl text-[#F2EDE9]/90 leading-relaxed max-w-2xl mx-auto"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.4}
         >
-          A secure and transparent platform integrating with{" "}
-          <span className="font-semibold text-white">Sandi</span> to ensure
-          trust, compliance, and impact in charitable giving across Qatar.
-        </p>
+          Every act of giving makes a difference. With{" "}
+          <span className="font-semibold text-white">transparency</span>,{" "}
+          <span className="font-semibold text-white">trust</span>, and{" "}
+          <span className="font-semibold text-white">impact</span>, we empower
+          communities across Qatar.
+        </motion.p>
 
-        {/* Buttons */}
-        <div
-          className="mt-8 flex flex-wrap justify-center gap-4"
-          data-aos="fade-up"
-          data-aos-delay="400"
+        {/* CTA Buttons */}
+        <motion.div
+          className="mt-8 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.6}
         >
-          <button className="bg-[#543D2E] text-white px-8 py-3 rounded-xl shadow-lg hover:bg-[#F2EDE9] hover:text-[#543D2E] transition-all duration-300">
-            View Campaigns
+          <button className="bg-gradient-to-r from-[#B62F5E] to-[#821435] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#543D2E] hover:text-white hover:bg-gradient-to-r hover:from-[#821435] hover:to-[#B62F5E] duration-400">
+            Donate Now
           </button>
-          <button className="border-2 border-white text-white px-8 py-3 rounded-xl shadow-lg hover:bg-white hover:text-[#723134] transition-all duration-300">
-            Get Started
+          <button className="border-2 border-[#F2EDE9] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#F2EDE9] hover:text-[#723134] transition-all duration-300">
+            Explore Campaigns
           </button>
-        </div>
+        </motion.div>
+
+        {/* Impact Stats */}
+        <motion.div
+          className="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.8}
+        >
+          <div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">10K+</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Lives Impacted</p>
+          </div>
+          <div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">500+</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Campaigns</p>
+          </div>
+          <div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">100%</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Transparency</p>
+          </div>
+          <div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">24/7</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Support</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

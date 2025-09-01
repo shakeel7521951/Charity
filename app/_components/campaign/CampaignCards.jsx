@@ -16,7 +16,7 @@ const campaigns = [
     description:
       "Providing medical assistance to underprivileged children in rural areas.",
     image:
-      "https://images.unsplash.com/photo-1606813902913-8c3c9d33f1ea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const campaigns = [
     description:
       "Helping communities affected by recent floods with essential supplies and rebuilding efforts.",
     image:
-      "https://images.unsplash.com/photo-1508435233346-8a1f833bdc18?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 4,
@@ -54,8 +54,7 @@ const campaigns = [
     endDate: "2023-12-15",
     description:
       "Distributing food packages to low-income families to fight hunger.",
-    image:
-      "https://images.unsplash.com/photo-1606788075761-6208a6a90a01?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 5,
@@ -79,8 +78,8 @@ const campaigns = [
     startDate: '2023-09-01',
     endDate: '2024-02-28',
     description: 'Distributing meals and ration packs to homeless families and underprivileged communities to fight hunger and malnutrition.',
-    image: 'https://images.unsplash.com/photo-1606788075761-1f3e4d3c69a9?auto=format&fit=crop&w=1000&q=80'
-}
+    image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80"
+  }
 ];
 
 const CampaignCard = () => {
@@ -107,7 +106,7 @@ const CampaignCard = () => {
 
             const daysRemaining = Math.ceil(
               (new Date(campaign.endDate) - new Date()) /
-                (1000 * 60 * 60 * 24)
+              (1000 * 60 * 60 * 24)
             );
 
             return (
@@ -118,7 +117,7 @@ const CampaignCard = () => {
                 className="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#E5DCD4] hover:shadow-2xl group flex flex-col"
               >
                 {/* Image */}
-                <div className="h-56 w-full relative overflow-hidden">
+                <div className="h-65 w-full relative overflow-hidden">
                   <img
                     src={campaign.image}
                     alt={campaign.name}
@@ -135,8 +134,8 @@ const CampaignCard = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-semibold text-[#723134] mb-3">
+                <div className="p-6 pt-1 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-semibold text-[#723134] mb-2">
                     {campaign.name}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4 line-clamp-3 flex-grow">

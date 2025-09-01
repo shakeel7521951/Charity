@@ -5,7 +5,8 @@ import "aos/dist/aos.css"
 const Corporate = () => {
     useEffect(()=>{
         AOS.init({
-            duration:4000,
+            duration:2000,
+            
         once:true
         })
     })
