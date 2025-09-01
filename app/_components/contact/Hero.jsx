@@ -84,18 +84,12 @@ export default function Hero() {
     <span className="relative z-10 whitespace-nowrap">Get Started</span>
   </button>
 </div>
-
-
-        
-        {/* Scroll indicator */}
+{/* Scroll indicator */}
         <div 
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           data-aos="fade-up"
           data-aos-delay="800"
         >
-          {/* <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
-          </div> */}
         </div>
       </div>
     </section>

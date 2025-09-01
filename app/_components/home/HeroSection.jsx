@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
+import ConsultationForm from "../common/ConsultationForm";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showConsultationModal, setShowConsultationModal] = useState(false);
 
   const slides = [
     {
@@ -66,6 +68,10 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
+      <ConsultationForm
+                    isOpen={showConsultationModal}
+                    onClose={() => setShowConsultationModal(false)}
+                  />
 
       {/* Carousel slides */}
       <div className="relative h-full w-full">
@@ -114,8 +120,12 @@ export default function HeroSection() {
                   <button className="bg-white text-[#8a1538] hover:bg-gray-100 font-semibold py-3 px-10 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
                     {slide.ctaPrimary}
                   </button>
-                  <button className="bg-transparent hover:bg-white/10 text-white font-semibold py-3 px-10 rounded-lg border-2 border-white transition duration-300">
-                    {slide.ctaSecondary}
+
+                  <button
+                    className="px-5 lg:px-7 py-3 lg:py-4 bg-[#B62F5E] hover:bg-[#94193e] text-white font-medium rounded-lg transition-transform duration-300 transform hover:scale-105 text-sm lg:text-base"
+                    onClick={() => setShowConsultationModal(true)}
+                  >
+                    Consultation
                   </button>
                 </div>
 
