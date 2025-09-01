@@ -72,7 +72,7 @@ export default function Hero() {
     className="relative bg-gradient-to-r from-[#543D2E] to-[#8A1538] text-white px-7 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
   >
     <div className="absolute inset-0 bg-gradient-to-r from-[#8A1538] to-[#543D2E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-    <span className="relative z-10 whitespace-nowrap">View Campaign</span>
+    <span className="relative z-10 whitespace-nowrap">View Campaigns</span>
   </button>
 
   {/* Outline Button */}
