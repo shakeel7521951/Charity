@@ -16,7 +16,7 @@ export default function Map() {
           <div className="inline-flex items-center justify-center mb-4">
             <div className="w-12 h-0.5 bg-[#8A1538] mr-3"></div>
             <span className="text-lg font-semibold tracking-wider text-[#8A1538] uppercase">
-              Location
+              Locations
             </span>
             <div className="w-12 h-0.5 bg-[#8A1538] ml-3"></div>
           </div>

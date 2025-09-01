@@ -77,7 +77,7 @@ export default function ContactForm() {
             </div>
 
             <select className="w-full border border-gray-200 rounded-lg p-3.5 focus:outline-none focus:ring-2 focus:ring-[#8A1538]/30 transition-all duration-300 bg-white appearance-none">
-              <option>Choose Topics</option>
+              <option>Choose a Topics</option>
               <option>Donation Support</option>
               <option>Receipts</option>
               <option>Campaign Info</option>
