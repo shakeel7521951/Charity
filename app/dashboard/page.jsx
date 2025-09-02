@@ -1,7 +1,7 @@
 import React from "react";
-import SideBar from "../_components/donorDashboard/SideBar";
-import DonorNav from "../_components/donorDashboard/DonorNav";
-import Dashboard from "../_components/donorDashboard/ddDashboard/Dashboard";
+import SideBar from "../_components/dashboard/SideBar";
+import DonorNav from "../_components/dashboard/DonorNav";
+import Dashboard from "../_components/dashboard/dashboard_inner/Dashboard";
 
 const Page = () => {
   return (

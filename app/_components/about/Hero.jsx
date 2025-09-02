@@ -24,7 +24,7 @@ export default function Hero() {
           "url('about/Hero.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}
+      }}  
     >
       {/* Dark overlay with brand gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#8A1538]/50 via-[#723134]/65 to-[#8A1538]/50"></div>

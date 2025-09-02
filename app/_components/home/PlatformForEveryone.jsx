@@ -1,3 +1,7 @@
+"use client";
+import React from "react";
+import { motion } from "framer-motion"; 
+
 const PlatformForEveryone = () => {
   // User types data from requirements
   const userTypes = [
@@ -8,11 +12,11 @@ const PlatformForEveryone = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
-      description: "Individuals and Corporates who want to make a difference",
+      description: "Individuals and corporates united to make a difference.",
       features: [
         "Give with confidence through transparent tracking",
-        "Multiple payment options: card, bank transfer, QR code, digital wallet",
-        "Receive instant receipts and real-time impact updates",
+        "Flexible payment options: bank transfer, QR code",
+        "Receive instant confirmations and real-time impact updates",
         "Choose from health, education, relief campaigns"
       ],
       cta: "Start Donating",
@@ -33,7 +37,7 @@ const PlatformForEveryone = () => {
         "Generate automated reports for RACA compliance"
       ],
       cta: "Register Your Charity",
-      accentColor: "#0E5E36"
+      accentColor: "#8A1538"
     },
     {
       role: "Authority (RACA)",
@@ -50,7 +54,7 @@ const PlatformForEveryone = () => {
         "Track performance through KPI dashboards"
       ],
       cta: "Learn About Oversight",
-      accentColor: "#4C1D95"
+      accentColor: "#8A1538"
     }
   ];
 
@@ -58,20 +62,40 @@ const PlatformForEveryone = () => {
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16 relative"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#8A1538] rounded-full"></div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">A Platform for <span className="text-[#8A1538]">Everyone</span></h2>
           <p className="text-xl text-gray-600 leading-relaxed">
             Designed to serve all stakeholders in Qatar's charitable ecosystem with <span className="font-semibold text-[#8A1538]">transparency</span> and <span className="font-semibold text-[#8A1538]">efficiency</span>
           </p>
-        </div>
+        </motion.div>
         
         {/* User Type Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.2 }
+            }
+          }}
+        >
           {userTypes.map((userType, index) => (
-            <div 
-              key={index} 
+            <motion.div 
+              key={index}
               className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               {/* Decorative corner accent */}
               <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
@@ -79,14 +103,16 @@ const PlatformForEveryone = () => {
               </div>
               
               {/* Icon */}
-              <div 
+              <motion.div 
                 className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6" 
                 style={{ backgroundColor: `${userType.accentColor}15` }}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <div style={{ color: userType.accentColor }}>
                   {userType.icon}
                 </div>
-              </div>
+              </motion.div>
               
               {/* Title and Description */}
               <h3 className="text-2xl font-bold text-gray-900 mb-3">{userType.role}</h3>
@@ -95,7 +121,13 @@ const PlatformForEveryone = () => {
               {/* Features List */}
               <ul className="space-y-4 mb-8">
                 {userType.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start">
+                  <motion.li 
+                    key={featureIndex} 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: featureIndex * 0.1 }}
+                  >
                     <div 
                       className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5" 
                       style={{ backgroundColor: `${userType.accentColor}20` }}
@@ -105,26 +137,34 @@ const PlatformForEveryone = () => {
                       </svg>
                     </div>
                     <span className="text-gray-700" style={{ color: '#374151' }}>{feature}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
               
               {/* CTA Button */}
-              <button 
+              <motion.button 
                 className="w-full py-2.5 px-6 rounded-xl font-semibold transition-all duration-300 hover:opacity-90 hover:shadow-md group-hover:-translate-y-0.5"
                 style={{ 
                   backgroundColor: userType.accentColor,
                   color: 'white'
                 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
                 {userType.cta}
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         {/* Integration Highlight */}
-        <div className="mt-20 bg-gradient-to-r from-[#8A1538] to-[#6A0F2A] rounded-2xl p-10 md:p-14 text-white overflow-hidden relative">
+        <motion.div 
+          className="mt-20 bg-gradient-to-r from-[#8A1538] to-[#6A0F2A] rounded-2xl p-10 md:p-14 text-white overflow-hidden relative"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           {/* Background pattern */}
           <div className="absolute top-0 right-0 w-full h-full opacity-10">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +178,12 @@ const PlatformForEveryone = () => {
           </div>
           
           <div className="flex flex-col md:flex-row items-center relative z-10">
-            <div className="md:w-2/3 mb-8 md:mb-0 md:pr-10">
+            <motion.div 
+              className="md:w-2/3 mb-8 md:mb-0 md:pr-10"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-sm font-medium mb-5">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -150,44 +195,50 @@ const PlatformForEveryone = () => {
                 Our platform integrates directly with Qatar's national Sandi platform to ensure coordinated aid distribution and prevent duplication of assistance.
               </p>
               <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-3 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-lg">Sync beneficiary data to prevent duplicate assistance</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-3 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-lg">Unified database combining Sandi and our platform</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-3 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-lg">Full visibility of all aid distribution in Qatar</span>
-                </li>
+                {[
+                  "Sync beneficiary data to prevent duplicate assistance",
+                  "Unified database combining Sandi and our platform",
+                  "Full visibility of all aid distribution in Qatar"
+                ].map((point, i) => (
+                  <motion.li 
+                    key={i} 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.2 }}
+                  >
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-3 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#8A1538]" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-lg">{point}</span>
+                  </motion.li>
+                ))}
               </ul>
-            </div>
-            <div className="md:w-1/3 flex justify-center">
+            </motion.div>
+            <motion.div 
+              className="md:w-1/3 flex justify-center"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
                 <div className="text-5xl font-bold mb-2">100%</div>
                 <div className="text-xl font-medium mb-1">Coordination Efficiency</div>
                 <div className="text-sm opacity-90 mt-2">No duplicate assistance</div>
                 <div className="mt-6 w-full bg-white/20 rounded-full h-2.5">
-                  <div className="bg-white h-2.5 rounded-full transition-all duration-1000" style={{width: "100%"}}></div>
+                  <motion.div 
+                    className="bg-white h-2.5 rounded-full" 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                  />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

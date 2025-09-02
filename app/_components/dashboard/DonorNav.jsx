@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBell, FaHome } from "react-icons/fa";
+import { FaBell } from "react-icons/fa";
 
 const DonorNav = () => {
   return (

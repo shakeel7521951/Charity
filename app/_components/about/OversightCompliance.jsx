@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { FileCheck, Scale, ShieldCheck } from "lucide-react";
+import { ChevronLeft, FileCheck, Scale, ShieldCheck, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function OversightCompliance() {
@@ -74,9 +74,9 @@ export default function OversightCompliance() {
         {/* Left buttons */}
         <button
           onClick={prevSlide}
-          className="hidden md:flex absolute left-1 md:left-6 z-30 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
+          className="hidden md:flex absolute left-1 md:left-6 z-30 bg-[#8A1538] text-white p-4 rounded-full shadow-lg hover:scale-110 transition"
         >
-          ‹
+           <ChevronLeft className="w-5 h-5" />
         </button>
 
         {/* Carousel wrappers */}
@@ -111,7 +111,7 @@ export default function OversightCompliance() {
                       style={{ backgroundImage: `url(${p.img})` }}
                     ></div>
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-[#8A1538]/40"></div>
+                    <div className="absolute inset-0 bg-[#8A1538]/30"></div>
 
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 h-full text-white">
@@ -140,7 +140,7 @@ export default function OversightCompliance() {
                     className="absolute w-[70%] md:w-[50%] h-4/5 rounded-2xl shadow-xl overflow-hidden bg-[#8A1538]/10"
                   >
                     <div
-                      className="absolute inset-0 bg-cover bg-center opacity-70"
+                      className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${p.img})` }}
                     ></div>
                   </motion.div>
@@ -157,10 +157,10 @@ export default function OversightCompliance() {
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="absolute w-[70%] md:w-[50%] h-4/5 rounded-2xl shadow-xl overflow-hidden"
+                    className="absolute w-[70%] md:w-[50%] h-4/5 rounded-2xl shadow-xl overflow-hidden bg-[#8A1538]/10"
                   >
                     <div
-                      className="absolute inset-0 bg-cover bg-center opacity-70"
+                      className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${p.img})` }}
                     ></div>
                   </motion.div>
@@ -173,9 +173,9 @@ export default function OversightCompliance() {
         {/* Right button */}
         <button
           onClick={nextSlide}
-          className="hidden md:flex absolute right-1 md:right-6 z-20 bg-[#8A1538] text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition"
+          className="hidden text-4xl md:flex absolute right-1 md:right-6 z-20 bg-[#8A1538] text-white p-4 rounded-full shadow-lg hover:scale-110 transition"
         >
-          ›
+           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
 

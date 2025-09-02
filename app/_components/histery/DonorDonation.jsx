@@ -155,17 +155,7 @@ const DonorDonation = () => {
               Edit Donation
             </h1>
             <div className="space-y-4">
-              <div>
-                <label className="block mb-1 text-sm font-medium text-[#922d4c]">
-                  Donation Name
-                </label>
-                <input
-                  type="text"
-                  value={editName}
-                  onChange={(e) => setEditName(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#922d4c]"
-                />
-              </div>
+            
               <div>
                 <label className="block mb-1 text-sm font-medium text-[#922d4c]">
                   Amount
