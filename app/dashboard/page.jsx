@@ -1,7 +1,7 @@
 // app/dashboard/page.jsx
 "use client";
-import StatBox from "../_components/dashboard/StatBox";
-import Chart from "../_components/dashboard/Chart";
+import StatBox from "../_components/dashboard/overview/StatBox";
+import Chart from "../_components/dashboard/overview/Chart";
 
 export default function DashboardHome() {
   return (
