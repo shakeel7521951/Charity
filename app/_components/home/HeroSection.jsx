@@ -418,17 +418,6 @@ export default function HeroSection() {
           </svg>
         </motion.button>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden md:block"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
-        </div>
-      </motion.div>
     </section>
   );
 }
