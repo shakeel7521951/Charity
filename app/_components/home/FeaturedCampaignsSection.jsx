@@ -203,16 +203,16 @@ const FeaturedCampaignsSection = () => {
                       </span>
                     </div>
                     <div className="w-full bg-[#e5ddd5] rounded-full h-2.5">
-                      <div
-                        className="h-2.5 rounded-full"
-                        style={{
-                          width: `${calculatePercentage(
+                      <motion.div
+                        className="h-3 rounded-full bg-gradient-to-r from-[#723134] to-[#a84d51]"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${calculatePercentage(
                             campaign.raised,
                             campaign.goal
-                          )}%`,
-                          background: `linear-gradient(to right, #8a1538, #543D2E)`,
-                        }}
-                      ></div>
+                          )}%`, }}
+                        transition={{ duration: 1.5, delay: 0.3 }}
+                        viewport={{ once: true }}
+                      ></motion.div>
                     </div>
                     <div className="flex justify-between text-xs text-[#543D2E]/70 mt-1">
                       <span>Raised</span>
