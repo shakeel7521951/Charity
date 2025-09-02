@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 import { 
   FiRefreshCw, 
   FiGlobe, 
@@ -9,17 +11,8 @@ import {
   FiHeart
 } from "react-icons/fi";
 import Link from "next/link";
-import AOS from "aos"
-import "aos/dist/aos.css"
 
 const WhyDonate = () => {
-    
-        useEffect(()=>{
-            AOS.init({
-                duration:100,
-                once:true,
-            })
-        })
   const trustPoints = [
     {
       icon: <FiRefreshCw className="w-10 h-10 text-[#aa335f]" />,
@@ -62,13 +55,18 @@ const WhyDonate = () => {
           by ensuring transparency, compliance, and security in every step of the donation process.
         </p>
 
-        {/* Trust Points */}
+        {/* Trust Points with Framer Motion */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {trustPoints.map((point, index) => (
-            <div
-            data-aos="flip-right"
+            <motion.div
               key={index}
-              className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+              className="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 group"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              whileHover={{ scale: 1.05, rotate: 1 }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className="inline-flex items-center justify-center p-4 mb-6 rounded-2xl bg-[#fce6ef] group-hover:bg-[#f8d2e0] transition-colors duration-300">
                 {point.icon}
@@ -77,12 +75,19 @@ const WhyDonate = () => {
                 {point.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">{point.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.02 }}
+          className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto"
+        >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center mb-6 md:mb-0">
               <div className="p-3 bg-[#fce6ef] rounded-full text-[#aa335f] mr-4">
@@ -93,12 +98,14 @@ const WhyDonate = () => {
                 <p className="text-gray-600">Your donation can change lives today.</p>
               </div>
             </div>
-          <Link href="/contact">  <button className="flex items-center justify-center px-6 py-3 bg-[#aa335f] text-white font-medium rounded-full hover:bg-[#8a234b] transition-colors duration-300 group">
-              Donate Now
-              <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </button></Link>
+            <Link href="/contact">
+              <button className="flex items-center justify-center px-6 py-3 bg-[#aa335f] text-white font-medium rounded-full hover:bg-[#8a234b] transition-colors duration-300 group">
+                Donate Now
+                <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

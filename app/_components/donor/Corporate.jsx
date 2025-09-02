@@ -1,15 +1,9 @@
 import React, { useEffect } from "react";
 import { FaBuilding, FaHandshake, FaChartLine } from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css"
+
+
 const Corporate = () => {
-    useEffect(()=>{
-        AOS.init({
-            duration:2000,
-            
-        once:true
-        })
-    })
+
   return (
     <section className="w-full py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
@@ -28,7 +22,7 @@ const Corporate = () => {
         {/* Sponsorship Opportunities */}
         <div className="grid md:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <div data-aos="zoom-out" className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+          <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
             <div className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 mb-5">
               <FaHandshake className="text-[#aa335f] text-2xl" />
             </div>
@@ -43,7 +37,7 @@ const Corporate = () => {
           </div>
 
           {/* Card 2 */}
-          <div data-aos="flip-up" className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+          <div  className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
             <div className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 mb-5">
               <FaChartLine className="text-[#aa335f] text-2xl" />
             </div>
@@ -57,7 +51,7 @@ const Corporate = () => {
           </div>
 
           {/* Card 3 */}
-          <div data-aos="flip-left" className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+          <div  className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
             <div className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 mb-5">
               <FaBuilding className="text-[#aa335f] text-2xl" />
             </div>

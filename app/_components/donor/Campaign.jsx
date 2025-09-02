@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+"use client";
+import React from "react";
 import Link from "next/link";
-import AOS from "aos"
-import 'aos/dist/aos.css'
+import { motion } from "framer-motion";
+
 const compainAry = [
   {
     id: 1,
@@ -36,7 +37,7 @@ const compainAry = [
     raisedAmount: "$7,600",
   },
   {
-    id: 5, // ✅ unique now
+    id: 5,
     img: "https://media.istockphoto.com/id/2171791945/photo/portrait-of-volunteers-during-donation-event-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=-dyAwuIFN4m8m4YxI-uTb7R29RqPn3aEndhTv4sBH_0=",
     name: "Disaster Relief",
     desc: "Emergency aid for families affected by natural disasters.",
@@ -44,7 +45,7 @@ const compainAry = [
     raisedAmount: "$12,400",
   },
   {
-    id: 6, // ✅ unique now
+    id: 6,
     img: "https://images.unsplash.com/photo-1643321613219-6d50e1372c0a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNoYXJpdHl8ZW58MHx8MHx8fDA%3D",
     name: "Housing Support",
     desc: "Helping homeless families with safe housing solutions.",
@@ -54,13 +55,6 @@ const compainAry = [
 ];
 
 const Campaign = () => {
-    
-        useEffect(()=>{
-            AOS.init({
-                duration:100,
-                once:true,
-            })
-        })
   return (
     <div className="py-10 px-6 bg-gray-50">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-10">
@@ -68,13 +62,15 @@ const Campaign = () => {
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {compainAry.map((item) => (
-          <div
-          data-aos="fade-up"
-            key={item.id} // ✅ no duplicate keys anymore
-            className="bg-white shadow-lg rounded-2xl overflow-hidden hover:scale-105 transform transition duration-300"
+        {compainAry.map((item, index) => (
+          <motion.div
+            key={item.id}
+            className="bg-white shadow-lg rounded-2xl overflow-hidden transform"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            
             <img
               src={item.img}
               alt={item.name}
@@ -112,7 +108,7 @@ const Campaign = () => {
                 </button>
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
