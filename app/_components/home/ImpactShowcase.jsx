@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const ImpactShowcase = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -120,131 +121,305 @@ const ImpactShowcase = () => {
     ? features 
     : features.filter(feature => feature.category === activeTab);
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const statVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const featureVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-br from-[#F0EBE6] relative overflow-hidden">
+    <motion.section 
+      className="py-20 bg-gradient-to-br from-[#F0EBE6] relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-72 bg-[#821435] opacity-5"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#e992ac] rounded-full opacity-5 transform translate-x-1/2 translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-semibold text-[#821435] bg-[#8214351d] rounded-full">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.span 
+            className="inline-block px-4 py-1 mb-4 text-sm font-semibold text-[#821435] bg-[#8214351d] rounded-full"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, type: "spring" }}
+          >
             Qatar's Premier Charity Platform
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Transforming Charitable Giving in Qatar</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          </motion.span>
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Transforming Charitable Giving in Qatar
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
             A comprehensive digital platform integrating with Sandi to bring transparency, efficiency, and trust to charitable donations across Qatar.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <div className="text-4xl font-bold text-[#821435] mb-2">{stat.value}</div>
+            <motion.div 
+              key={index} 
+              className="bg-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              variants={statVariants}
+              whileHover={{ y: -5 }}
+            >
+              <motion.div 
+                className="text-4xl font-bold text-[#821435] mb-2"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + index * 0.1, type: "spring" }}
+              >
+                {stat.value}
+              </motion.div>
               <div className="text-gray-800 font-semibold mb-1">{stat.label}</div>
               <div className="text-sm text-gray-500">{stat.trend}</div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Features Section with Tabs */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
+        <motion.div 
+          className="mb-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Platform Features</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">Advanced capabilities designed for all stakeholders in the charitable ecosystem</p>
-          </div>
+          </motion.div>
           
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            <button 
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === 'all' ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-              onClick={() => setActiveTab('all')}
-            >
-              All Features
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === 'transparency' ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-              onClick={() => setActiveTab('transparency')}
-            >
-              Transparency
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === 'security' ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-              onClick={() => setActiveTab('security')}
-            >
-              Security & Compliance
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === 'integration' ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-              onClick={() => setActiveTab('integration')}
-            >
-              Sandi Integration
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === 'management' ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-              onClick={() => setActiveTab('management')}
-            >
-              Management
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === 'accessibility' ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-              onClick={() => setActiveTab('accessibility')}
-            >
-              Accessibility
-            </button>
-          </div>
+          <motion.div 
+            className="flex flex-wrap justify-center gap-2 mb-10"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+          >
+            {[
+              { id: 'all', label: 'All Features' },
+              { id: 'transparency', label: 'Transparency' },
+              { id: 'security', label: 'Security & Compliance' },
+              { id: 'integration', label: 'Sandi Integration' },
+              { id: 'management', label: 'Management' },
+              { id: 'accessibility', label: 'Accessibility' }
+            ].map((tab, index) => (
+              <motion.button 
+                key={tab.id}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === tab.id ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
+                onClick={() => setActiveTab(tab.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 + index * 0.1, duration: 0.3 }}
+              >
+                {tab.label}
+              </motion.button>
+            ))}
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            key={activeTab}
+          >
             {filteredFeatures.map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <div className="text-[#821435] mb-4 flex justify-center">
+              <motion.div 
+                key={index} 
+                className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                variants={featureVariants}
+                whileHover={{ scale: 1.02 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <motion.div 
+                  className="text-[#821435] mb-4 flex justify-center"
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ duration: 0.2 }}
+                >
                   {feature.icon}
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">{feature.title}</h3>
                 <p className="text-gray-600 text-center text-sm leading-relaxed">{feature.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* User Testimonials */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+        >
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.9, duration: 0.5 }}
+          >
             <h3 className="text-3xl font-bold text-gray-800 mb-4">What Our Users Say</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">Hear from stakeholders across the charitable ecosystem</p>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {userStories.map((story, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:shadow-xl">
+              <motion.div 
+                key={index} 
+                className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:shadow-xl"
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+              >
                 <div className="flex items-center mb-4">
-                  <img src={story.image} alt={story.author} className="w-12 h-12 rounded-full object-cover mr-4" />
+                  <motion.img 
+                    src={story.image} 
+                    alt={story.author} 
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  />
                   <div>
                     <h4 className="font-semibold text-gray-800">{story.author}</h4>
                     <p className="text-sm text-[#821435]">{story.role}</p>
                   </div>
                 </div>
                 <p className="text-gray-600 italic">"{story.quote}"</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* CTA Section */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">Join Qatar's Trusted Charity Platform</h3>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-3 bg-[#821435] text-white font-semibold rounded-lg shadow-md hover:bg-[#821435] transition-colors">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          <motion.h3 
+            className="text-2xl font-bold text-gray-800 mb-6"
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.1, duration: 0.5 }}
+          >
+            Join Qatar's Trusted Charity Platform
+          </motion.h3>
+          <motion.div 
+            className="flex flex-col sm:flex-row justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+          >
+            <motion.button 
+              className="px-8 py-3 bg-[#821435] text-white font-semibold rounded-lg shadow-md hover:bg-[#821435] transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Register Your Charity
-            </button>
-            <button className="px-8 py-3 bg-white text-[#821435] border border-[#821435] font-semibold rounded-lg shadow-md hover:bg-[#8214351b] transition-colors">
+            </motion.button>
+            <motion.button 
+              className="px-8 py-3 bg-white text-[#821435] border border-[#821435] font-semibold rounded-lg shadow-md hover:bg-[#8214351b] transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Make a Donation
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
