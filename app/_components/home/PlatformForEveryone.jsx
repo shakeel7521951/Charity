@@ -12,11 +12,11 @@ const PlatformForEveryone = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
-      description: "Individuals and Corporates who want to make a difference",
+      description: "Individuals and corporates united to make a difference.",
       features: [
         "Give with confidence through transparent tracking",
         "Flexible payment options: bank transfer, QR code",
-        "Receive instant and real-time impact updates",
+        "Receive instant confirmations and real-time impact updates",
         "Choose from health, education, relief campaigns"
       ],
       cta: "Start Donating",
@@ -37,7 +37,7 @@ const PlatformForEveryone = () => {
         "Generate automated reports for RACA compliance"
       ],
       cta: "Register Your Charity",
-      accentColor: "#0E5E36"
+      accentColor: "#8A1538"
     },
     {
       role: "Authority (RACA)",
@@ -54,7 +54,7 @@ const PlatformForEveryone = () => {
         "Track performance through KPI dashboards"
       ],
       cta: "Learn About Oversight",
-      accentColor: "#4C1D95"
+      accentColor: "#8A1538"
     }
   ];
 
@@ -208,7 +208,7 @@ const PlatformForEveryone = () => {
                     transition={{ duration: 0.5, delay: i * 0.2 }}
                   >
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-3 mt-0.5">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-300" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#8A1538]" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ConsultationForm from "../common/ConsultationForm";
 import { FaHandHoldingHeart } from "react-icons/fa";
+import { CheckCircle, CheckCircleIcon, ChevronLeft, ChevronRight, UsersIcon, Zap } from "lucide-react";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,76 +11,31 @@ export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(true);
 
   const slides = [
-    {
-      title: "Transparent Charitable Giving",
-      description:
-        "Qatar's first transparent donation platform with blockchain tracking from donor to beneficiary.",
-      ctaPrimary: "Donate Now",
-      ctaSecondary: "Consultation",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Give with Confidence",
-      description:
-        "Every donation is tracked and verified. Complete transparency in real-time reporting and RACA oversight.",
-      ctaPrimary: "Support a Cause",
-      ctaSecondary: "Consultation",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Make a Difference in Qatar",
-      description:
-        "Join thousands of donors helping communities across Qatar through verified, RACA-approved charities.",
-      ctaPrimary: "View Campaigns",
-      ctaSecondary: "Consultation",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-          />
-        </svg>
-      ),
-    },
-  ];
+  {
+    title: "Transparent Charitable Giving",
+    description:
+      "Qatar's first transparent donation platform with blockchain tracking from donor to beneficiary.",
+    ctaPrimary: "Donate Now",
+    ctaSecondary: "Consultation",
+    icon: <CheckCircleIcon className="w-6 h-6" />,
+  },
+  {
+    title: "Confidence in every contribution",
+    description:
+      "Every donation is tracked and verified. Complete transparency in real-time reporting and RACA oversight.",
+    ctaPrimary: "Support a Cause",
+    ctaSecondary: "Consultation",
+    icon: <Zap className="w-6 h-6" />,
+  },
+  {
+    title: "Make a Difference in Qatar",
+    description:
+      "Join thousands of donors helping communities across Qatar through verified, RACA-approved charities.",
+    ctaPrimary: "View Campaigns",
+    ctaSecondary: "Consultation",
+    icon: <UsersIcon className="w-6 h-6" />,
+  },
+];
 
   // Slide transition with fade effect
   useEffect(() => {
@@ -119,7 +75,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#723134] via-[#8a1538] to-[#543D2E] pt-10">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#723134] via-[#8a1538] to-[#543D2E] pt-10 ">
       <ConsultationForm
         isOpen={showConsultationModal}
         onClose={() => setShowConsultationModal(false)}
@@ -264,18 +220,7 @@ export default function HeroSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.7 + i * 0.1, duration: 0.5 }}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 mr-2 text-white"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <CheckCircle className="h-5 w-5 mr-2 text-white" />
                     <span>{feature}</span>
                   </motion.div>
                 ))}
@@ -291,7 +236,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <div
-              className="relative w-full h-96 bg-[#723134]/20 backdrop-blur-xl rounded-3xl border border-white/30 p-8 bg-cover bg-center overflow-hidden shadow-2xl"
+              className="relative w-full h-96 bg-[#723134]/20 backdrop-blur-xl rounded-3xl border-2 border-[#b9393f]/20 p-8 bg-cover bg-center overflow-hidden shadow-2xl"
               style={{
                 backgroundImage:
                   "url('https://images.unsplash.com/photo-1562709902-31c9a3b1ad5c?w=1200&auto=format&fit=crop&q=80')",
@@ -319,7 +264,7 @@ export default function HeroSection() {
                   <motion.div 
                     className="absolute inset-0 rounded-full border-4 border-[#F2EDE9]/20"
                     animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    transition={{ duration: 3, repeat: Infinity }}
                   ></motion.div>
                   <motion.div 
                     className="absolute inset-6 rounded-full border-2 border-[#F2EDE9]/40"
@@ -362,19 +307,7 @@ export default function HeroSection() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
+          <ChevronLeft className="w-5 h-5" />
         </motion.button>
 
         {/* Indicator dots */}
@@ -403,19 +336,7 @@ export default function HeroSection() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+          <ChevronRight className="w-5 h-5" />
         </motion.button>
       </div>
     </section>

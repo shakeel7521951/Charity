@@ -116,15 +116,13 @@ const FeaturedCampaignsSection = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ y: -8, boxShadow: "0 12px 30px rgba(0,0,0,0.15)" }}
             >
-              <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-[#e5ddd5] group">
+              <div className="bg-red-50 rounded-2xl shadow-md overflow-hidden border border-[#e5ddd5] group">
                 {/* Campaign Image with Overlay */}
                 <div className="h-48 relative overflow-hidden">
                   <motion.img
                     src={campaign.image}
                     alt={campaign.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"                    transition={{ duration: 0.5, ease: "easeOut" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 

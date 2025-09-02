@@ -8,7 +8,7 @@ import TrustIndicatorBar from "./_components/home/TrustIndicatorBar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeroSection />
       <TrustIndicatorBar />
       <HowItWorksSection />
