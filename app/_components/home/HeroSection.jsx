@@ -302,7 +302,7 @@ export default function HeroSection() {
         {/* Previous button */}
         <motion.button
           onClick={goToPrevSlide}
-          className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition backdrop-blur-sm flex items-center justify-center"
+          className="hidden bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition backdrop-blur-sm sm:flex items-center justify-center"
           aria-label="Previous slide"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -331,7 +331,7 @@ export default function HeroSection() {
         {/* Next button */}
         <motion.button
           onClick={goToNextSlide}
-          className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition backdrop-blur-sm flex items-center justify-center"
+          className="hidden bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition backdrop-blur-sm sm:flex items-center justify-center"
           aria-label="Next slide"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
