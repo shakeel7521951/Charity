@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import { FaBullseye, FaCheckCircle, FaCalendarAlt } from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const campaigns = [
   {
@@ -54,7 +53,8 @@ const campaigns = [
     endDate: "2023-12-15",
     description:
       "Distributing food packages to low-income families to fight hunger.",
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80"
+    image:
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 5,
@@ -71,57 +71,84 @@ const campaigns = [
   },
   {
     id: 6,
-    name: 'Hunger Free Drive',
-    category: 'Food & Nutrition',
+    name: "Hunger Free Drive",
+    category: "Food & Nutrition",
     goal: 120000,
     raised: 47000,
-    startDate: '2023-09-01',
-    endDate: '2024-02-28',
-    description: 'Distributing meals and ration packs to homeless families and underprivileged communities to fight hunger and malnutrition.',
-    image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80"
-  }
+    startDate: "2023-09-01",
+    endDate: "2024-02-28",
+    description:
+      "Distributing meals and ration packs to homeless families and underprivileged communities to fight hunger and malnutrition.",
+    image:
+      "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80",
+  },
 ];
 
 const CampaignCard = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
-  }, []);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   return (
     <section className="py-16 bg-[#F2EDE9]">
       <div className="max-w-7xl mx-auto px-6">
-        <h2
+        <motion.h2
           className="text-4xl font-bold text-center mb-14 text-[#543D2E]"
-          data-aos="fade-down"
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
           Active Campaigns
-        </h2>
+        </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {campaigns.map((campaign, index) => {
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {campaigns.map((campaign) => {
             const progress = Math.min(
               (campaign.raised / campaign.goal) * 100,
               100
             );
-
             const daysRemaining = Math.ceil(
               (new Date(campaign.endDate) - new Date()) /
-              (1000 * 60 * 60 * 24)
+                (1000 * 60 * 60 * 24)
             );
 
             return (
-              <div
+              <motion.div
                 key={campaign.id}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#E5DCD4] hover:shadow-2xl group flex flex-col"
+                variants={cardVariants}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 15px 30px rgba(0,0,0,0.2)",
+                }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                className="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#E5DCD4] flex flex-col cursor-pointer"
               >
                 {/* Image */}
                 <div className="h-65 w-full relative overflow-hidden">
                   <img
                     src={campaign.image}
                     alt={campaign.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
                   <div className="absolute top-3 right-3 bg-[#723134] text-white text-xs px-3 py-1 rounded-full font-medium">
                     {campaign.category}
@@ -161,20 +188,23 @@ const CampaignCard = () => {
                   {/* Progress Bar */}
                   <div className="mt-auto">
                     <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                      <div
+                      <motion.div
                         className="h-3 rounded-full bg-gradient-to-r from-[#723134] to-[#a84d51]"
-                        style={{ width: `${progress}%` }}
-                      ></div>
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${progress}%` }}
+                        transition={{ duration: 1.5, delay: 0.3 }}
+                        viewport={{ once: true }}
+                      ></motion.div>
                     </div>
                     <p className="mt-2 text-sm text-gray-600 text-right">
                       {progress.toFixed(1)}% funded
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

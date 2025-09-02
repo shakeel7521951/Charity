@@ -1,5 +1,6 @@
 "use client";
 import { FaHandsHelping } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function CampaignHeader() {
   return (
@@ -14,28 +15,32 @@ export default function CampaignHeader() {
       {/* Overlay */}
       <div className="absolute w-full h-full bg-[#723134]/80 flex items-center justify-center">
         <div className="text-center text-white px-6">
-          <div data-aos="zoom-in" data-aos-duration="1000">
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <FaHandsHelping className="text-5xl md:text-6xl mx-auto mb-4 text-[#F2EDE9]" />
-          </div>
+          </motion.div>
 
-          <h1
+          <motion.h1
             className="text-3xl md:text-5xl font-bold"
-            data-aos="fade-down"
-            data-aos-duration="1200"
-            data-aos-delay="200"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
           >
             Start Your Charity Campaign
-          </h1>
+          </motion.h1>
 
-          <p
+          <motion.p
             className="mt-3 text-lg md:text-xl text-[#F2EDE9] max-w-2xl mx-auto"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="400"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.4 }}
           >
             Share your story, raise awareness, and inspire people to make a
             difference through collective support.
-          </p>
+          </motion.p>
         </div>
       </div>
     </div>

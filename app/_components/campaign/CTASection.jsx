@@ -1,31 +1,48 @@
 "use client";
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import { motion } from "framer-motion";
 
 const CTASection = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   return (
     <section className="py-20 bg-[#723134] text-white text-center">
-      <div className="max-w-4xl mx-auto px-6" data-aos="zoom-in">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#F2EDE9]">
+      <motion.div 
+        className="max-w-4xl mx-auto px-6"
+        initial={{ scale: 0.9, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.h2 
+          className="text-3xl md:text-4xl font-bold mb-6 text-[#F2EDE9]"
+          initial={{ y: -20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           Be Part of the Change Today
-        </h2>
-        <p className="mb-8 text-lg md:text-xl leading-relaxed text-[#F2EDE9]">
+        </motion.h2>
+        <motion.p 
+          className="mb-8 text-lg md:text-xl leading-relaxed text-[#F2EDE9]"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           Your contribution can bring hope to communities in need.  
           Start supporting a campaign now and help us create a better tomorrow.
-        </p>
-        <button
+        </motion.p>
+        <motion.button
           className="px-8 py-4 bg-[#F2EDE9] text-[#723134] font-bold rounded-full shadow-lg hover:bg-[#e0d9d4] transition"
-          data-aos="fade-up"
-          data-aos-delay="300"
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           Donate Now
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     </section>
   );
 };
