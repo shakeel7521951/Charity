@@ -1,30 +1,29 @@
-import React from "react";
-import SideBar from "../_components/dashboard/SideBar";
-import DonorNav from "../_components/dashboard/DonorNav";
-import Dashboard from "../_components/dashboard/dashboard_inner/Dashboard";
+// app/dashboard/page.jsx
+"use client";
+import StatBox from "../_components/dashboard/StatBox";
+import Chart from "../_components/dashboard/Chart";
 
-const Page = () => {
+export default function DashboardHome() {
   return (
-    <div className="flex h-full lg:h-screen bg-gray-100">
-      {/* Sidebar */}
-      <div className="hidden lg:block w-64 bg-gray-900 shadow-lg">
-        <SideBar />
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <StatBox title="Total Donations" value="$1.2M" />
+      <StatBox title="Active Campaigns" value="45" />
+      <StatBox title="Registered Charities" value="120" />
+      <StatBox title="Beneficiaries" value="8,540" />
+
+      <div className="lg:col-span-2 bg-white rounded-2xl shadow p-6">
+        <h3 className="text-lg font-semibold text-[#543D2E] mb-4">Donation Trends</h3>
+        <Chart />
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        {/* Top Navbar */}
-        <div className="sticky top-0 z-20 bg-white shadow-md">
-          <DonorNav />
-        </div>
-
-        {/* Dashboard Content */}
-        <div className="flex-1 overflow-y-auto p-6">
-          <Dashboard />
-        </div>
+      <div className="lg:col-span-2 bg-white rounded-2xl shadow p-6">
+        <h3 className="text-lg font-semibold text-[#543D2E] mb-4">Top Campaigns</h3>
+        <ul className="space-y-3">
+          <li className="flex justify-between"><span>Health Aid</span><span>$250K</span></li>
+          <li className="flex justify-between"><span>Education Fund</span><span>$180K</span></li>
+          <li className="flex justify-between"><span>Relief Packages</span><span>$120K</span></li>
+        </ul>
       </div>
     </div>
   );
-};
-
-export default Page;
+}
