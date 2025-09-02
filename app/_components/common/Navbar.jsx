@@ -59,6 +59,9 @@ const Navbar = () => {
             <Link href="#" className="px-4 py-2 bg-gradient-to-r from-[#821435] to-[#B62F5E] text-white text-sm font-medium rounded-md shadow-md hover:opacity-90 transition-opacity duration-300">
               Donate Now
             </Link>
+            <Link href="/dashboard" className="px-4 py-2 bg-gradient-to-r from-[#6ac45e] to-[#9b254e] text-white text-sm font-medium rounded-md shadow-md hover:opacity-90 transition-opacity duration-300">
+              Dashboard
+            </Link>
           </div>
 
           {/* Mobile menu button */}
