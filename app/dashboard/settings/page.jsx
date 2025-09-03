@@ -1,10 +1,10 @@
-import { Settings } from 'lucide-react'
+import SettingsPage from '@/app/_components/dashboard/settings/page'
 import React from 'react'
 
 const page = () => {
     return (
         <div>
-            <Settings />
+            <SettingsPage />
         </div>
     )
 }
