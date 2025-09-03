@@ -1,4 +1,3 @@
-// app/dashboard/authority/page.jsx
 "use client";
 
 import StatBox from './../overview/StatBox';

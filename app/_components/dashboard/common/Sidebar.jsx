@@ -1,11 +1,12 @@
 // app/components/dashboard/Sidebar.jsx
 "use client";
 import Link from "next/link";
-import { Home, Users, FileText, BarChart3, Heart, Database, Settings } from "lucide-react";
+import { HeartHandshake , Home, Users, FileText, BarChart3, Heart, Database, Settings } from "lucide-react";
 
 const menu = [
   { name: "Overview", icon: Home, href: "/dashboard" },
   { name: "Donations", icon: Heart, href: "/dashboard/donations" },
+  { name: "Donors", icon: HeartHandshake, href: "/dashboard/donors" },
   { name: "Charities", icon: Users, href: "/dashboard/charities" },
   { name: "Campaigns", icon: FileText, href: "/dashboard/campaigns" },
   { name: "Authority", icon: BarChart3, href: "/dashboard/authority" },
