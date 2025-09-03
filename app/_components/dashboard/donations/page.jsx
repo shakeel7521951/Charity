@@ -55,13 +55,15 @@ export default function DonationsPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-screen md:w-full">
       <h2 className="text-2xl font-bold text-[#543D2E]">Donations</h2>
+
 
       {/* Donation Records */}
       <Card title="Donation Transactions">
         <Table columns={columns} data={data} />
       </Card>
+
 
       {/* Quick Filters */}
       <Card title="Filter Donations">

@@ -14,7 +14,7 @@ export default function CampaignsPage() {
   const columns = ["Campaign", "Category", "Goal", "Raised", "Status"];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-screen md:w-full">
       <h2 className="text-2xl font-bold text-[#543D2E]">Manage Campaigns</h2>
 
       {/* Campaign Creation Form */}

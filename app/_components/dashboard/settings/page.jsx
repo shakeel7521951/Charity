@@ -5,7 +5,7 @@ import Card from "../overview/Card";
 
 export default function SettingsPage() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-screen md:w-full">
       <h2 className="text-2xl font-bold text-[#543D2E]">Settings</h2>
 
       {/* Profile Settings */}

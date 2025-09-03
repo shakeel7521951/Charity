@@ -1,7 +1,15 @@
-// app/components/dashboard/Sidebar.jsx
 "use client";
 import Link from "next/link";
-import { HeartHandshake , Home, Users, FileText, BarChart3, Heart, Database, Settings } from "lucide-react";
+import {
+  HeartHandshake,
+  Home,
+  Users,
+  FileText,
+  BarChart3,
+  Heart,
+  Database,
+  Settings,
+} from "lucide-react";
 
 const menu = [
   { name: "Overview", icon: Home, href: "/dashboard" },
@@ -15,16 +23,17 @@ const menu = [
   { name: "Settings", icon: Settings, href: "/dashboard/settings" },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onLinkClick }) {
   return (
-    <aside className="w-64 bg-[#723134] text-white p-6 hidden md:block">
-      <h1 className="text-2xl font-bold mb-10">Charity Dashboard</h1>
-      <nav className="space-y-4">
+    <aside className="w-full h-full bg-[#723134] text-white p-6 ">
+      <h1 className="text-2xl font-bold mb-10">Dashboard</h1>
+      <nav className="space-y-4 overflow-y-auto h-full max-md:pb-12">
         {menu.map((item) => (
           <Link
             key={item.name}
             href={item.href}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#543D2E] transition"
+            onClick={onLinkClick} // Auto close on mobile
           >
             <item.icon className="w-5 h-5" />
             {item.name}

@@ -18,7 +18,7 @@ export default function AuthorityPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-screen md:w-full">
       <h2 className="text-2xl font-bold text-[#543D2E]">Authority Dashboard</h2>
 
       {/* KPI Stats */}

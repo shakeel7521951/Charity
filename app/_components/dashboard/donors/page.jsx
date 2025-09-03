@@ -14,7 +14,7 @@ export default function DonorsPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-screen md:w-full">
       <h2 className="text-2xl font-bold text-[#543D2E]">Donors</h2>
 
       {/* Donor List */}

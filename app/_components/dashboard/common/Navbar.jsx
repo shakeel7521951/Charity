@@ -1,11 +1,22 @@
 // app/components/dashboard/Navbar.jsx
 "use client";
-import { Bell } from "lucide-react";
+import { Bell, Menu } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ onMenuClick }) {
   return (
-    <header className="relative flex items-center justify-between bg-white shadow px-6 py-3">
-      <h2 className="text-xl font-semibold text-[#543D2E]">Dashboard</h2>
+    <header className="sticky top-0 flex items-center justify-between bg-white shadow px-6 py-3.5">
+      <div className="flex items-center gap-3">
+        {/* Sidebar toggle button */}
+        <button
+          onClick={onMenuClick}
+          className="p-2 rounded-md hover:bg-gray-100 focus:outline-none block lg:hidden"
+        >
+          <Menu className="w-6 h-6 text-[#723134]" />
+        </button>
+
+        <h2 className="text-xl font-semibold text-[#543D2E]">Dashboard</h2>
+      </div>
+
       <div className="flex items-center gap-4">
         <button className="relative p-2 rounded-full hover:bg-gray-100">
           <Bell className="w-6 h-6 text-[#723134]" />
