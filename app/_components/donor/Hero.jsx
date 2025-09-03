@@ -88,8 +88,8 @@ const Hero = () => {
                   {item.msg}
                 </p>
                 
-                <div className="flex flex-col flex-row justify-center items-center gap-6">
-                  <Link href="/donate">
+                <div className="flex  flex-row justify-center items-center gap-6">
+                  <Link href="/contact">
                     <button data-aos="fade-right" className="group relative p-3 sm:px-8 sm:py-4 bg-[#A02B54] hover:bg-[#e22869] transition-all duration-300 rounded-xl shadow-lg sm:text-xl font-semibold flex items-center overflow-hidden">
                       <span className="relative z-10 flex items-center">
                         Donate Now

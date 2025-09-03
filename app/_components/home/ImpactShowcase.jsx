@@ -1,9 +1,12 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import ConsultationForm from "../common/ConsultationForm"
 
 const ImpactShowcase = () => {
   const [activeTab, setActiveTab] = useState('all');
+  const [showConsultationModal, setShowConsultationModal] = useState(false);
 
   // Sample data - in a real app this would come from props or API
   const stats = [
@@ -117,8 +120,8 @@ const ImpactShowcase = () => {
     }
   ];
 
-  const filteredFeatures = activeTab === 'all' 
-    ? features 
+  const filteredFeatures = activeTab === 'all'
+    ? features
     : features.filter(feature => feature.category === activeTab);
 
   // Animation variants
@@ -168,7 +171,7 @@ const ImpactShowcase = () => {
   };
 
   return (
-    <motion.section 
+    <motion.section
       className="py-20 bg-gradient-to-br from-[#F0EBE6] relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -178,17 +181,22 @@ const ImpactShowcase = () => {
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-72 bg-[#821435] opacity-5"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#e992ac] rounded-full opacity-5 transform translate-x-1/2 translate-y-1/2"></div>
-      
+
+      <ConsultationForm
+        isOpen={showConsultationModal}
+        onClose={() => setShowConsultationModal(false)}
+      />
+
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.span 
+          <motion.span
             className="inline-block px-4 py-1 mb-4 text-sm font-semibold text-[#821435] bg-[#8214351d] rounded-full"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -197,7 +205,7 @@ const ImpactShowcase = () => {
           >
             Qatar's Premier Charity Platform
           </motion.span>
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -206,7 +214,7 @@ const ImpactShowcase = () => {
           >
             Transforming Charitable Giving in Qatar
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -218,7 +226,7 @@ const ImpactShowcase = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
           variants={containerVariants}
           initial="hidden"
@@ -226,13 +234,13 @@ const ImpactShowcase = () => {
           viewport={{ once: true, margin: "-50px" }}
         >
           {stats.map((stat, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="bg-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               variants={statVariants}
               whileHover={{ y: -5 }}
             >
-              <motion.div 
+              <motion.div
                 className="text-4xl font-bold text-[#821435] mb-2"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
@@ -248,14 +256,14 @@ const ImpactShowcase = () => {
         </motion.div>
 
         {/* Features Section with Tabs */}
-        <motion.div 
+        <motion.div
           className="mb-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -265,8 +273,8 @@ const ImpactShowcase = () => {
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Platform Features</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">Advanced capabilities designed for all stakeholders in the charitable ecosystem</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-wrap justify-center gap-2 mb-10"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -281,7 +289,7 @@ const ImpactShowcase = () => {
               { id: 'management', label: 'Management' },
               { id: 'accessibility', label: 'Accessibility' }
             ].map((tab, index) => (
-              <motion.button 
+              <motion.button
                 key={tab.id}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeTab === tab.id ? 'bg-[#821435] text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
                 onClick={() => setActiveTab(tab.id)}
@@ -296,8 +304,8 @@ const ImpactShowcase = () => {
               </motion.button>
             ))}
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
@@ -305,14 +313,14 @@ const ImpactShowcase = () => {
             key={activeTab}
           >
             {filteredFeatures.map((feature, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 variants={featureVariants}
                 whileHover={{ scale: 1.02 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <motion.div 
+                <motion.div
                   className="text-[#821435] mb-4 flex justify-center"
                   whileHover={{ rotate: 5, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
@@ -327,14 +335,14 @@ const ImpactShowcase = () => {
         </motion.div>
 
         {/* User Testimonials */}
-        <motion.div 
+        <motion.div
           className="mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -344,8 +352,8 @@ const ImpactShowcase = () => {
             <h3 className="text-3xl font-bold text-gray-800 mb-4">What Our Users Say</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">Hear from stakeholders across the charitable ecosystem</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
@@ -353,16 +361,16 @@ const ImpactShowcase = () => {
             viewport={{ once: true, margin: "-50px" }}
           >
             {userStories.map((story, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:shadow-xl"
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-center mb-4">
-                  <motion.img 
-                    src={story.image} 
-                    alt={story.author} 
+                  <motion.img
+                    src={story.image}
+                    alt={story.author}
                     className="w-12 h-12 rounded-full object-cover mr-4"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
@@ -379,14 +387,14 @@ const ImpactShowcase = () => {
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div 
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <motion.h3 
+          <motion.h3
             className="text-2xl font-bold text-gray-800 mb-6"
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -395,27 +403,28 @@ const ImpactShowcase = () => {
           >
             Join Qatar's Trusted Charity Platform
           </motion.h3>
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1.2, duration: 0.5 }}
           >
-            <motion.button 
-              className="px-8 py-3 bg-[#821435] text-white font-semibold rounded-lg shadow-md hover:bg-[#821435] transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Register Your Charity
-            </motion.button>
-            <motion.button 
-              className="px-8 py-3 bg-white text-[#821435] border border-[#821435] font-semibold rounded-lg shadow-md hover:bg-[#8214351b] transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Link href='/campaign'>
+              <button
+                className="px-8 py-3 bg-[#821435] text-white font-semibold rounded-lg shadow-md hover:scale-105 active:scale-95 transform transition-transform duration-300"
+              >
+                Register Your Charity
+              </button>
+            </Link>
+
+            <button
+              onClick={() => setShowConsultationModal(true)}
+              className="px-8 py-3 bg-white text-[#821435] border border-[#821435] font-semibold rounded-lg shadow-md hover:bg-[#8214351b] hover:scale-105 active:scale-95 transform transition-all duration-300"
             >
               Make a Donation
-            </motion.button>
+            </button>
+
           </motion.div>
         </motion.div>
       </div>

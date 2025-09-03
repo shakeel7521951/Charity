@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   const fadeUp = {
@@ -24,7 +25,7 @@ export default function Hero() {
           "url('about/Hero.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}  
+      }}
     >
       {/* Dark overlay with brand gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#8A1538]/50 via-[#723134]/65 to-[#8A1538]/50"></div>
@@ -66,12 +67,16 @@ export default function Hero() {
           animate="visible"
           custom={0.6}
         >
-          <button className="bg-gradient-to-r from-[#B62F5E] to-[#821435] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#543D2E] hover:text-white hover:bg-gradient-to-r hover:from-[#821435] hover:to-[#B62F5E] duration-400">
-            Donate Now
-          </button>
-          <button className="border-2 border-[#F2EDE9] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#F2EDE9] hover:text-[#723134] transition-all duration-300">
-            Explore Campaigns
-          </button>
+          <Link href='/contact'>
+            <button className="bg-gradient-to-r from-[#B62F5E] to-[#821435] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#543D2E] hover:text-white hover:bg-gradient-to-r hover:from-[#821435] hover:to-[#B62F5E] duration-400">
+              Donate Now
+            </button>
+          </Link>
+          <Link href='/campaign'>
+            <button className="border-2 border-[#F2EDE9] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#F2EDE9] hover:text-[#723134] transition-all duration-300">
+              Explore Campaigns
+            </button>
+          </Link>
         </motion.div>
 
         {/* Impact Stats */}

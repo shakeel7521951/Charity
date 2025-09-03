@@ -2,6 +2,7 @@
 import React from "react";
 import { Shield, Database, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function SandiInfo() {
   const features = [
@@ -79,9 +80,11 @@ export default function SandiInfo() {
             in donations by unifying data across organizations, preventing fraud,
             and building trust between donors, charities, and beneficiaries.
           </p>
-          <button className="mt-8 px-8 py-3 rounded-full hover:bg-[#B62F5E] bg-[#821435] text-white font-semibold shadow-lg hover:scale-105 transition-transform">
-            Learn More
-          </button>
+          <Link href='/donor'>
+            <button className="mt-8 px-8 py-3 rounded-full hover:bg-[#B62F5E] bg-[#821435] text-white font-semibold shadow-lg hover:scale-105 transition-transform">
+              Learn More
+            </button>
+          </Link>
         </motion.div>
 
         {/* Right Image */}

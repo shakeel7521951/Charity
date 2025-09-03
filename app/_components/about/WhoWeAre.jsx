@@ -2,6 +2,7 @@
 import React from "react";
 import { Shield, Users, HeartHandshake } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function WhoWeAre() {
   const values = [
@@ -129,12 +130,14 @@ export default function WhoWeAre() {
           To revolutionize charitable giving in Qatar by combining{" "}
           <span className="font-semibold text-[#821435]">innovation</span>,{" "}
           <span className="font-semibold text-[#821435]">compliance</span>, and{" "}
-          <span className="font-semibold text-[#821435]">compassion</span> and 
+          <span className="font-semibold text-[#821435]">compassion</span> and
           ensuring every contribution reaches those in need with maximum impact.
         </p>
-        <button className="mt-8 px-8 py-3 rounded-full hover:bg-[#B62F5E] bg-[#821435] text-white font-semibold shadow-lg hover:scale-105 transition">
-          Learn More
-        </button>
+        <Link href='/donor'>
+          <button className="mt-8 px-8 py-3 rounded-full hover:bg-[#B62F5E] bg-[#821435] text-white font-semibold shadow-lg hover:scale-105 transition">
+            Learn More
+          </button>
+        </Link>
       </motion.div>
     </section>
   );

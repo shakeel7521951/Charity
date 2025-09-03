@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 export default function Hero() {
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function Hero() {
     >
       {/* Enhanced gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#723134]/60 to-[#5A2A2D]/50"></div>
-      
+
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0zMCAzMG0tMjggMGEyOCwyOCAwIDEsMSA1NiwwYTI4LDI4IDAgMSwxIC01NiwwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=')] opacity-20 mix-blend-soft-light"></div>
 
@@ -30,7 +31,7 @@ export default function Hero() {
         {/* Decorative elements */}
         <div className="absolute -top-10 -left-10 w-28 h-28 border-4 border-[#F2EDE9]/10 rounded-full" data-aos="zoom-in" data-aos-delay="600"></div>
         <div className="absolute -bottom-8 -right-8 w-20 h-20 border-4 border-[#F2EDE9]/10 rounded-full" data-aos="zoom-in" data-aos-delay="700"></div>
-        
+
         {/* Heading */}
         <h1
           className="text-5xl md:text-7xl font-bold leading-tight tracking-tight"
@@ -42,14 +43,14 @@ export default function Hero() {
         >
           We'd love to <span className="text-[#F2EDE9]">hear</span> from you
         </h1>
-        
+
         {/* Separator */}
-        <div 
+        <div
           className="w-24 h-1 bg-gradient-to-r from-[#543D2E] to-[#8A1538] mx-auto my-8 rounded-full"
           data-aos="fade-up"
           data-aos-delay="100"
         ></div>
-        
+
         {/* Paragraph */}
         <p
           className="mt-6 text-xl md:text-2xl text-[#F2EDE9] leading-relaxed max-w-2xl mx-auto"
@@ -62,30 +63,32 @@ export default function Hero() {
 
         {/* Buttons */}
         <div
-  className="mt-12 flex flex-row justify-center gap-6 items-center"
-  data-aos="fade-up"
-  data-aos-delay="400"
->
-  {/* Gradient Button */}
-  <button
-    type="button"
-    className="relative bg-gradient-to-r from-[#543D2E] to-[#8A1538] text-white px-7 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
-  >
-    <div className="absolute inset-0 bg-gradient-to-r from-[#8A1538] to-[#543D2E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-    <span className="relative z-10 whitespace-nowrap">View Campaigns</span>
-  </button>
+          className="mt-12 flex flex-row justify-center gap-6 items-center"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          {/* Gradient Button */}
+          <Link href='/campaign'>
+            <button
+              type="button"
+              className="relative bg-gradient-to-r from-[#543D2E] to-[#8A1538] text-white px-7 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#8A1538] to-[#543D2E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <span className="relative z-10 whitespace-nowrap">View Campaigns</span>
+            </button>
+          </Link>
 
-  {/* Outline Button */}
-  <button
-    type="button"
-    className="relative border-2 border-[#F2EDE9] text-white px-7 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
-  >
-    <div className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-    <span className="relative z-10 whitespace-nowrap">Get Started</span>
-  </button>
-</div>
-{/* Scroll indicator */}
-        <div 
+          {/* Outline Button */}
+          <button
+            type="button"
+            className="relative border-2 border-[#F2EDE9] text-white px-7 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <span className="relative z-10 whitespace-nowrap">Get Started</span>
+          </button>
+        </div>
+        {/* Scroll indicator */}
+        <div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           data-aos="fade-up"
           data-aos-delay="800"

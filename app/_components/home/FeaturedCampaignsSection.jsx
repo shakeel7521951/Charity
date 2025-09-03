@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const FeaturedCampaignsSection = () => {
   const campaigns = [
@@ -108,6 +109,7 @@ const FeaturedCampaignsSection = () => {
         >
           {campaigns.map((campaign, index) => (
             <motion.div
+              className="rounded-2xl"
               key={index}
               variants={{
                 hidden: { opacity: 0, y: 40 },
@@ -122,19 +124,18 @@ const FeaturedCampaignsSection = () => {
                   <motion.img
                     src={campaign.image}
                     alt={campaign.title}
-                    className="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105"                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:scale-105" transition={{ duration: 0.5, ease: "easeOut" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 
                   <div className="absolute top-4 left-4">
                     <span
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold ${
-                        campaign.category === "Health"
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold ${campaign.category === "Health"
                           ? "bg-red-100 text-red-800"
                           : campaign.category === "Education"
-                          ? "bg-blue-100 text-blue-800"
-                          : "bg-amber-100 text-amber-800"
-                      }`}
+                            ? "bg-blue-100 text-blue-800"
+                            : "bg-amber-100 text-amber-800"
+                        }`}
                     >
                       {campaign.category}
                     </span>
@@ -206,10 +207,12 @@ const FeaturedCampaignsSection = () => {
                       <motion.div
                         className="h-3 rounded-full bg-gradient-to-r from-[#723134] to-[#a84d51]"
                         initial={{ width: 0 }}
-                        whileInView={{ width: `${calculatePercentage(
+                        whileInView={{
+                          width: `${calculatePercentage(
                             campaign.raised,
                             campaign.goal
-                          )}%`, }}
+                          )}%`,
+                        }}
                         transition={{ duration: 1.5, delay: 0.3 }}
                         viewport={{ once: true }}
                       ></motion.div>
@@ -303,9 +306,11 @@ const FeaturedCampaignsSection = () => {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <button className="bg-white hover:bg-[#f8f5f2] text-[#8a1538] font-semibold py-2.5 px-10 rounded-lg border-2 border-[#8a1538] transition duration-300 shadow-md hover:shadow-lg">
-            View All Campaigns
-          </button>
+          <Link href='/campaign'>
+            <button className="bg-white hover:bg-[#f8f5f2] text-[#8a1538] font-semibold py-2.5 px-10 rounded-lg border-2 border-[#8a1538] transition duration-300 shadow-md hover:shadow-lg">
+              View All Campaigns
+            </button>
+          </Link>
           <p className="text-sm text-[#543D2E]/70 mt-4">
             All campaigns are RACA-approved and Sandi-integrated
           </p>

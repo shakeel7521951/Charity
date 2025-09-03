@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"; // ✅ Added
+import Link from "next/link";
 
 const FAQs = () => {
   const [activeCategory, setActiveCategory] = useState("general");
@@ -191,11 +192,10 @@ const FAQs = () => {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.4 }}
-              className={`flex items-center px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 ${
-                activeCategory === category.id
+              className={`flex items-center px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 ${activeCategory === category.id
                   ? "bg-gradient-to-r from-[#821435] to-[#B62F5E] text-white shadow-lg"
                   : "bg-white text-gray-700 hover:bg-gray-50 hover:text-[#821435] shadow-md"
-              }`}
+                }`}
             >
               <span className="mr-3 text-xl">{category.icon}</span>
               {category.name}
@@ -223,9 +223,8 @@ const FAQs = () => {
                     {item.question}
                   </h3>
                   <motion.div
-                    className={`flex-shrink-0 ml-2 transform transition-transform duration-300 ${
-                      openItems[item.id] ? "rotate-180" : ""
-                    }`}
+                    className={`flex-shrink-0 ml-2 transform transition-transform duration-300 ${openItems[item.id] ? "rotate-180" : ""
+                      }`}
                     animate={{ rotate: openItems[item.id] ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -292,9 +291,11 @@ const FAQs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <button className="px-8 py-4 bg-white text-[#821435] font-semibold rounded-lg shadow-md hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1">
-                Contact Support
-              </button>
+              <Link href='/contact'>
+                <button className="px-8 py-4 bg-white text-[#821435] font-semibold rounded-lg shadow-md hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1">
+                  Contact Support
+                </button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>
