@@ -77,7 +77,7 @@ const TrustIndicatorBar = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {/* Official Partnerships */}
+          {/* Official Partnership */}
           <motion.div 
             className="bg-white rounded-xl p-6 shadow-md border border-[#e5ddd5] flex flex-col items-center"
             variants={itemVariants}
