@@ -28,7 +28,7 @@ export default function DashboardLayout({ children }) {
       {/* Main content */}
       <div className="flex-1 flex flex-col lg:ml-[20%]">
         <Navbar onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
-        <main className="md:p-6 p-2">{children}</main>
+        <main className="md:p-6 px-2 py-6">{children}</main>
       </div>
     </div>
   );

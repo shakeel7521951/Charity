@@ -1,15 +1,7 @@
 "use client";
 import Link from "next/link";
-import {
-  HeartHandshake,
-  Home,
-  Users,
-  FileText,
-  BarChart3,
-  Heart,
-  Database,
-  Settings,
-} from "lucide-react";
+import { HeartHandshake, Home, Users, FileText, BarChart3, Heart, Database, Settings } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const menu = [
   { name: "Overview", icon: Home, href: "/dashboard" },
@@ -24,22 +16,33 @@ const menu = [
 ];
 
 export default function Sidebar({ onLinkClick }) {
+
+  const pathname = usePathname();
+
   return (
-    <aside className="w-full h-full bg-[#723134] text-white p-6 ">
-      <h1 className="text-2xl font-bold mb-10">Dashboard</h1>
-      <nav className="space-y-4 overflow-y-auto h-full max-md:pb-12">
-        {menu.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#543D2E] transition"
-            onClick={onLinkClick} // Auto close on mobile
-          >
-            <item.icon className="w-5 h-5" />
-            {item.name}
-          </Link>
-        ))}
-      </nav>
-    </aside>
+   <aside className="w-full h-full bg-[#723134] text-white p-6">
+  <h1 className="text-2xl font-bold mb-10">Dashboard</h1>
+  <nav className="space-y-4 overflow-y-auto h-full max-md:pb-12">
+    {menu.map((item) => {
+      const isActive = pathname === item.href;
+      return (
+        <Link
+          key={item.name}
+          href={item.href}
+          onClick={onLinkClick}
+          className={`flex items-center gap-3 p-3 rounded-lg transition-colors duration-300
+            ${isActive 
+              ? "bg-white text-[#723134]"
+              : "text-white hover:bg-[#F2EDE9] hover:text-[#723134]"}
+          `}
+        >
+          <item.icon className="w-5 h-5" />
+          {item.name}
+        </Link>
+      );
+    })}
+  </nav>
+</aside>
+
   );
 }

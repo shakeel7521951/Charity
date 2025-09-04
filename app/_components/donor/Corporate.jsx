@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FaBuilding, FaHandshake, FaChartLine } from "react-icons/fa";
 
 

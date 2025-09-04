@@ -5,21 +5,21 @@ import Chart from "../_components/dashboard/overview/Chart";
 
 export default function DashboardHome() {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="flex flex-col gap-12">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 max-md:gap-x-2 gap-6">
         <StatBox title="Total Donations" value="$1.2M" />
         <StatBox title="Active Campaigns" value="45" />
         <StatBox title="Registered Charities" value="120" />
         <StatBox title="Beneficiaries" value="8,540" />
       </div>
 
-      <div className="grid md:grid-cols-1  gap-6">
-        <div className="lg:col-span-2 bg-white rounded-2xl shadow p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2  gap-6">
+        <div className="bg-white rounded-2xl shadow p-6">
           <h3 className="text-lg font-semibold text-[#543D2E] mb-4">Donation Trends</h3>
           <Chart />
         </div>
 
-        <div className="lg:col-span-2 bg-white rounded-2xl shadow p-6">
+        <div className="bg-white rounded-2xl shadow p-6">
           <h3 className="text-lg font-semibold text-[#543D2E] mb-4">Top Campaigns</h3>
           <ul className="space-y-3">
             <li className="flex justify-between"><span>Health Aid</span><span>$250K</span></li>
