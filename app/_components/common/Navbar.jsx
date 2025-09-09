@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t, i18n } = useTranslation("navbar");
 
-  // ⬆️ put this inside your Navbar component
+
   const [lang, setLang] = useState(i18n.language || "en");
 
   const changeLanguage = (newLang) => {
