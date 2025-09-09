@@ -1,0 +1,33 @@
+{
+  "brand": {
+    "title": "Qatar Charity",
+    "desc": "Connecting generosity with need through transparency and technology. Making charitable giving more impactful in Qatar and beyond."
+  },
+  "links": {
+    "title": "Quick Links",
+    "items": ["About Us", "Our Campaigns", "Transparency Report", "Get Involved", "Success Stories"]
+  },
+  "resources": {
+    "title": "Resources",
+    "items": ["FAQ", "Blog & News", "Documentation", "Support Center", "Community"]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Doha, Qatar\nWest Bay, Diplomatic Area",
+    "phone": "+974 4494 4444",
+    "email": "info@qcharity.org"
+  },
+  "newsletter": {
+    "title": "Stay Updated with Our Initiatives",
+    "desc": "Subscribe to our newsletter to receive updates on our campaigns, impact stories, and ways to help.",
+    "placeholder": "Your email address",
+    "button": "Subscribe"
+  },
+  "bottom": {
+    "rights": "All rights reserved.",
+    "platform": "Qatar Charity Platform",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookie": "Cookie Policy"
+  }
+}
