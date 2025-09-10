@@ -1,0 +1,104 @@
+{
+  "charitySupportForm": {
+    "title": "Support Our Mission",
+    "subtitle": "Fill out the form below to volunteer, donate, or ask us anything.",
+    "personalInfo": "Personal Information",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number (WhatsApp)",
+    "emailAddress": "Email Address",
+    "howToHelp": "How Would You Like to Help?",
+    "iWantTo": "I Want To",
+    "yourMessage": "Your Message",
+    "whySupport": "Why do you want to support our cause?",
+    "uploadDocuments": "Upload Documents (Optional)",
+    "uploadText": "Upload relevant documents (PDF, Word, Images)",
+    "maxSize": "Max file size: 10MB, Max files: 5",
+    "chooseFiles": "Choose Files",
+    "contactPreference": "Contact Preference",
+    "contactMethod": "How would you prefer us to contact you?",
+    "consentAgreement": "Consent & Agreement",
+    "consentText": "I confirm that the information I've provided is accurate and I consent to being contacted via my selected method. I agree to the Privacy Policy and understand my data will be processed for the purpose of handling this request.",
+    "confidentiality": "Your details are kept confidential and won't be shared without permission.",
+    "responseTime": "We usually respond within 1-2 working days.",
+    "cancel": "Cancel",
+    "submit": "Submit via WhatsApp",
+    "sending": "Sending...",
+    "successMessage": "Thank you for your support! We'll contact you soon via WhatsApp.",
+    "errorMessage": "Error sending your request. Please try again.",
+    
+    "supportTypes": {
+      "donation": "Make a Donation",
+      "volunteer": "Volunteer",
+      "sponsorship": "Corporate Sponsorship",
+      "general": "General Inquiry"
+    },
+    
+    "donation": {
+      "amount": "Donation Amount",
+      "frequency": "Frequency",
+      "oneTime": "One-time",
+      "monthly": "Monthly",
+      "quarterly": "Quarterly",
+      "annually": "Annually"
+    },
+    
+    "volunteer": {
+      "skills": "Skills/Expertise",
+      "availability": "Availability",
+      "teaching": "Teaching/Education",
+      "medical": "Medical/Healthcare",
+      "construction": "Construction/Building",
+      "counseling": "Counseling",
+      "administrative": "Administrative",
+      "events": "Event Planning",
+      "fundraising": "Fundraising",
+      "other": "Other",
+      "weekdays": "Weekdays",
+      "weekends": "Weekends",
+      "both": "Both",
+      "flexible": "Flexible"
+    },
+    
+    "sponsorship": {
+      "type": "Sponsorship Type",
+      "companyName": "Company Name",
+      "financial": "Financial Support",
+      "inKind": "In-kind Donation",
+      "event": "Event Sponsorship",
+      "partnership": "Strategic Partnership"
+    },
+    
+    "contactMethods": {
+      "email": "Email",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "any": "Any Method"
+    },
+    
+    "validation": {
+      "fullNameRequired": "Full name is required",
+      "phoneRequired": "Phone number is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "supportTypeRequired": "Please select how you'd like to help",
+      "messageRequired": "Please tell us why you want to support our cause",
+      "messageTooShort": "Please provide more details (at least 20 characters)",
+      "donationAmountRequired": "Please specify donation amount",
+      "volunteerSkillsRequired": "Please select your skills",
+      "sponsorshipTypeRequired": "Please select sponsorship type",
+      "contactPreferenceRequired": "Please select preferred contact method",
+      "consentRequired": "Please accept the consent agreement"
+    },
+    
+    "whatsapp": {
+      "title": "CHARITY SUPPORT REQUEST",
+      "personalInfo": "PERSONAL INFORMATION",
+      "supportType": "SUPPORT TYPE",
+      "message": "MESSAGE",
+      "preferredContact": "PREFERRED CONTACT",
+      "documents": "DOCUMENTS",
+      "consent": "Consent: I confirm the information provided is accurate and I'm genuinely interested in supporting your cause.",
+      "sentVia": "Sent via Charity Support Form"
+    }
+  }
+}

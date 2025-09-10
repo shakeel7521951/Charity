@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { t, i18n } = useTranslation("navbar/navbar");
+  const { t, i18n } = useTranslation("common/navbar");
 
 
   const [lang, setLang] = useState(i18n.language || "en");
@@ -55,8 +55,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <div className="flex items-center">
-              <div className="bg-gradient-to-r from-[#821435] to-[#B62F5E] p-2 rounded-lg mr-3">
+            <div className="flex items-center gap-2.5">
+              <div className="bg-gradient-to-r from-[#821435] to-[#B62F5E] p-2 rounded-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7 text-white"

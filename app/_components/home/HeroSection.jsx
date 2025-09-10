@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ConsultationForm from "../common/ConsultationForm";
 import { FaHandHoldingHeart } from "react-icons/fa";
-import {CheckCircle, ChevronLeft, ChevronRight,} from "lucide-react";
+import { CheckCircle, ChevronLeft, ChevronRight, } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import "../../../i18n";
@@ -129,12 +129,14 @@ export default function HeroSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
-                <div className="flex items-center justify-center w-8 h-8 bg-white/20 rounded-full mr-3">
-                  <CheckCircle className="h-5 w-5 text-white" />
+                <div className="flex gap-3 items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-white/20 rounded-full">
+                    <CheckCircle className="h-5 w-5 text-white" />
+                  </div>
+                  <span className="text-sm font-medium text-white">
+                    {t("trustBadge")}
+                  </span>
                 </div>
-                <span className="text-sm font-medium text-white">
-                  {t("trustBadge")}
-                </span>
               </motion.div>
 
               {/* Title & Description */}
@@ -169,8 +171,10 @@ export default function HeroSection() {
                     key={i}
                     className="flex items-center text-white/90 text-sm"
                   >
-                    <CheckCircle className="h-5 w-5 mr-2 text-white" />
-                    <span>{feature}</span>
+                    <div className="flex gap-2.5">
+                      <CheckCircle className="h-5 w-5 text-white" />
+                      <span>{feature}</span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -250,8 +254,8 @@ export default function HeroSection() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
-                  ? "bg-white scale-125"
-                  : "bg-white/50 hover:bg-white/70"
+                ? "bg-white scale-125"
+                : "bg-white/50 hover:bg-white/70"
                 }`}
             />
           ))}

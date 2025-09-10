@@ -1,0 +1,104 @@
+{
+  "charitySupportForm": {
+    "title": "ادعم مهمتنا",
+    "subtitle": "املأ النموذج أدناه للتطوع أو التبرع أو سؤالنا عن أي شيء.",
+    "personalInfo": "المعلومات الشخصية",
+    "fullName": "الاسم الكامل",
+    "phoneNumber": "رقم الهاتف (واتساب)",
+    "emailAddress": "البريد الإلكتروني",
+    "howToHelp": "كيف تريد المساعدة؟",
+    "iWantTo": "أريد أن",
+    "yourMessage": "رسالتك",
+    "whySupport": "لماذا تريد دعم قضيتنا؟",
+    "uploadDocuments": "رفع المستندات (اختياري)",
+    "uploadText": "رفع المستندات ذات الصلة (PDF، Word، Images)",
+    "maxSize": "الحد الأقصى لحجم الملف: 10MB، الحد الأقصى للملفات: 5",
+    "chooseFiles": "اختر الملفات",
+    "contactPreference": "تفضيل الاتصال",
+    "contactMethod": "كيف تفضل أن نتصل بك؟",
+    "consentAgreement": "الموافقة والاتفاق",
+    "consentText": "أؤكد أن المعلومات التي قدمتها دقيقة وأوافق على الاتصال بي عبر الطريقة المختارة. أوافق على سياسة الخصوصية وأتفهم أن بياناتي سيتم معالجتها لغرض معالجة هذا الطلب.",
+    "confidentiality": "يتم الاحتفاظ ببياناتك سرية ولن يتم مشاركتها دون إذن.",
+    "responseTime": "عادة ما نرد خلال 1-2 يوم عمل.",
+    "cancel": "إلغاء",
+    "submit": "إرسال عبر واتساب",
+    "sending": "جاري الإرسال...",
+    "successMessage": "شكراً لدعمك! سنتواصل معك قريباً عبر واتساب.",
+    "errorMessage": "خطأ في إرسال طلبك. يرجى المحاولة مرة أخرى.",
+    
+    "supportTypes": {
+      "donation": "التبرع",
+      "volunteer": "التطوع",
+      "sponsorship": "الرعاية المؤسسية",
+      "general": "استفسار عام"
+    },
+    
+    "donation": {
+      "amount": "مبلغ التبرع",
+      "frequency": "التكرار",
+      "oneTime": "مرة واحدة",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "annually": "سنوي"
+    },
+    
+    "volunteer": {
+      "skills": "المهارات/الخبرة",
+      "availability": "التوفر",
+      "teaching": "التدريس/التعليم",
+      "medical": "الطبي/الرعاية الصحية",
+      "construction": "البناء/التشييد",
+      "counseling": "الإرشاد",
+      "administrative": "إداري",
+      "events": "تخطيط الفعاليات",
+      "fundraising": "جمع التبرعات",
+      "other": "أخرى",
+      "weekdays": "أيام الأسبوع",
+      "weekends": "عطلات نهاية الأسبوع",
+      "both": "كلاهما",
+      "flexible": "مرن"
+    },
+    
+    "sponsorship": {
+      "type": "نوع الرعاية",
+      "companyName": "اسم الشركة",
+      "financial": "الدعم المالي",
+      "inKind": "تبرع عيني",
+      "event": "رعاية الفعاليات",
+      "partnership": "شراكة استراتيجية"
+    },
+    
+    "contactMethods": {
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "whatsapp": "واتساب",
+      "any": "أي طريقة"
+    },
+    
+    "validation": {
+      "fullNameRequired": "الاسم الكامل مطلوب",
+      "phoneRequired": "رقم الهاتف مطلوب",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+      "supportTypeRequired": "يرجى اختيار طريقة المساعدة",
+      "messageRequired": "يرجى إخبارنا لماذا تريد دعم قضيتنا",
+      "messageTooShort": "يرجى تقديم المزيد من التفاصيل (20 حرف على الأقل)",
+      "donationAmountRequired": "يرجى تحديد مبلغ التبرع",
+      "volunteerSkillsRequired": "يرجى اختيار مهاراتك",
+      "sponsorshipTypeRequired": "يرجى اختيار نوع الرعاية",
+      "contactPreferenceRequired": "يرجى اختيار طريقة الاتصال المفضلة",
+      "consentRequired": "يرجى قبول اتفاقية الموافقة"
+    },
+    
+    "whatsapp": {
+      "title": "طلب دعم خيري",
+      "personalInfo": "المعلومات الشخصية",
+      "supportType": "نوع الدعم",
+      "message": "الرسالة",
+      "preferredContact": "طريقة الاتصال المفضلة",
+      "documents": "المستندات",
+      "consent": "الموافقة: أؤكد أن المعلومات المقدمة دقيقة وأنا مهتم حقاً بدعم قضيتكم.",
+      "sentVia": "تم الإرسال عبر نموذج الدعم الخيري"
+    }
+  }
+}

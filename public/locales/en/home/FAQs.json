@@ -1,0 +1,112 @@
+{
+  "header": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about Qatar's premier charity management platform"
+  },
+  "categories": [
+    { "id": "general", "name": "General Questions", "icon": "📋" },
+    { "id": "donors", "name": "For Donors", "icon": "🤲" },
+    { "id": "charities", "name": "For Charities", "icon": "🏛️" },
+    { "id": "technical", "name": "Technical Support", "icon": "🔧" }
+  ],
+  "faqData": {
+    "general": [
+      {
+        "id": "gen-1",
+        "question": "What is the Qatar Charity Platform?",
+        "answer": "The Qatar Charity Platform is a comprehensive digital system for managing, monitoring, and regulating charitable donations and campaigns in Qatar. It integrates with the Sandi platform to ensure transparency, compliance, and efficient distribution of aid."
+      },
+      {
+        "id": "gen-2",
+        "question": "How does the platform ensure transparency?",
+        "answer": "We use blockchain technology to create tamper-proof records of all transactions. Donors can track their contributions in real-time from donation to distribution, with proof of spending provided by charities."
+      },
+      {
+        "id": "gen-3",
+        "question": "Is my personal information secure?",
+        "answer": "Yes, we employ bank-level security measures including encryption, secure servers, and compliance with Qatar data protection regulations. Your information is never shared without your consent."
+      },
+      {
+        "id": "gen-4",
+        "question": "What languages are supported?",
+        "answer": "The platform is fully available in both Arabic and English, with plans to add more languages in the future based on user needs."
+      }
+    ],
+    "donors": [
+      {
+        "id": "donor-1",
+        "question": "How can I make a donation?",
+        "answer": "You can donate through multiple methods: credit/debit cards, bank transfer, QR code payments, or digital wallets. Simply register an account, browse campaigns, and select your preferred payment method."
+      },
+      {
+        "id": "donor-2",
+        "question": "Will I receive a receipt for my donation?",
+        "answer": "Yes, you will receive an instant digital receipt for every donation, which can be used for tax purposes. All receipts are stored in your account dashboard for easy access."
+      },
+      {
+        "id": "donor-3",
+        "question": "How can I track the impact of my donation?",
+        "answer": "Our real-time tracking system allows you to follow your donation from start to finish. You'll receive updates, photos, and reports showing how your contribution made a difference."
+      },
+      {
+        "id": "donor-4",
+        "question": "Can I set up recurring donations?",
+        "answer": "Yes, you can set up monthly, quarterly, or annual recurring donations to your preferred charities with customizable amounts."
+      },
+      {
+        "id": "donor-5",
+        "question": "Are there any fees for donating?",
+        "answer": "The platform charges a minimal processing fee of 1.5% to cover transaction costs and platform maintenance. Charities receive 98.5% of your donation amount."
+      }
+    ],
+    "charities": [
+      {
+        "id": "charity-1",
+        "question": "How can my organization register on the platform?",
+        "answer": "Charities must apply through the registration portal, providing all required documentation including valid licenses from RACA. The approval process typically takes 5-7 business days."
+      },
+      {
+        "id": "charity-2",
+        "question": "What are the reporting requirements?",
+        "answer": "Registered charities must submit regular reports including proof of spending, beneficiary information, and impact assessments. The platform provides templates to simplify this process."
+      },
+      {
+        "id": "charity-3",
+        "question": "How does the Sandi integration work?",
+        "answer": "The platform automatically syncs with Sandi to verify beneficiaries and prevent duplicate aid. Charities can access verified beneficiary lists and report distributions directly through the system."
+      },
+      {
+        "id": "charity-4",
+        "question": "What support is available for charity administrators?",
+        "answer": "We provide comprehensive training, dedicated account managers, and 24/7 technical support to help charities maximize their use of the platform."
+      }
+    ],
+    "technical": [
+      {
+        "id": "tech-1",
+        "question": "What browsers are supported?",
+        "answer": "The platform works best on Chrome, Firefox, Safari, and Edge browsers updated to their latest versions. For optimal experience, enable JavaScript and cookies."
+      },
+      {
+        "id": "tech-2",
+        "question": "Is there a mobile app available?",
+        "answer": "Yes, we have native iOS and Android apps available for download from their respective app stores. The mobile apps offer all the functionality of the web platform."
+      },
+      {
+        "id": "tech-3",
+        "question": "What if I encounter technical issues?",
+        "answer": "Our support team is available 24/7 through live chat, email, or phone. You can also visit our Help Center for troubleshooting guides and video tutorials."
+      },
+      {
+        "id": "tech-4",
+        "question": "How often is the platform updated?",
+        "answer": "We release regular updates every two weeks with new features, security enhancements, and performance improvements. All updates are thoroughly tested before deployment."
+      }
+    ]
+  },
+  "support": {
+    "title": "Still have questions?",
+    "description": "Our support team is ready to help you with any additional questions you might have about the platform.",
+    "button": "Contact Support"
+  }
+}

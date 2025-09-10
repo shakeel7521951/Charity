@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation("footer/footer");
+  const { t } = useTranslation("common/footer");
 
   const links = t("links.items", { returnObjects: true });
   const resources = t("resources.items", { returnObjects: true });
@@ -14,9 +14,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-r from-[#821435] to-[#B62F5E] p-2 rounded-lg mr-3">
+          <div className="lg:col-span-1 ">
+            <div className="flex items-center mb-6 gap-3">
+              <div className="bg-gradient-to-r from-[#821435] to-[#B62F5E] p-2 rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>

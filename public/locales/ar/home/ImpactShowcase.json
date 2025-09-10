@@ -1,0 +1,104 @@
+{
+  "header": {
+    "tag": "المنصة الخيرية الرائدة في قطر",
+    "title": "تحويل العمل الخيري في قطر",
+    "subtitle": "منصة رقمية متكاملة بالتعاون مع سندي لتعزيز الشفافية والكفاءة والثقة في التبرعات الخيرية في قطر."
+  },
+  "stats": [
+    { "value": "٢.٥ مليون+", "label": "تبرعات تمت معالجتها", "trend": "+١٥٪ هذا الشهر" },
+    { "value": "١٥٠+", "label": "جمعيات مسجلة", "trend": "في جميع أنحاء قطر" },
+    { "value": "٩٨٪", "label": "رضا المتبرعين", "trend": "بناءً على ١٠ آلاف+ تقييم" },
+    { "value": "١٠٠٪", "label": "التزام تنظيمي", "trend": "صفر مخالفات" }
+  ],
+  "featuresHeader": {
+    "title": "مميزات المنصة",
+    "subtitle": "قدرات متقدمة مصممة لجميع أصحاب المصلحة في القطاع الخيري"
+  },
+  "tabs": [
+    { "id": "all", "label": "كل المميزات" },
+    { "id": "transparency", "label": "الشفافية" },
+    { "id": "security", "label": "الأمان والامتثال" },
+    { "id": "integration", "label": "التكامل مع سندي" },
+    { "id": "management", "label": "الإدارة" },
+    { "id": "accessibility", "label": "سهولة الوصول" }
+  ],
+  "features": [
+    {
+      "title": "تتبع مباشر",
+      "description": "تابع تبرعك من البداية حتى النهاية مع شفافية كاملة.",
+      "category": "transparency",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zM9 19V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'/></svg>"
+    },
+    {
+      "title": "التكامل مع سندي",
+      "description": "تنسيق سلس مع منصة سندي الوطنية للمساعدات لمنع الازدواجية.",
+      "category": "integration",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'/></svg>"
+    },
+    {
+      "title": "أمان البلوك تشين",
+      "description": "سجلات غير قابلة للتلاعب لجميع المعاملات لضمان الشفافية الكاملة.",
+      "category": "security",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'/></svg>"
+    },
+    {
+      "title": "الوصول متعدد المنصات",
+      "description": "تطبيقات الويب والجوال متاحة باللغتين العربية والإنجليزية.",
+      "category": "accessibility",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'/></svg>"
+    },
+    {
+      "title": "اكتشاف الاحتيال ومكافحة غسل الأموال",
+      "description": "خوارزميات متقدمة لاكتشاف ومنع الأنشطة المشبوهة.",
+      "category": "security",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'/></svg>"
+    },
+    {
+      "title": "التقارير الآلية",
+      "description": "إنشاء تقارير الامتثال والتقارير المالية بنقرة واحدة.",
+      "category": "management",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'/></svg>"
+    },
+    {
+      "title": "لوحات مؤشرات الأداء",
+      "description": "مراقبة مؤشرات الأداء للجمعيات والحملات.",
+      "category": "management",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'/></svg>"
+    },
+    {
+      "title": "خيارات دفع متعددة",
+      "description": "بطاقات الائتمان، التحويلات المصرفية، رموز QR والمحافظ الرقمية.",
+      "category": "accessibility",
+      "icon": "<svg class='w-10 h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z'/></svg>"
+    }
+  ],
+  "testimonialsHeader": {
+    "title": "ماذا يقول مستخدمونا",
+    "subtitle": "آراء أصحاب المصلحة في القطاع الخيري"
+  },
+  "userStories": [
+  {
+    "quote": "بصفتي متبرعًا، يمكنني الآن رؤية مكان ذهابي لمساهمتي بالضبط، مما يجعلني أكثر ثقة في التبرع.",
+    "author": "أحمد آل ثاني",
+    "role": "متبرع منتظم",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
+  },
+  {
+    "quote": "لقد ألغى تكامل سندي ازدواجية توزيع المساعدات، مما جعل عملياتنا أكثر كفاءة.",
+    "author": "فاطمة العطية",
+    "role": "مديرة جمعية خيرية",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?&w=200&q=80"
+  },
+  {
+    "quote": "أدوات الامتثال تمنحنا إشرافًا كاملاً مع تقليل عبء العمل الإداري بشكل كبير.",
+    "author": "خالد السليطي",
+    "role": "مسؤول في هيئة تنظيم الأعمال الخيرية",
+    "image": "https://images.unsplash.com/photo-1552058544-f2b08422138a?&w=200&q=80"
+  }
+],
+  "cta": {
+    "title": "انضم إلى المنصة الخيرية الموثوقة في قطر",
+    "register": "سجل جمعيتك",
+    "donate": "تبرع الآن"
+  }
+}

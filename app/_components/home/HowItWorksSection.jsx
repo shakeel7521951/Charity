@@ -106,11 +106,10 @@ const HowItWorksSection = () => {
             >
               <div className="mb-6">
                 <motion.div
-                  className={`w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 relative shadow-lg ${
-                    index % 2 === 0
+                  className={`w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 relative shadow-lg ${index % 2 === 0
                       ? "bg-gradient-to-br from-[#8a1538] to-[#6c102c]"
                       : "bg-gradient-to-br from-[#543D2E] to-[#3e2c21]"
-                  }`}
+                    }`}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -164,21 +163,23 @@ const HowItWorksSection = () => {
                     className="flex items-start"
                     variants={stepVariants}
                   >
-                    <div className="w-6 h-6 bg-[#8a1538]/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-[#8a1538]"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                    <div className="flex gap-2.5 mt-0.5">
+                      <div className="w-6 h-6 bg-[#8a1538]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4 text-[#8a1538]"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[#543D2E]">{item}</span>
                     </div>
-                    <span className="text-[#543D2E]">{item}</span>
                   </motion.li>
                 ))}
               </motion.ul>

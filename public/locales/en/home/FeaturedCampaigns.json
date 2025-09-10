@@ -1,0 +1,47 @@
+{
+  "sectionBadge": "Verified Campaigns",
+  "sectionTitle": "Make a Difference Today",
+  "sectionDesc": "Support RACA-approved campaigns from trusted charities in Qatar. All campaigns are integrated with Sandi for transparent impact.",
+  "donateButton": "Donate Now",
+  "sandiBadge": "Integrated with Sandi to prevent duplication",
+  "viewAllButton": "View All Campaigns",
+  "viewAllDesc": "All campaigns are RACA-approved and Sandi-integrated",
+  "campaigns": [
+    {
+      "category": "Health",
+      "title": "Medical Support for Families",
+      "charity": "Qatar Red Crescent",
+      "description": "Provide essential medical care and medication for low-income families across Qatar",
+      "raised": 450000,
+      "goal": 750000,
+      "donors": 1245,
+      "daysLeft": 12,
+      "verified": true,
+      "image": "https://media.gettyimages.com/id/2120554524/photo/hospital-holding-hands-and-kid-in-bed-with-love-support-and-care-in-clinic-after-surgery.jpg?s=612x612&w=0&k=20&c=VSnDhLLZI1j4UdxTbGlyZOzMGCSo3w2Yj1CvaJsLmUA="
+    },
+    {
+      "category": "Education",
+      "title": "Digital Learning for Students",
+      "charity": "Education Above All",
+      "description": "Supply tablets and internet access for students in need to continue their education",
+      "raised": 285000,
+      "goal": 500000,
+      "donors": 892,
+      "daysLeft": 21,
+      "verified": true,
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "category": "Relief",
+      "title": "Winter Aid Package Distribution",
+      "charity": "Qatar Charity",
+      "description": "Provide warm clothing, blankets and heating equipment for families during winter months",
+      "raised": 620000,
+      "goal": 800000,
+      "donors": 1567,
+      "daysLeft": 5,
+      "verified": true,
+      "image": "https://media.gettyimages.com/id/530930529/photo/little-girl-trying-on-coat-at-winter-clothing-donation-drive.jpg?s=612x612&w=0&k=20&c=bFskyDKmdlt2JLs7uZ6m2rss4VZRkijhdkUs_CFVn-s="
+    }
+  ]
+}

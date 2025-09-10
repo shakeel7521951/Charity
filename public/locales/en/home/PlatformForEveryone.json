@@ -1,0 +1,60 @@
+{
+  "title": {
+    "before": "A Platform for",
+    "highlight": "Everyone"
+  },
+  "subtitle": "Designed to serve all stakeholders in Qatar's charitable ecosystem with transparency and efficiency",
+  "userTypes": [
+    {
+      "role": "Donors",
+      "description": "Individuals and corporates united to make a difference.",
+      "features": [
+        "Give with confidence through transparent tracking",
+        "Flexible payment options: bank transfer, QR code",
+        "Receive instant confirmations and real-time impact updates",
+        "Choose from health, education, relief campaigns"
+      ],
+      "cta": "Start Donating",
+      "accentColor": "#8A1538"
+    },
+    {
+      "role": "Charities",
+      "description": "Organizations managing campaigns and donations",
+      "features": [
+        "Create and manage donation campaigns efficiently",
+        "Upload legal documents and licenses for verification",
+        "Track donations and distribution to beneficiaries",
+        "Generate automated reports for RACA compliance"
+      ],
+      "cta": "Register Your Charity",
+      "accentColor": "#8A1538"
+    },
+    {
+      "role": "Authority (RACA)",
+      "description": "Regulatory body with oversight and compliance tools",
+      "features": [
+        "Approve or reject charity campaigns",
+        "View all donations and campaigns in real-time",
+        "Receive automated compliance and financial reports",
+        "Track performance through KPI dashboards"
+      ],
+      "cta": "Learn About Oversight",
+      "accentColor": "#8A1538"
+    }
+  ],
+  "integration": {
+    "badge": "Integrated Solution",
+    "title": "Seamless Sandi Integration",
+    "description": "Our platform integrates directly with Qatar's national Sandi platform to ensure coordinated aid distribution and prevent duplication of assistance.",
+    "points": [
+      "Sync beneficiary data to prevent duplicate assistance",
+      "Unified database combining Sandi and our platform",
+      "Full visibility of all aid distribution in Qatar"
+    ],
+    "stats": {
+      "value": "100%",
+      "label": "Coordination Efficiency",
+      "sub": "No duplicate assistance"
+    }
+  }
+}
