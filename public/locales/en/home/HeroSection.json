@@ -1,0 +1,31 @@
+{
+  "trustBadge": "RACA Approved Platform",
+  "slides": [
+    {
+      "title": "Transparent Charitable Giving",
+      "description": "Qatar's first transparent donation platform with blockchain tracking from donor to beneficiary.",
+      "ctaPrimary": "Donate Now",
+      "ctaSecondary": "Consultation",
+      "link": "/contact"
+    },
+    {
+      "title": "Confidence in every contribution",
+      "description": "Every donation is tracked and verified. Complete transparency in real-time reporting and RACA oversight.",
+      "ctaPrimary": "Support a Cause",
+      "ctaSecondary": "Consultation",
+      "link": "/contact"
+    },
+    {
+      "title": "Make a Difference in Qatar",
+      "description": "Join thousands of donors helping communities across Qatar through verified, RACA-approved charities.",
+      "ctaPrimary": "View Campaigns",
+      "ctaSecondary": "Consultation",
+      "link": "/contact"
+    }
+  ],
+  "features": [
+    "Integrated with Sandi",
+    "Blockchain Transparency",
+    "Real-time Tracking"
+  ]
+}

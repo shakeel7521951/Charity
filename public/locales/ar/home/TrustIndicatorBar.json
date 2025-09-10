@@ -1,0 +1,42 @@
+{
+  "title": "موثوق به من قبل المجتمع الخيري في قطر",
+  "subtitle": "متكامل تمامًا مع منصة صندي للتبرعات الخيرية الشفافة والمنظمة",
+
+  "partnerships": {
+    "heading": "شراكات رسمية",
+    "raca": {
+      "title": "ركا",
+      "desc": "الهيئة التنظيمية"
+    },
+    "sandi": {
+      "title": "صندي",
+      "desc": "المنصة الوطنية"
+    }
+  },
+
+  "impact": {
+    "heading": "أثرنا",
+    "stats": {
+      "verifiedCharities": "جمعيات خيرية موثقة",
+      "donationsRaised": "التبرعات المحصلة",
+      "familiesHelped": "العائلات المساعدة",
+      "compliance": "الامتثال"
+    }
+  },
+
+  "security": {
+    "heading": "الأمان والثقة",
+    "items": {
+      "secure": "آمن",
+      "verified": "موثق",
+      "transparent": "شفاف",
+      "compliant": "متوافق"
+    }
+  },
+
+  "footer": {
+    "regulation": "متوافق 100٪ مع اللوائح الخيرية القطرية",
+    "ssl": "تشفير آمن",
+    "blockchain": "موثق عبر البلوك تشين"
+  }
+}

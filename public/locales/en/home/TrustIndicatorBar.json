@@ -1,0 +1,42 @@
+{
+  "title": "Trusted by Qatar's Charitable Community",
+  "subtitle": "Fully integrated with Sandi for transparent, regulated charitable giving",
+
+  "partnerships": {
+    "heading": "Official Partnerships",
+    "raca": {
+      "title": "RACA",
+      "desc": "Regulatory Body"
+    },
+    "sandi": {
+      "title": "SANDI",
+      "desc": "National Platform"
+    }
+  },
+
+  "impact": {
+    "heading": "Our Impact",
+    "stats": {
+      "verifiedCharities": "Verified Charities",
+      "donationsRaised": "Donations Raised",
+      "familiesHelped": "Families Helped",
+      "compliance": "Compliance"
+    }
+  },
+
+  "security": {
+    "heading": "Security & Trust",
+    "items": {
+      "secure": "Secure",
+      "verified": "Verified",
+      "transparent": "Transparent",
+      "compliant": "Compliant"
+    }
+  },
+
+  "footer": {
+    "regulation": "100% compliant with Qatari charitable regulations",
+    "ssl": "Secure Encryption",
+    "blockchain": "Blockchain Verified"
+  }
+}

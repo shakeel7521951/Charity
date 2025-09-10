@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { t, i18n } = useTranslation("navbar");
+  const { t, i18n } = useTranslation("navbar/navbar");
 
 
   const [lang, setLang] = useState(i18n.language || "en");

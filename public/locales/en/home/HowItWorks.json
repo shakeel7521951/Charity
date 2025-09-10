@@ -1,0 +1,38 @@
+{
+  "badge": "Transparent Process",
+  "title": "How Your Donation Makes an Impact",
+  "subtitle": "Our platform ensures complete transparency from donation to distribution, with full integration to Qatar's Sandi system",
+  "steps": [
+    {
+      "title": "Choose a Verified Campaign",
+      "desc": "Browse RACA-approved campaigns from trusted charities in Qatar",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-10 w-10 text-white' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /></svg>"
+    },
+    {
+      "title": "Donate Securely",
+      "desc": "Give easily via card, bank transfer, or digital wallet with encryption",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-10 w-10 text-white' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' /></svg>"
+    },
+    {
+      "title": "Track Your Impact",
+      "desc": "Receive real-time updates on how your donation is being used",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='h-10 w-10 text-white' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' /></svg>"
+    }
+  ],
+  "additional": {
+    "title": "Complete Transparency with Sandi Integration",
+    "desc": "Our platform uses blockchain technology to create an immutable record of every transaction, ensuring complete transparency from donor to beneficiary while integrating with Qatar's national Sandi platform.",
+    "box": {
+      "title": "Transparent Donation Tracking",
+      "subtitle": "From donor to beneficiary"
+    }
+  },
+  "features": [
+    "Integrated with Sandi to prevent duplicate aid distribution",
+    "RACA approved and monitored campaigns with full oversight",
+    "Regular impact reports with photos, videos, and beneficiary stories",
+    "Blockchain-verified transaction records for complete auditability"
+  ],
+  "cta": "Start Donating Now",
+  "note": "All donations are processed securely and are tax-deductible in Qatar"
+}

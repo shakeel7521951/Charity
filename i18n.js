@@ -13,11 +13,11 @@ i18n
       escapeValue: false,
     },
     backend: {
-      // 👇 will correctly resolve /locales/en/navbar/navbar.json, /locales/en/home/home.json, etc.
-      loadPath: "/locales/{{lng}}/{{ns}}/{{ns}}.json",
+      // 👇 keeps support for nested files like home/HeroSection.json
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
-    ns: ["navbar", "home", "footer"], // add as many namespaces as needed
-    defaultNS: "navbar", // you can change default if you want
+    ns: [],               // no preloaded namespaces
+    defaultNS: false,  
   });
 
 export default i18n;

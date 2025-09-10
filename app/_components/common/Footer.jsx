@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation("footer");
+  const { t } = useTranslation("footer/footer");
 
   const links = t("links.items", { returnObjects: true });
   const resources = t("resources.items", { returnObjects: true });
