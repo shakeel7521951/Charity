@@ -1,0 +1,24 @@
+{
+  "title": "Oversight & Compliance",
+  "points": [
+    {
+      "icon": "FileCheck",
+      "title": "Campaign Approval",
+      "desc": "Every campaign is reviewed and verified by RACA before launch.",
+      "img": "/about/Insights-Compaign.jpg"
+    },
+    {
+      "icon": "Scale",
+      "title": "Compliance",
+      "desc": "Strict financial monitoring & anti-fraud mechanisms ensure trust.",
+      "img": "/about/Insights-Compliance.jpg"
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "Transparency",
+      "desc": "Blockchain provides tamper-proof donation and fund tracking.",
+      "img": "/about/Insights-Transparency.jpg"
+    }
+  ],
+  "footerText": "Ensuring accountability, compliance, and trust at every step."
+}

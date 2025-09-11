@@ -2,30 +2,32 @@
 import React from "react";
 import { Eye, Target, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function MissionVisionValues() {
+  const { t } = useTranslation("about/MissionVisionValues");
+
   const values = [
     {
       icon: Target,
-      title: "Compliance",
-      desc: "Strictly aligned with RACA regulations to ensure all donations are legitimate and ethical.",
+      title: t("values.0.title"),
+      desc: t("values.0.desc"),
       gradient: "from-[#8A1538] via-[#b63b5c] to-[#d9738f]",
     },
     {
       icon: Eye,
-      title: "Transparency",
-      desc: "Donors, charities, and regulators enjoy complete visibility into donation flows.",
+      title: t("values.1.title"),
+      desc: t("values.1.desc"),
       gradient: "from-[#8A1538] via-[#6b1a2b] to-[#c84c67]",
     },
     {
       icon: Lightbulb,
-      title: "Innovation",
-      desc: "Integrating Blockchain, AI, and AR/VR to redefine digital giving in Qatar.",
+      title: t("values.2.title"),
+      desc: t("values.2.desc"),
       gradient: "from-[#8A1538] via-[#5c1222] to-[#9b2c46]",
     },
   ];
 
-  // Simple fade up animation
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: (delay = 0) => ({
@@ -47,12 +49,9 @@ export default function MissionVisionValues() {
         custom={0}
       >
         <h2 className="text-4xl md:text-5xl font-bold text-[#8A1538]">
-          Mission, Vision & Values
+          {t("section.title")}
         </h2>
-        <p className="mt-4 text-lg text-gray-600">
-          Guided by integrity, innovation, and compliance, we're building
-          Qatar's most trusted and impactful digital donation ecosystem.
-        </p>
+        <p className="mt-4 text-lg text-gray-600">{t("section.subtitle")}</p>
       </motion.div>
 
       {/* Mission & Vision */}
@@ -65,14 +64,11 @@ export default function MissionVisionValues() {
           viewport={{ once: true }}
           custom={0.1}
         >
-          <h3 className="text-2xl font-semibold text-[#8A1538]">Mission</h3>
+          <h3 className="text-2xl font-semibold text-[#8A1538]">
+            {t("mission.title")}
+          </h3>
           <p className="mt-3 text-gray-600 leading-relaxed">
-            To provide a{" "}
-            <span className="font-semibold">
-              secure, transparent, and efficient
-            </span>{" "}
-            digital donation system that ensures fairness and accountability
-            across Qatar.
+            {t("mission.desc")}
           </p>
         </motion.div>
 
@@ -84,13 +80,11 @@ export default function MissionVisionValues() {
           viewport={{ once: true }}
           custom={0.2}
         >
-          <h3 className="text-2xl font-semibold text-[#8A1538]">Vision</h3>
+          <h3 className="text-2xl font-semibold text-[#8A1538]">
+            {t("vision.title")}
+          </h3>
           <p className="mt-3 text-gray-600 leading-relaxed">
-            To create a future where{" "}
-            <span className="font-semibold">
-              every donation is traceable, impactful, and trusted
-            </span>{" "}
-            — driving social progress in Qatar and beyond.
+            {t("vision.desc")}
           </p>
         </motion.div>
       </div>
@@ -110,10 +104,8 @@ export default function MissionVisionValues() {
             viewport={{ once: true }}
             custom={0.3 + i * 0.1}
           >
-            {/* Animated Overlay */}
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition duration-500"></div>
 
-            {/* Content */}
             <div className="relative z-10 text-center">
               <v.icon className="mx-auto w-14 h-14 text-white animate-bounce" />
               <h3 className="mt-4 text-2xl font-bold">{v.title}</h3>

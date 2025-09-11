@@ -3,25 +3,28 @@ import React from "react";
 import { Shield, Database, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function SandiInfo() {
+  const { t } = useTranslation("about/SandiInfo");
+
   const features = [
     {
       icon: Shield,
-      title: "Fairness & Security",
-      desc: "Prevents duplicate beneficiaries, ensuring aid reaches those who truly need it.",
+      title: t("features.0.title"),
+      desc: t("features.0.desc"),
       bg: "/about/Sandi-Security.jpg",
     },
     {
       icon: Database,
-      title: "Unified Records",
-      desc: "Maintains a centralized national database of all charitable transactions.",
+      title: t("features.1.title"),
+      desc: t("features.1.desc"),
       bg: "/about/Sandi-Records.jpg",
     },
     {
       icon: Users,
-      title: "Collaboration",
-      desc: "Connects charities, government, and donors for more impactful giving.",
+      title: t("features.2.title"),
+      desc: t("features.2.desc"),
       bg: "/about/Sandi-Collaboration.jpg",
     },
   ];
@@ -66,23 +69,21 @@ export default function SandiInfo() {
           custom={0.2}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#543D2E] leading-tight">
-            What is <span className="text-[#821435]">Sandi?</span>
+            {t("title")}{" "}
+            <span className="text-[#821435]">{t("highlightedTitle")}</span>
           </h2>
           <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-            <span className="font-semibold text-[#821435]">Sandi</span> is Qatar’s{" "}
-            <span className="text-[#821435] font-semibold">
-              national platform
-            </span>{" "}
-            for charitable and social aid management. It ensures{" "}
-            <span className="text-[#821435] font-semibold">
-              fairness, security, and transparency
-            </span>{" "}
-            in donations by unifying data across organizations, preventing fraud,
-            and building trust between donors, charities, and beneficiaries.
+            {t("description", {
+              sandi: t("highlightedWords.sandi"),
+              nationalPlatform: t("highlightedWords.nationalPlatform"),
+              fairness: t("highlightedWords.fairness"),
+              security: t("highlightedWords.security"),
+              transparency: t("highlightedWords.transparency")
+            })}
           </p>
           <Link href='/donor'>
             <button className="mt-8 px-8 py-3 rounded-full hover:bg-[#B62F5E] bg-[#821435] text-white font-semibold shadow-lg hover:scale-105 transition-transform">
-              Learn More
+              {t("learnMoreButton")}
             </button>
           </Link>
         </motion.div>

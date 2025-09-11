@@ -2,18 +2,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function CallToAction() {
+  const { t } = useTranslation("about/CallToAction");
+
   return (
-    <section style={{
-      backgroundImage: "linear-gradient(to right, rgba(138, 21, 56, 0.3), rgba(166, 45, 76, 0.6), rgba(138, 21, 56, 0.3)), url('about/CallToAction.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundBlendMode: "overlay",
-      backgroundAttachment: "fixed"
-    }}
-      className="py-20 px-6 text-center bg-[#8A1513] text-white overflow-hidden">
-      {/* Background decorative shapes */}
+    <section
+      style={{
+        backgroundImage:
+          "linear-gradient(to right, rgba(138, 21, 56, 0.3), rgba(166, 45, 76, 0.6), rgba(138, 21, 56, 0.3)), url('about/CallToAction.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundBlendMode: "overlay",
+        backgroundAttachment: "fixed"
+      }}
+      className="py-20 px-6 text-center bg-[#8A1513] text-white overflow-hidden"
+    >
+      {/* Background shapes */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.2, scale: 1 }}
@@ -34,10 +40,8 @@ export default function CallToAction() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-      >
-        Join us in making donations <br className="hidden md:block" />
-        transparent and impactful
-      </motion.h2>
+        dangerouslySetInnerHTML={{ __html: t("heading") }}
+      />
 
       {/* Subtext */}
       <motion.p
@@ -46,11 +50,8 @@ export default function CallToAction() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2 }}
         viewport={{ once: true }}
-      >
-        Be part of a trusted system backed by{" "}
-        <span className="font-semibold">RACA</span> & integrated with{" "}
-        <span className="font-semibold">Sandi</span>
-      </motion.p>
+        dangerouslySetInnerHTML={{ __html: t("subtext") }}
+      />
 
       {/* Buttons */}
       <motion.div
@@ -64,27 +65,26 @@ export default function CallToAction() {
           <motion.button
             whileHover={{
               scale: 1.1,
-              boxShadow: "0px 10px 25px rgba(255,255,255,0.4)",
+              boxShadow: "0px 10px 25px rgba(255,255,255,0.4)"
             }}
             whileTap={{ scale: 0.95 }}
             className="bg-white text-[#8A1538] px-6 md:px-8 py-3 rounded-lg shadow font-semibold transition"
           >
-            Donate Now
+            {t("buttons.donate")}
           </motion.button>
         </Link>
-
 
         <motion.button
           whileHover={{
             scale: 1.1,
             backgroundColor: "white",
             color: "#8A1538",
-            boxShadow: "0px 10px 25px rgba(255,255,255,0.4)",
+            boxShadow: "0px 10px 25px rgba(255,255,255,0.4)"
           }}
           whileTap={{ scale: 0.95 }}
           className="border border-white px-6 md:px-8 py-3 rounded-lg font-semibold transition"
         >
-          Register as Charity
+          {t("buttons.register")}
         </motion.button>
       </motion.div>
     </section>

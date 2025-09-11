@@ -1,0 +1,41 @@
+{
+  "title": "Active Campaigns",
+  "campaigns": [
+    {
+      "name": "Medical Aid for Children",
+      "category": "Health",
+      "description": "Providing medical assistance to underprivileged children in rural areas."
+    },
+    {
+      "name": "Education for All",
+      "category": "Education",
+      "description": "Building schools and providing educational materials for children in need."
+    },
+    {
+      "name": "Flood Relief Fund",
+      "category": "Relief",
+      "description": "Helping communities affected by recent floods with essential supplies and rebuilding efforts."
+    },
+    {
+      "name": "Food for Families",
+      "category": "Hunger",
+      "description": "Distributing food packages to low-income families to fight hunger."
+    },
+    {
+      "name": "Clean Water Project",
+      "category": "Environment",
+      "description": "Building wells and providing clean water to communities in need."
+    },
+    {
+      "name": "Hunger Free Drive",
+      "category": "Food & Nutrition",
+      "description": "Distributing meals and ration packs to homeless families and underprivileged communities to fight hunger and malnutrition."
+    }
+  ],
+  "labels": {
+    "daysLeft": "days left",
+    "goal": "Goal",
+    "raised": "Raised",
+    "funded": "funded"
+  }
+}

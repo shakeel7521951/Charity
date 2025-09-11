@@ -1,0 +1,27 @@
+{
+  "title": "What is",
+  "highlightedTitle": "Sandi?",
+  "description": "Sandi is Qatar's national platform for charitable and social aid management. It ensures fairness, security, and transparency in donations by unifying data across organizations, preventing fraud, and building trust between donors, charities, and beneficiaries.",
+  "learnMoreButton": "Learn More",
+  "features": [
+    {
+      "title": "Fairness & Security",
+      "desc": "Prevents duplicate beneficiaries, ensuring aid reaches those who truly need it."
+    },
+    {
+      "title": "Unified Records",
+      "desc": "Maintains a centralized national database of all charitable transactions."
+    },
+    {
+      "title": "Collaboration",
+      "desc": "Connects charities, government, and donors for more impactful giving."
+    }
+  ],
+  "highlightedWords": {
+    "sandi": "Sandi",
+    "nationalPlatform": "national platform",
+    "fairness": "fairness",
+    "security": "security",
+    "transparency": "transparency"
+  }
+}

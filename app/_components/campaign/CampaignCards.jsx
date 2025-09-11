@@ -2,89 +2,80 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaBullseye, FaCheckCircle, FaCalendarAlt } from "react-icons/fa";
-
-const campaigns = [
-  {
-    id: 1,
-    name: "Medical Aid for Children",
-    category: "Health",
-    goal: 100000,
-    raised: 65000,
-    startDate: "2023-05-01",
-    endDate: "2023-12-31",
-    description:
-      "Providing medical assistance to underprivileged children in rural areas.",
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: 2,
-    name: "Education for All",
-    category: "Education",
-    goal: 100000,
-    raised: 42000,
-    startDate: "2023-06-15",
-    endDate: "2023-11-30",
-    description:
-      "Building schools and providing educational materials for children in need.",
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    id: 3,
-    name: "Flood Relief Fund",
-    category: "Relief",
-    goal: 200000,
-    raised: 176000,
-    startDate: "2023-07-01",
-    endDate: "2023-10-31",
-    description:
-      "Helping communities affected by recent floods with essential supplies and rebuilding efforts.",
-    image:
-      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: 4,
-    name: "Food for Families",
-    category: "Hunger",
-    goal: 80000,
-    raised: 55000,
-    startDate: "2023-08-01",
-    endDate: "2023-12-15",
-    description:
-      "Distributing food packages to low-income families to fight hunger.",
-    image:
-      "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: 5,
-    name: "Clean Water Project",
-    category: "Environment",
-    goal: 120000,
-    raised: 90000,
-    startDate: "2023-09-10",
-    endDate: "2024-02-28",
-    description:
-      "Building wells and providing clean water to communities in need.",
-    image:
-      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    id: 6,
-    name: "Hunger Free Drive",
-    category: "Food & Nutrition",
-    goal: 120000,
-    raised: 47000,
-    startDate: "2023-09-01",
-    endDate: "2024-02-28",
-    description:
-      "Distributing meals and ration packs to homeless families and underprivileged communities to fight hunger and malnutrition.",
-    image:
-      "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const CampaignCard = () => {
+  const { t } = useTranslation("campaigns/CampaignCard");
+
+  const campaigns = [
+    {
+      id: 1,
+      name: t("campaigns.0.name"),
+      category: t("campaigns.0.category"),
+      goal: 100000,
+      raised: 65000,
+      startDate: "2023-05-01",
+      endDate: "2023-12-31",
+      description: t("campaigns.0.description"),
+      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      id: 2,
+      name: t("campaigns.1.name"),
+      category: t("campaigns.1.category"),
+      goal: 100000,
+      raised: 42000,
+      startDate: "2023-06-15",
+      endDate: "2023-11-30",
+      description: t("campaigns.1.description"),
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80",
+    },
+    {
+      id: 3,
+      name: t("campaigns.2.name"),
+      category: t("campaigns.2.category"),
+      goal: 200000,
+      raised: 176000,
+      startDate: "2023-07-01",
+      endDate: "2023-10-31",
+      description: t("campaigns.2.description"),
+      image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      id: 4,
+      name: t("campaigns.3.name"),
+      category: t("campaigns.3.category"),
+      goal: 80000,
+      raised: 55000,
+      startDate: "2023-08-01",
+      endDate: "2023-12-15",
+      description: t("campaigns.3.description"),
+      image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      id: 5,
+      name: t("campaigns.4.name"),
+      category: t("campaigns.4.category"),
+      goal: 120000,
+      raised: 90000,
+      startDate: "2023-09-10",
+      endDate: "2024-02-28",
+      description: t("campaigns.4.description"),
+      image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80",
+    },
+    {
+      id: 6,
+      name: t("campaigns.5.name"),
+      category: t("campaigns.5.category"),
+      goal: 120000,
+      raised: 47000,
+      startDate: "2023-09-01",
+      endDate: "2024-02-28",
+      description: t("campaigns.5.description"),
+      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80",
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -112,7 +103,7 @@ const CampaignCard = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          Active Campaigns
+          {t("title")}
         </motion.h2>
 
         <motion.div
@@ -129,7 +120,7 @@ const CampaignCard = () => {
             );
             const daysRemaining = Math.ceil(
               (new Date(campaign.endDate) - new Date()) /
-                (1000 * 60 * 60 * 24)
+              (1000 * 60 * 60 * 24)
             );
 
             return (
@@ -155,7 +146,7 @@ const CampaignCard = () => {
                   </div>
                   {daysRemaining > 0 && (
                     <div className="absolute top-3 left-3 bg-[#543D2E] bg-opacity-90 text-white text-xs px-3 py-1 rounded-full">
-                      {daysRemaining} days left
+                      {daysRemaining} {t("labels.daysLeft")}
                     </div>
                   )}
                 </div>
@@ -172,11 +163,11 @@ const CampaignCard = () => {
                   <div className="mb-5 space-y-2 text-sm text-gray-700 my-auto">
                     <p className="flex items-center gap-2">
                       <FaBullseye className="text-[#723134]" />
-                      Goal: QAR {campaign.goal.toLocaleString()}
+                      {t("labels.goal")}: QAR {campaign.goal.toLocaleString()}
                     </p>
                     <p className="flex items-center gap-2">
                       <FaCheckCircle className="text-green-600" />
-                      Raised: QAR {campaign.raised.toLocaleString()}
+                      {t("labels.raised")}: QAR {campaign.raised.toLocaleString()}
                     </p>
                     <p className="flex items-center gap-2">
                       <FaCalendarAlt className="text-[#543D2E]" />
@@ -197,7 +188,7 @@ const CampaignCard = () => {
                       ></motion.div>
                     </div>
                     <p className="mt-2 text-sm text-gray-600 text-right">
-                      {progress.toFixed(1)}% funded
+                      {progress.toFixed(1)}% {t("labels.funded")}
                     </p>
                   </div>
                 </div>

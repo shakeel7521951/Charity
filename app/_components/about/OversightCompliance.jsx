@@ -2,35 +2,21 @@
 import React, { useState, useRef } from "react";
 import { ChevronLeft, FileCheck, Scale, ShieldCheck, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function OversightCompliance() {
-  const points = [
-    {
-      icon: FileCheck,
-      title: "Campaign Approval",
-      desc: "Every campaign is reviewed and verified by RACA before launch.",
-      img: "/about/Insights-Compaign.jpg",
-    },
-    {
-      icon: Scale,
-      title: "Compliance",
-      desc: "Strict financial monitoring & anti-fraud mechanisms ensure trust.",
-      img: "/about/Insights-Compliance.jpg",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Transparency",
-      desc: "Blockchain provides tamper-proof donation and fund tracking.",
-      img: "/about/Insights-Transparency.jpg",
-    },
-  ];
+  const { t } = useTranslation("about/OversightCompliance");
+
+  // Load localized points
+  const points = t("points", { returnObjects: true });
+  const pointList = Array.isArray(points) ? points : [];
 
   const [current, setCurrent] = useState(0);
 
   const prevSlide = () =>
-    setCurrent((prev) => (prev === 0 ? points.length - 1 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? pointList.length - 1 : prev - 1));
   const nextSlide = () =>
-    setCurrent((prev) => (prev === points.length - 1 ? 0 : prev + 1));
+    setCurrent((prev) => (prev === pointList.length - 1 ? 0 : prev + 1));
 
   // --- Swipe logic ---
   const touchStartX = useRef(0);
@@ -47,6 +33,13 @@ export default function OversightCompliance() {
   const handleTouchEnd = () => {
     if (touchStartX.current - touchEndX.current > 75) nextSlide();
     if (touchEndX.current - touchStartX.current > 75) prevSlide();
+  };
+
+  // Map string icons from JSON → actual Lucide icons
+  const IconMap = {
+    FileCheck: FileCheck,
+    Scale: Scale,
+    ShieldCheck: ShieldCheck,
   };
 
   return (
@@ -67,33 +60,32 @@ export default function OversightCompliance() {
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Oversight & Compliance
+        {t("title")}
       </motion.h2>
 
       <div className="relative flex items-center justify-center">
-        {/* Left buttons */}
+        {/* Left button */}
         <button
           onClick={prevSlide}
           className="hidden md:flex absolute left-1 md:left-6 z-30 bg-[#8A1538] text-white p-4 rounded-full shadow-lg hover:scale-110 transition"
         >
-           <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-5 h-5" />
         </button>
 
-        {/* Carousel wrappers */}
+        {/* Carousel */}
         <div
-          className="flex items-center justify-center w-full max-w-4xl h-[380px] md:h-[420px] relative overflow-hidden "
+          className="flex items-center justify-center w-full max-w-4xl h-[380px] md:h-[420px] relative overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {points.map((p, index) => {
+          {pointList.map((p, index) => {
             let position = "nextSlide";
             if (index === current) position = "activeSlide";
-            if (
-              index === current - 1 ||
-              (current === 0 && index === points.length - 1)
-            )
+            if (index === current - 1 || (current === 0 && index === pointList.length - 1))
               position = "lastSlide";
+
+            const IconComponent = IconMap[p.icon] || FileCheck;
 
             return (
               <AnimatePresence key={index}>
@@ -103,22 +95,19 @@ export default function OversightCompliance() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8, y: -60 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="absolute w-[85%] md:w-[65%] h-full rounded-2xl shadow-2xl overflow-hidden z-20 "
+                    className="absolute w-[85%] md:w-[65%] h-full rounded-2xl shadow-2xl overflow-hidden z-20"
                   >
                     {/* Background image */}
                     <div
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${p.img})` }}
                     ></div>
-                    {/* Overlay */}
                     <div className="absolute inset-0 bg-[#8A1538]/30"></div>
 
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 h-full text-white">
-                      <p.icon className="w-16 h-16 text-[#F2EDE9]" />
-                      <h3 className="mt-6 text-2xl font-semibold">
-                        {p.title}
-                      </h3>
+                      <IconComponent className="w-16 h-16 text-[#F2EDE9]" />
+                      <h3 className="mt-6 text-2xl font-semibold">{p.title}</h3>
                       <p className="mt-3 text-lg leading-relaxed max-w-md opacity-90">
                         {p.desc}
                       </p>
@@ -129,12 +118,7 @@ export default function OversightCompliance() {
                 {position === "lastSlide" && (
                   <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 0.5,
-                      scale: 0.85,
-                      x: -150,
-                      rotateY: 15,
-                    }}
+                    animate={{ opacity: 0.5, scale: 0.85, x: -150, rotateY: 15 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
                     className="absolute w-[70%] md:w-[50%] h-4/5 rounded-2xl shadow-xl overflow-hidden bg-[#8A1538]/10"
@@ -149,12 +133,7 @@ export default function OversightCompliance() {
                 {position === "nextSlide" && (
                   <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 0.5,
-                      scale: 0.85,
-                      x: 150,
-                      rotateY: -15,
-                    }}
+                    animate={{ opacity: 0.5, scale: 0.85, x: 150, rotateY: -15 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
                     className="absolute w-[70%] md:w-[50%] h-4/5 rounded-2xl shadow-xl overflow-hidden bg-[#8A1538]/10"
@@ -173,9 +152,9 @@ export default function OversightCompliance() {
         {/* Right button */}
         <button
           onClick={nextSlide}
-          className="hidden text-4xl md:flex absolute right-1 md:right-6 z-20 bg-[#8A1538] text-white p-4 rounded-full shadow-lg hover:scale-110 transition"
+          className="hidden md:flex absolute right-1 md:right-6 z-20 bg-[#8A1538] text-white p-4 rounded-full shadow-lg hover:scale-110 transition"
         >
-           <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-5 h-5" />
         </button>
       </div>
 
@@ -186,7 +165,7 @@ export default function OversightCompliance() {
         transition={{ duration: 0.8, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        Ensuring accountability, compliance, and trust at every step.
+        {t("footerText")}
       </motion.p>
     </motion.section>
   );

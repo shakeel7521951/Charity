@@ -1,0 +1,23 @@
+{
+  "heading": "ماذا يقول الناس",
+  "testimonials": [
+    {
+      "name": "سارة جونسون",
+      "role": "متبرعة",
+      "feedback": "كانت تجربة دعم الحملات هنا رائعة للغاية. أستطيع أن أرى بالفعل التغيير الذي يحدثه تبرعي.",
+      "image": "https://randomuser.me/api/portraits/women/68.jpg"
+    },
+    {
+      "name": "ديفيد مارتينيز",
+      "role": "متطوع",
+      "feedback": "علّمتني تجربة التطوع قيمة دعم المجتمع. لقد غيّر هذا المنصّة حياة عدد لا يحصى من الناس.",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "name": "عائشة خان",
+      "role": "مستفيدة",
+      "feedback": "بفضل المتبرعين، حصل قريتي على مياه نظيفة. لقد غيّر هذا حياتنا اليومية حقًا للأفضل.",
+      "image": "https://randomuser.me/api/portraits/women/45.jpg"
+    }
+  ]
+}

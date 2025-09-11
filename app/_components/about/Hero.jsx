@@ -2,8 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation("about/hero");
+
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: (delay = 0) => ({
@@ -21,8 +24,7 @@ export default function Hero() {
     <section
       className="relative min-h-screen w-full flex items-center justify-center text-center px-6 pt-24 md:pt-32"
       style={{
-        backgroundImage:
-          "url('about/Hero.jpg')",
+        backgroundImage: "url('about/Hero.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -40,8 +42,8 @@ export default function Hero() {
           animate="visible"
           custom={0.2}
         >
-          <span className="text-[#F2EDE9]">Together We Rise</span> <br />
-          Building Hope Through Charity
+          <span className="text-[#F2EDE9]">{t("titleLine1")}</span> <br />
+          {t("titleLine2")}
         </motion.h1>
 
         {/* Subheading */}
@@ -52,11 +54,7 @@ export default function Hero() {
           animate="visible"
           custom={0.4}
         >
-          Every act of giving makes a difference. With{" "}
-          <span className="font-semibold text-white">transparency</span>,{" "}
-          <span className="font-semibold text-white">trust</span>, and{" "}
-          <span className="font-semibold text-white">impact</span>, we empower
-          communities across Qatar.
+          {t("subtitle")}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -69,12 +67,12 @@ export default function Hero() {
         >
           <Link href='/contact'>
             <button className="bg-gradient-to-r from-[#B62F5E] to-[#821435] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#543D2E] hover:text-white hover:bg-gradient-to-r hover:from-[#821435] hover:to-[#B62F5E] duration-400">
-              Donate Now
+              {t("donateButton")}
             </button>
           </Link>
           <Link href='/campaign'>
             <button className="border-2 border-[#F2EDE9] text-[#F2EDE9] px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-lg hover:bg-[#F2EDE9] hover:text-[#723134] transition-all duration-300">
-              Explore Campaigns
+              {t("campaignsButton")}
             </button>
           </Link>
         </motion.div>
@@ -88,20 +86,20 @@ export default function Hero() {
           custom={0.8}
         >
           <div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">10K+</h3>
-            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Lives Impacted</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">{t("livesImpacted")}</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">{t("stats.livesImpacted")}</p>
           </div>
           <div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">500+</h3>
-            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Campaigns</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">{t("campaignsCount")}</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">{t("stats.campaigns")}</p>
           </div>
           <div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">100%</h3>
-            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Transparency</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">{t("transparencyPercent")}</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">{t("stats.transparency")}</p>
           </div>
           <div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">24/7</h3>
-            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">Support</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F2EDE9]">{t("supportHours")}</h3>
+            <p className="text-xs sm:text-sm md:text-base text-[#FFFFFF]/80">{t("stats.support")}</p>
           </div>
         </motion.div>
       </div>

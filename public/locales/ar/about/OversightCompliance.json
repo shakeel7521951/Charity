@@ -1,0 +1,24 @@
+{
+  "title": "الرقابة والامتثال",
+  "points": [
+    {
+      "icon": "FileCheck",
+      "title": "موافقة الحملة",
+      "desc": "يتم مراجعة كل حملة والتحقق منها من قبل رواقا قبل الإطلاق.",
+      "img": "/about/Insights-Compaign.jpg"
+    },
+    {
+      "icon": "Scale",
+      "title": "الامتثال",
+      "desc": "تضمن آليات المراقبة المالية الصارمة ومكافحة الاحتيال الثقة.",
+      "img": "/about/Insights-Compliance.jpg"
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "الشفافية",
+      "desc": "توفر تقنية البلوك تشين تتبعًا غير قابل للتلاعب بالتبرعات والأموال.",
+      "img": "/about/Insights-Transparency.jpg"
+    }
+  ],
+  "footerText": "ضمان المساءلة والامتثال والثقة في كل خطوة."
+}

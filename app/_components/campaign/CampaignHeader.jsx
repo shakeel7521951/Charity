@@ -1,8 +1,11 @@
 "use client";
 import { FaHandsHelping } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function CampaignHeader() {
+  const { t } = useTranslation("campaigns/CampaignHeader");
+
   return (
     <div className="relative w-full h-[600px] md:h-[90vh] overflow-hidden shadow-lg">
       {/* Background Image */}
@@ -29,7 +32,7 @@ export default function CampaignHeader() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
           >
-            Start Your Charity Campaign
+            {t("heading")}
           </motion.h1>
 
           <motion.p
@@ -38,8 +41,7 @@ export default function CampaignHeader() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.4 }}
           >
-            Share your story, raise awareness, and inspire people to make a
-            difference through collective support.
+            {t("subtext")}
           </motion.p>
         </div>
       </div>

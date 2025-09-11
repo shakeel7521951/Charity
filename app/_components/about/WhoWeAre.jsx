@@ -3,25 +3,28 @@ import React from "react";
 import { Shield, Users, HeartHandshake } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function WhoWeAre() {
+  const { t } = useTranslation("about/WhoWeAre");
+
   const values = [
     {
       icon: Shield,
-      title: "Security",
-      desc: "Every donation is encrypted, monitored, and protected under Qatar’s compliance laws.",
+      title: t("values.0.title"),
+      desc: t("values.0.desc"),
       bg: "/about/WhoWeAre-Security.jpg",
     },
     {
       icon: Users,
-      title: "Transparency",
-      desc: "Track your donations with complete visibility from donor to beneficiary.",
+      title: t("values.1.title"),
+      desc: t("values.1.desc"),
       bg: "/about/WhoWeAre-Transparency.jpg",
     },
     {
       icon: HeartHandshake,
-      title: "Trust",
-      desc: "Backed by RACA & integrated with Sandi for fairness and accountability.",
+      title: t("values.2.title"),
+      desc: t("values.2.desc"),
       bg: "/about/WhoWeAre-Trust.jpg",
     },
   ];
@@ -64,7 +67,8 @@ export default function WhoWeAre() {
           viewport={{ once: true }}
           custom={0.1}
         >
-          Who <span className="text-[#821435]">We Are</span>
+          {t("title")}{" "}
+          <span className="text-[#821435]">{t("highlightedTitle")}</span>
         </motion.h2>
         <motion.p
           className="mt-5 max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed"
@@ -74,12 +78,11 @@ export default function WhoWeAre() {
           viewport={{ once: true }}
           custom={0.3}
         >
-          We are Qatar’s trusted national donation platform, dedicated to
-          building{" "}
-          <span className="font-semibold text-[#821435]">secure</span>,{" "}
-          <span className="font-semibold text-[#821435]">transparent</span>, and{" "}
-          <span className="font-semibold text-[#821435]">impactful</span> giving
-          experiences.
+          {t("description", {
+            secure: t("highlightedWords.secure"),
+            transparent: t("highlightedWords.transparent"),
+            impactful: t("highlightedWords.impactful")
+          })}
         </motion.p>
       </div>
 
@@ -124,18 +127,18 @@ export default function WhoWeAre() {
         custom={0.5}
       >
         <h3 className="text-3xl md:text-4xl font-extrabold text-[#821435]">
-          Our Mission
+          {t("missionTitle")}
         </h3>
         <p className="mt-5 text-gray-700 max-w-4xl mx-auto leading-relaxed text-lg">
-          To revolutionize charitable giving in Qatar by combining{" "}
-          <span className="font-semibold text-[#821435]">innovation</span>,{" "}
-          <span className="font-semibold text-[#821435]">compliance</span>, and{" "}
-          <span className="font-semibold text-[#821435]">compassion</span> and
-          ensuring every contribution reaches those in need with maximum impact.
+          {t("missionText", {
+            innovation: t("highlightedWords.innovation"),
+            compliance: t("highlightedWords.compliance"),
+            compassion: t("highlightedWords.compassion")
+          })}
         </p>
         <Link href='/donor'>
           <button className="mt-8 px-8 py-3 rounded-full hover:bg-[#B62F5E] bg-[#821435] text-white font-semibold shadow-lg hover:scale-105 transition">
-            Learn More
+            {t("learnMoreButton")}
           </button>
         </Link>
       </motion.div>

@@ -2,36 +2,26 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaHandsHelping, FaDonate, FaSmile } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const HowItWorks = () => {
-  const steps = [
-    {
-      icon: <FaHandsHelping className="text-5xl text-indigo-600" />,
-      title: "Choose a Campaign",
-      description:
-        "Browse through various causes and select the campaign you'd like to support. Every campaign is transparent with clear goals.",
-    },
-    {
-      icon: <FaDonate className="text-5xl text-green-600" />,
-      title: "Make a Donation",
-      description:
-        "Contribute securely through our platform. Even the smallest amount can bring life-changing impact to someone in need.",
-    },
-    {
-      icon: <FaSmile className="text-5xl text-yellow-500" />,
-      title: "See the Impact",
-      description:
-        "Track the progress of campaigns you supported and witness the real change your contribution has created.",
-    },
+  const { t } = useTranslation("campaigns/HowItWorks");
+
+  const icons = [
+    <FaHandsHelping className="text-5xl text-indigo-600" />,
+    <FaDonate className="text-5xl text-green-600" />,
+    <FaSmile className="text-5xl text-yellow-500" />
   ];
+
+  const steps = t("steps", { returnObjects: true });
 
   // Animation variants (for entry animation only)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
+      transition: { staggerChildren: 0.2 }
+    }
   };
 
   const itemVariants = {
@@ -39,8 +29,8 @@ const HowItWorks = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5 },
-    },
+      transition: { duration: 0.5 }
+    }
   };
 
   return (
@@ -52,7 +42,7 @@ const HowItWorks = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          How It Works
+          {t("heading")}
         </motion.h2>
         <motion.div
           className="grid md:grid-cols-3 gap-12"
@@ -67,7 +57,7 @@ const HowItWorks = () => {
               className="p-8 rounded-2xl shadow-md bg-gray-50 hover:shadow-xl transform transition-transform duration-300 hover:-translate-y-2"
               variants={itemVariants}
             >
-              <div className="flex justify-center mb-6">{step.icon}</div>
+              <div className="flex justify-center mb-6">{icons[index]}</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 {step.title}
               </h3>

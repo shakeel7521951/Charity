@@ -1,0 +1,30 @@
+{
+  "title": "Who",
+  "highlightedTitle": "We Are",
+  "description": "We are Qatar's trusted national donation platform, dedicated to building secure, transparent, and impactful giving experiences.",
+  "values": [
+    {
+      "title": "Security",
+      "desc": "Every donation is encrypted, monitored, and protected under Qatar's compliance laws."
+    },
+    {
+      "title": "Transparency",
+      "desc": "Track your donations with complete visibility from donor to beneficiary."
+    },
+    {
+      "title": "Trust",
+      "desc": "Backed by RACA & integrated with Sandi for fairness and accountability."
+    }
+  ],
+  "missionTitle": "Our Mission",
+  "missionText": "To revolutionize charitable giving in Qatar by combining innovation, compliance, and compassion and ensuring every contribution reaches those in need with maximum impact.",
+  "learnMoreButton": "Learn More",
+  "highlightedWords": {
+    "secure": "secure",
+    "transparent": "transparent",
+    "impactful": "impactful",
+    "innovation": "innovation",
+    "compliance": "compliance",
+    "compassion": "compassion"
+  }
+}

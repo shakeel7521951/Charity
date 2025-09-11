@@ -1,0 +1,25 @@
+{
+  "title": "How It Works",
+  "steps": [
+    {
+      "icon": "Users",
+      "title": "Donor",
+      "desc": "Chooses a campaign and makes a secure donation."
+    },
+    {
+      "icon": "HeartHandshake",
+      "title": "Charity",
+      "desc": "Receives funds and manages aid distribution."
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "Sandi Sync",
+      "desc": "Ensures no duplicate beneficiaries."
+    },
+    {
+      "icon": "Eye",
+      "title": "Authority (RACA)",
+      "desc": "Monitors donations in real-time."
+    }
+  ]
+}

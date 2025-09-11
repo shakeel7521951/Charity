@@ -1,0 +1,28 @@
+{
+  "section": {
+    "title": "Mission, Vision & Values",
+    "subtitle": "Guided by integrity, innovation, and compliance, we're building Qatar's most trusted and impactful digital donation ecosystem."
+  },
+  "mission": {
+    "title": "Mission",
+    "desc": "To provide a secure, transparent, and efficient digital donation system that ensures fairness and accountability across Qatar."
+  },
+  "vision": {
+    "title": "Vision",
+    "desc": "To create a future where every donation is traceable, impactful, and trusted — driving social progress in Qatar and beyond."
+  },
+  "values": [
+    {
+      "title": "Compliance",
+      "desc": "Strictly aligned with RACA regulations to ensure all donations are legitimate and ethical."
+    },
+    {
+      "title": "Transparency",
+      "desc": "Donors, charities, and regulators enjoy complete visibility into donation flows."
+    },
+    {
+      "title": "Innovation",
+      "desc": "Integrating Blockchain, AI, and AR/VR to redefine digital giving in Qatar."
+    }
+  ]
+}

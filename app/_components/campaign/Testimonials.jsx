@@ -1,45 +1,19 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Donor",
-      feedback:
-        "Supporting campaigns here has been an amazing experience. I can actually see the change my donation makes.",
-      image:
-        "https://randomuser.me/api/portraits/women/68.jpg",
-    },
-    {
-      name: "David Martinez",
-      role: "Volunteer",
-      feedback:
-        "Being a volunteer taught me the value of community support. This platform has transformed countless lives.",
-      image:
-        "https://randomuser.me/api/portraits/men/32.jpg",
-    },
-    {
-      name: "Aisha Khan",
-      role: "Beneficiary",
-      feedback:
-        "Thanks to the donors, my village received clean water. This has truly changed our daily lives for the better.",
-      image:
-        "https://randomuser.me/api/portraits/women/45.jpg",
-    },
-  ];
+  const { t } = useTranslation("campaigns/Testimonials");
+  const testimonials = t("testimonials", { returnObjects: true });
 
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+      transition: { staggerChildren: 0.2 }
+    }
   };
 
   const itemVariants = {
@@ -47,10 +21,8 @@ const Testimonials = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
-    },
+      transition: { duration: 0.6 }
+    }
   };
 
   return (
@@ -62,7 +34,7 @@ const Testimonials = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          What People Say
+          {t("heading")}
         </motion.h2>
         <motion.div
           className="grid md:grid-cols-3 gap-10"
@@ -71,7 +43,7 @@ const Testimonials = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {testimonials.map((t, index) => (
+          {testimonials.map((tItem, index) => (
             <motion.div
               key={index}
               className="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transform transition-transform duration-300 hover:-translate-y-2"
@@ -79,8 +51,8 @@ const Testimonials = () => {
             >
               <div className="flex justify-center mb-4">
                 <motion.img
-                  src={t.image}
-                  alt={t.name}
+                  src={tItem.image}
+                  alt={tItem.name}
                   width={80}
                   height={80}
                   className="rounded-full"
@@ -88,9 +60,9 @@ const Testimonials = () => {
                   transition={{ duration: 0.2 }}
                 />
               </div>
-              <p className="text-gray-600 italic mb-4">"{t.feedback}"</p>
-              <h4 className="font-semibold text-gray-800">{t.name}</h4>
-              <p className="text-sm text-gray-500">{t.role}</p>
+              <p className="text-gray-600 italic mb-4">"{tItem.feedback}"</p>
+              <h4 className="font-semibold text-gray-800">{tItem.name}</h4>
+              <p className="text-sm text-gray-500">{tItem.role}</p>
             </motion.div>
           ))}
         </motion.div>
