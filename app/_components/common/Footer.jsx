@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const Footer = () => {
   const { t } = useTranslation("common/footer");
@@ -8,13 +9,38 @@ const Footer = () => {
   const links = t("links.items", { returnObjects: true });
   const resources = t("resources.items", { returnObjects: true });
 
+  // Quick Links with actual URLs
+  const quickLinks = [
+    { name: links[0], url: "/" },
+    { name: links[1], url: "/about" },
+    { name: links[2], url: "/campaign" },
+    { name: links[3], url: "/donor" },
+    { name: links[4], url: "/contact" }
+  ];
+
+  // Resources with actual URLs
+  const resourceLinks = [
+    { name: resources[0], url: "#" },
+    { name: resources[1], url: "#" },
+    { name: resources[2], url: "#" },
+    { name: resources[3], url: "#" },
+    { name: resources[4], url: "#" }
+  ];
+
+  // Bottom links with actual URLs
+  const bottomLinks = [
+    { name: t("bottom.privacy"), url: "#" },
+    { name: t("bottom.terms"), url: "#" },
+    { name: t("bottom.cookie"), url: "#" }
+  ];
+
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
-          <div className="lg:col-span-1 ">
+          <div className="lg:col-span-1">
             <div className="flex items-center mb-6 gap-3">
               <div className="bg-gradient-to-r from-[#821435] to-[#B62F5E] p-2 rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -30,11 +56,14 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 relative inline-block">{t("links.title")}</h4>
             <ul className="space-y-3">
-              {links.map((link, index) => (
+              {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                    {link}
-                  </a>
+                  <Link 
+                    href={link.url} 
+                    className="text-gray-300 hover:text-white transition-colors duration-300"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -44,11 +73,14 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 relative inline-block">{t("resources.title")}</h4>
             <ul className="space-y-3">
-              {resources.map((res, index) => (
+              {resourceLinks.map((resource, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                    {res}
-                  </a>
+                  <Link 
+                    href={resource.url} 
+                    className="text-gray-300 hover:text-white transition-colors duration-300"
+                  >
+                    {resource.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -62,10 +94,14 @@ const Footer = () => {
                 <span className="text-gray-300 whitespace-pre-line">{t("contact.address")}</span>
               </li>
               <li className="flex items-center">
-                <span className="text-gray-300">{t("contact.phone")}</span>
+                <a href={`tel:${t("contact.phone").replace(/\D/g, '')}`} className="text-gray-300 hover:text-white transition-colors duration-300">
+                  {t("contact.phone")}
+                </a>
               </li>
               <li className="flex items-center">
-                <span className="text-gray-300">{t("contact.email")}</span>
+                <a href={`mailto:${t("contact.email")}`} className="text-gray-300 hover:text-white transition-colors duration-300">
+                  {t("contact.email")}
+                </a>
               </li>
             </ul>
           </div>
@@ -107,9 +143,15 @@ const Footer = () => {
               © {new Date().getFullYear()} {t("bottom.platform")}. {t("bottom.rights")}
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">{t("bottom.privacy")}</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">{t("bottom.terms")}</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">{t("bottom.cookie")}</a>
+              {bottomLinks.map((link, index) => (
+                <Link 
+                  key={index}
+                  href={link.url} 
+                  className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
+                >
+                  {link.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

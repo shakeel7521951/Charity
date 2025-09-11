@@ -9,7 +9,8 @@ import { useTranslation } from "react-i18next";
 import "../../../i18n";
 
 export default function HeroSection() {
-  const { t } = useTranslation("home/HeroSection");
+  const { t, i18n } = useTranslation("home/HeroSection");
+  const locale = i18n.language;
 
   const slides = t("slides", { returnObjects: true });
   const slideList = Array.isArray(slides) ? slides : [];
@@ -19,7 +20,7 @@ export default function HeroSection() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showConsultationModal, setShowConsultationModal] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  // const [isVisible, setIsVisible] = useState(true);   
 
   // Auto change slides
   useEffect(() => {
@@ -245,7 +246,11 @@ export default function HeroSection() {
           onClick={goToPrevSlide}
           className="hidden sm:flex bg-white/10 hover:bg-white/20 text-white p-3 rounded-full"
         >
-          <ChevronLeft className="w-5 h-5" />
+          {locale === 'ar' ? (
+            <ChevronRight className="w-5 h-5" />
+          ) : (
+            <ChevronLeft className="w-5 h-5" />
+          )}
         </motion.button>
 
         <div className="flex space-x-2">
@@ -265,7 +270,11 @@ export default function HeroSection() {
           onClick={goToNextSlide}
           className="hidden sm:flex bg-white/10 hover:bg-white/20 text-white p-3 rounded-full"
         >
-          <ChevronRight className="w-5 h-5" />
+          {locale === 'ar' ? (
+            <ChevronLeft className="w-5 h-5" />
+          ) : (
+            <ChevronRight className="w-5 h-5" />
+          )}
         </motion.button>
       </div>
     </section>

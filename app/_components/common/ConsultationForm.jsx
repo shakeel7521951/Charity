@@ -22,8 +22,10 @@ import {
   Users,
   Building,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function CharitySupportForm({ isOpen, onClose }) {
+  const { t } = useTranslation("common/ConsultationForm");
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -33,7 +35,7 @@ export default function CharitySupportForm({ isOpen, onClose }) {
     donationAmount: "",
     frequency: "",
     volunteerSkills: "",
-    availableDays: "", // single-select to match the current UI
+    availableDays: "",
     sponsorshipType: "",
     companyName: "",
     uploadedFiles: [],
@@ -48,49 +50,49 @@ export default function CharitySupportForm({ isOpen, onClose }) {
 
   // Form options
   const supportTypes = [
-    { value: "donation", label: "Make a Donation", icon: Gift },
-    { value: "volunteer", label: "Volunteer", icon: Users },
-    { value: "sponsorship", label: "Corporate Sponsorship", icon: Building },
-    { value: "general", label: "General Inquiry", icon: MessageSquare },
+    { value: "donation", label: t("supportTypes.donation"), icon: Gift },
+    { value: "volunteer", label: t("supportTypes.volunteer"), icon: Users },
+    { value: "sponsorship", label: t("supportTypes.sponsorship"), icon: Building },
+    { value: "general", label: t("supportTypes.general"), icon: MessageSquare },
   ];
 
   const donationFrequencies = [
-    { value: "one-time", label: "One-time" },
-    { value: "monthly", label: "Monthly" },
-    { value: "quarterly", label: "Quarterly" },
-    { value: "annually", label: "Annually" },
+    { value: "one-time", label: t("donation.oneTime") },
+    { value: "monthly", label: t("donation.monthly") },
+    { value: "quarterly", label: t("donation.quarterly") },
+    { value: "annually", label: t("donation.annually") },
   ];
 
   const volunteerSkillsList = [
-    { value: "teaching", label: "Teaching/Education" },
-    { value: "medical", label: "Medical/Healthcare" },
-    { value: "construction", label: "Construction/Building" },
-    { value: "counseling", label: "Counseling" },
-    { value: "administrative", label: "Administrative" },
-    { value: "events", label: "Event Planning" },
-    { value: "fundraising", label: "Fundraising" },
-    { value: "other", label: "Other" },
+    { value: "teaching", label: t("volunteer.teaching") },
+    { value: "medical", label: t("volunteer.medical") },
+    { value: "construction", label: t("volunteer.construction") },
+    { value: "counseling", label: t("volunteer.counseling") },
+    { value: "administrative", label: t("volunteer.administrative") },
+    { value: "events", label: t("volunteer.events") },
+    { value: "fundraising", label: t("volunteer.fundraising") },
+    { value: "other", label: t("volunteer.other") },
   ];
 
   const availableDaysList = [
-    { value: "weekdays", label: "Weekdays" },
-    { value: "weekends", label: "Weekends" },
-    { value: "both", label: "Both" },
-    { value: "flexible", label: "Flexible" },
+    { value: "weekdays", label: t("volunteer.weekdays") },
+    { value: "weekends", label: t("volunteer.weekends") },
+    { value: "both", label: t("volunteer.both") },
+    { value: "flexible", label: t("volunteer.flexible") },
   ];
 
   const sponsorshipTypes = [
-    { value: "financial", label: "Financial Support" },
-    { value: "in-kind", label: "In-kind Donation" },
-    { value: "event", label: "Event Sponsorship" },
-    { value: "partnership", label: "Strategic Partnership" },
+    { value: "financial", label: t("sponsorship.financial") },
+    { value: "in-kind", label: t("sponsorship.inKind") },
+    { value: "event", label: t("sponsorship.event") },
+    { value: "partnership", label: t("sponsorship.partnership") },
   ];
 
   const contactPreferences = [
-    { value: "email", label: "Email" },
-    { value: "phone", label: "Phone" },
-    { value: "whatsapp", label: "WhatsApp" },
-    { value: "any", label: "Any Method" },
+    { value: "email", label: t("contactMethods.email") },
+    { value: "phone", label: t("contactMethods.phone") },
+    { value: "whatsapp", label: t("contactMethods.whatsapp") },
+    { value: "any", label: t("contactMethods.any") },
   ];
 
   // Form validation
@@ -103,48 +105,48 @@ export default function CharitySupportForm({ isOpen, onClose }) {
     }
 
     if (!formData.fullName.trim()) {
-      newErrors.fullName = "Full name is required";
+      newErrors.fullName = t("validation.fullNameRequired");
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+      newErrors.phone = t("validation.phoneRequired");
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = t("validation.emailRequired");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
+      newErrors.email = t("validation.emailInvalid");
     }
 
     if (!formData.supportType) {
-      newErrors.supportType = "Please select how you'd like to help";
+      newErrors.supportType = t("validation.supportTypeRequired");
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Please tell us why you want to support our cause";
+      newErrors.message = t("validation.messageRequired");
     } else if (formData.message.trim().length < 20) {
-      newErrors.message = "Please provide more details (at least 20 characters)";
+      newErrors.message = t("validation.messageTooShort");
     }
 
     // Additional validation based on support type
     if (formData.supportType === "donation" && !formData.donationAmount) {
-      newErrors.donationAmount = "Please specify donation amount";
+      newErrors.donationAmount = t("validation.donationAmountRequired");
     }
 
     if (formData.supportType === "volunteer" && !formData.volunteerSkills) {
-      newErrors.volunteerSkills = "Please select your skills";
+      newErrors.volunteerSkills = t("validation.volunteerSkillsRequired");
     }
 
     if (formData.supportType === "sponsorship" && !formData.sponsorshipType) {
-      newErrors.sponsorshipType = "Please select sponsorship type";
+      newErrors.sponsorshipType = t("validation.sponsorshipTypeRequired");
     }
 
     if (!formData.contactPreference) {
-      newErrors.contactPreference = "Please select preferred contact method";
+      newErrors.contactPreference = t("validation.contactPreferenceRequired");
     }
 
     if (!formData.consentGiven) {
-      newErrors.consentGiven = "Please accept the consent agreement";
+      newErrors.consentGiven = t("validation.consentRequired");
     }
 
     setErrors(newErrors);
@@ -192,6 +194,65 @@ export default function CharitySupportForm({ isOpen, onClose }) {
       ...prev,
       uploadedFiles: prev.uploadedFiles.filter((_, i) => i !== index),
     }));
+  };
+
+  // Format message for WhatsApp
+  const formatWhatsAppMessage = () => {
+    const supportTypeLabel = supportTypes.find(
+      (s) => s.value === formData.supportType
+    )?.label;
+
+    let specificDetails = "";
+
+    if (formData.supportType === "donation") {
+      const frequencyLabel =
+        donationFrequencies.find((f) => f.value === formData.frequency)?.label ||
+        t("donation.oneTime");
+      specificDetails = `💰 ${t("donation.amount")}: ${formData.donationAmount} (${frequencyLabel})`;
+    } else if (formData.supportType === "volunteer") {
+      const skillsLabel =
+        volunteerSkillsList.find((s) => s.value === formData.volunteerSkills)
+          ?.label || t("volunteer.other");
+      const availabilityLabel =
+        availableDaysList.find((d) => d.value === formData.availableDays)
+          ?.label || t("volunteer.flexible");
+      specificDetails = `🤝 ${t("supportTypes.volunteer")}: ${skillsLabel} • ${t("volunteer.availability")}: ${availabilityLabel}`;
+    } else if (formData.supportType === "sponsorship") {
+      const sponsorshipLabel =
+        sponsorshipTypes.find((s) => s.value === formData.sponsorshipType)
+          ?.label || t("sponsorship.financial");
+      specificDetails = `🏢 ${t("supportTypes.sponsorship")}: ${sponsorshipLabel}${formData.companyName ? ` ${t("sponsorship.from")} ${formData.companyName}` : ""
+        }`;
+    }
+
+    const fileNames =
+      formData.uploadedFiles.length > 0
+        ? formData.uploadedFiles.map((file) => file.name).join(", ")
+        : t("whatsapp.noFiles");
+
+    return `❤️ ${t("whatsapp.title")}
+
+👤 ${t("whatsapp.personalInfo")}:
+• ${t("fullName")}: ${formData.fullName}
+• ${t("phoneNumber")}: ${formData.phone}
+• ${t("emailAddress")}: ${formData.email}
+
+🎯 ${t("whatsapp.supportType")}: ${supportTypeLabel}
+${specificDetails}
+
+📋 ${t("whatsapp.message")}:
+${formData.message}
+
+📞 ${t("whatsapp.preferredContact")}: ${contactPreferences.find((c) => c.value === formData.contactPreference)
+        ?.label
+      }
+
+📎 ${t("whatsapp.documents")}: ${fileNames}
+
+✅ ${t("whatsapp.consent")}
+
+--
+${t("whatsapp.sentVia")}`;
   };
 
   // Handle form submission
@@ -246,67 +307,6 @@ export default function CharitySupportForm({ isOpen, onClose }) {
     }
   };
 
-  // Format message for WhatsApp
-  const formatWhatsAppMessage = () => {
-    const supportTypeLabel = supportTypes.find(
-      (s) => s.value === formData.supportType
-    )?.label;
-
-    let specificDetails = "";
-
-    if (formData.supportType === "donation") {
-      const frequencyLabel =
-        donationFrequencies.find((f) => f.value === formData.frequency)?.label ||
-        "Not specified";
-      specificDetails = `💰 DONATION: ${formData.donationAmount} (${frequencyLabel})`;
-    } else if (formData.supportType === "volunteer") {
-      const skillsLabel =
-        volunteerSkillsList.find((s) => s.value === formData.volunteerSkills)
-          ?.label || "Not specified";
-      const availabilityLabel =
-        availableDaysList.find((d) => d.value === formData.availableDays)
-          ?.label || "Not specified";
-      specificDetails = `🤝 VOLUNTEER: ${skillsLabel} • Availability: ${availabilityLabel}`;
-    } else if (formData.supportType === "sponsorship") {
-      const sponsorshipLabel =
-        sponsorshipTypes.find((s) => s.value === formData.sponsorshipType)
-          ?.label || "Not specified";
-      specificDetails = `🏢 SPONSORSHIP: ${sponsorshipLabel}${
-        formData.companyName ? ` from ${formData.companyName}` : ""
-      }`;
-    }
-
-    const fileNames =
-      formData.uploadedFiles.length > 0
-        ? formData.uploadedFiles.map((file) => file.name).join(", ")
-        : "No files attached";
-
-    return `❤️ CHARITY SUPPORT REQUEST
-
-👤 PERSONAL INFORMATION:
-• Name: ${formData.fullName}
-• Phone: ${formData.phone}
-• Email: ${formData.email}
-
-🎯 SUPPORT TYPE: ${supportTypeLabel}
-${specificDetails}
-
-📋 MESSAGE:
-${formData.message}
-
-📞 PREFERRED CONTACT: ${
-      contactPreferences.find((c) => c.value === formData.contactPreference)
-        ?.label
-    }
-
-📎 DOCUMENTS: ${fileNames}
-
-✅ Consent: I confirm the information provided is accurate and I'm genuinely interested in supporting your cause.
-
---
-Sent via Charity Support Form`;
-  };
-
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -318,23 +318,6 @@ Sent via Charity Support Form`;
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  };
-
-  const handleArrayChange = (e, arrayName) => {
-    const { value, checked } = e.target;
-    setFormData((prev) => {
-      if (checked) {
-        return {
-          ...prev,
-          [arrayName]: [...prev[arrayName], value],
-        };
-      } else {
-        return {
-          ...prev,
-          [arrayName]: prev[arrayName].filter((item) => item !== value),
-        };
-      }
-    });
   };
 
   // Don't render if modal is not open
@@ -369,13 +352,13 @@ Sent via Charity Support Form`;
                     className="text-2xl font-bold text-white"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
-                    Support Our Mission
+                    {t("title")}
                   </h2>
                   <p
                     className="text-[#F2EDE9] text-sm"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    Fill out the form below to volunteer, donate, or ask us anything.
+                    {t("subtitle")}
                   </p>
                 </div>
               </div>
@@ -395,11 +378,10 @@ Sent via Charity Support Form`;
             {/* Success/Error Messages */}
             {submitStatus && (
               <div
-                className={`mb-6 p-4 rounded-xl border ${
-                  submitStatus === "success"
+                className={`mb-6 p-4 rounded-xl border ${submitStatus === "success"
                     ? "bg-green-50 border-green-200 text-green-800"
                     : "bg-red-50 border-red-200 text-red-800"
-                }`}
+                  }`}
               >
                 <div className="flex items-center space-x-2">
                   {submitStatus === "success" ? (
@@ -412,8 +394,8 @@ Sent via Charity Support Form`;
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {submitStatus === "success"
-                      ? "Thank you for your support! We'll contact you soon via WhatsApp."
-                      : "Error sending your request. Please try again."}
+                      ? t("successMessage")
+                      : t("errorMessage")}
                   </span>
                 </div>
               </div>
@@ -439,7 +421,7 @@ Sent via Charity Support Form`;
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   <User className="w-5 h-5 text-[#723134]" />
-                  <span>Personal Information</span>
+                  <span>{t("personalInfo")}</span>
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -449,7 +431,7 @@ Sent via Charity Support Form`;
                       className="block text-sm font-medium text-[#543D2E] mb-2"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      Full Name *
+                      {t("fullName")} *
                     </label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#543D2E]/60" />
@@ -458,12 +440,11 @@ Sent via Charity Support Form`;
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                          errors.fullName
+                        className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.fullName
                             ? "border-red-300 bg-red-50"
                             : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                        }`}
-                        placeholder="Enter your full name"
+                          }`}
+                        placeholder={t("fullName")}
                         style={{ fontFamily: "'Inter', sans-serif" }}
                       />
                     </div>
@@ -481,7 +462,7 @@ Sent via Charity Support Form`;
                       className="block text-sm font-medium text-[#543D2E] mb-2"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      Phone Number (WhatsApp) *
+                      {t("phoneNumber")} *
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#543D2E]/60" />
@@ -490,11 +471,10 @@ Sent via Charity Support Form`;
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                          errors.phone
+                        className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.phone
                             ? "border-red-300 bg-red-50"
                             : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                        }`}
+                          }`}
                         placeholder="+974 XXXX XXXX"
                         style={{ fontFamily: "'Inter', sans-serif" }}
                       />
@@ -513,7 +493,7 @@ Sent via Charity Support Form`;
                       className="block text-sm font-medium text-[#543D2E] mb-2"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      Email Address *
+                      {t("emailAddress")} *
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#543D2E]/60" />
@@ -522,12 +502,11 @@ Sent via Charity Support Form`;
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                          errors.email
+                        className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.email
                             ? "border-red-300 bg-red-50"
                             : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                        }`}
-                        placeholder="Enter your email address"
+                          }`}
+                        placeholder={t("emailAddress")}
                         style={{ fontFamily: "'Inter', sans-serif" }}
                       />
                     </div>
@@ -548,7 +527,7 @@ Sent via Charity Support Form`;
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   <Heart className="w-5 h-5 text-[#723134]" />
-                  <span>How Would You Like to Help?</span>
+                  <span>{t("howToHelp")}</span>
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -558,20 +537,19 @@ Sent via Charity Support Form`;
                       className="block text-sm font-medium text-[#543D2E] mb-2"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      I Want To *
+                      {t("iWantTo")} *
                     </label>
                     <select
                       name="supportType"
                       value={formData.supportType}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                        errors.supportType
+                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.supportType
                           ? "border-red-300 bg-red-50"
                           : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                      }`}
+                        }`}
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      <option value="">Select how you'd like to help</option>
+                      <option value="">{t("iWantTo")}</option>
                       {supportTypes.map((type) => (
                         <option key={type.value} value={type.value}>
                           {type.label}
@@ -594,7 +572,7 @@ Sent via Charity Support Form`;
                           className="block text-sm font-medium text-[#543D2E] mb-2"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          Donation Amount *
+                          {t("donation.amount")} *
                         </label>
                         <div className="relative">
                           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#543D2E]/60">
@@ -605,12 +583,11 @@ Sent via Charity Support Form`;
                             name="donationAmount"
                             value={formData.donationAmount}
                             onChange={handleChange}
-                            className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                              errors.donationAmount
+                            className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.donationAmount
                                 ? "border-red-300 bg-red-50"
                                 : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                            }`}
-                            placeholder="Amount"
+                              }`}
+                            placeholder={t("donation.amount")}
                             style={{ fontFamily: "'Inter', sans-serif" }}
                           />
                         </div>
@@ -626,7 +603,7 @@ Sent via Charity Support Form`;
                           className="block text-sm font-medium text-[#543D2E] mb-2"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          Frequency
+                          {t("donation.frequency")}
                         </label>
                         <select
                           name="frequency"
@@ -635,7 +612,7 @@ Sent via Charity Support Form`;
                           className="w-full px-4 py-3 border border-[#543D2E]/30 rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          <option value="">Select frequency</option>
+                          <option value="">{t("donation.frequency")}</option>
                           {donationFrequencies.map((freq) => (
                             <option key={freq.value} value={freq.value}>
                               {freq.label}
@@ -653,20 +630,19 @@ Sent via Charity Support Form`;
                           className="block text-sm font-medium text-[#543D2E] mb-2"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          Skills/Expertise *
+                          {t("volunteer.skills")} *
                         </label>
                         <select
                           name="volunteerSkills"
                           value={formData.volunteerSkills}
                           onChange={handleChange}
-                          className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                            errors.volunteerSkills
+                          className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.volunteerSkills
                               ? "border-red-300 bg-red-50"
                               : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                          }`}
+                            }`}
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          <option value="">Select your skills</option>
+                          <option value="">{t("volunteer.skills")}</option>
                           {volunteerSkillsList.map((skill) => (
                             <option key={skill.value} value={skill.value}>
                               {skill.label}
@@ -685,7 +661,7 @@ Sent via Charity Support Form`;
                           className="block text-sm font-medium text-[#543D2E] mb-2"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          Availability
+                          {t("volunteer.availability")}
                         </label>
                         <select
                           name="availableDays"
@@ -694,7 +670,7 @@ Sent via Charity Support Form`;
                           className="w-full px-4 py-3 border border-[#543D2E]/30 rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          <option value="">Select availability</option>
+                          <option value="">{t("volunteer.availability")}</option>
                           {availableDaysList.map((day) => (
                             <option key={day.value} value={day.value}>
                               {day.label}
@@ -712,20 +688,19 @@ Sent via Charity Support Form`;
                           className="block text-sm font-medium text-[#543D2E] mb-2"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          Sponsorship Type *
+                          {t("sponsorship.type")} *
                         </label>
                         <select
                           name="sponsorshipType"
                           value={formData.sponsorshipType}
                           onChange={handleChange}
-                          className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                            errors.sponsorshipType
+                          className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.sponsorshipType
                               ? "border-red-300 bg-red-50"
                               : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                          }`}
+                            }`}
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          <option value="">Select sponsorship type</option>
+                          <option value="">{t("sponsorship.type")}</option>
                           {sponsorshipTypes.map((type) => (
                             <option key={type.value} value={type.value}>
                               {type.label}
@@ -744,7 +719,7 @@ Sent via Charity Support Form`;
                           className="block text-sm font-medium text-[#543D2E] mb-2"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          Company Name
+                          {t("sponsorship.companyName")}
                         </label>
                         <input
                           type="text"
@@ -752,7 +727,7 @@ Sent via Charity Support Form`;
                           value={formData.companyName}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-[#543D2E]/30 rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300"
-                          placeholder="Your company name"
+                          placeholder={t("sponsorship.companyName")}
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         />
                       </div>
@@ -768,7 +743,7 @@ Sent via Charity Support Form`;
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   <AiOutlineInfoCircle className="text-[#723134] text-xl" />
-                  <span>Your Message</span>
+                  <span>{t("yourMessage")}</span>
                 </h3>
 
                 {/* Message */}
@@ -777,19 +752,18 @@ Sent via Charity Support Form`;
                     className="block text-sm font-medium text-[#543D2E] mb-2"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    Why do you want to support our cause? *
+                    {t("whySupport")} *
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows="4"
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 resize-none ${
-                      errors.message
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 resize-none ${errors.message
                         ? "border-red-300 bg-red-50"
                         : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                    }`}
-                    placeholder="Please share why you're interested in supporting our mission and any specific ways you'd like to help..."
+                      }`}
+                    placeholder={t("whySupport")}
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   />
                   {errors.message && (
@@ -806,7 +780,7 @@ Sent via Charity Support Form`;
                     className="block text-sm font-medium text-[#543D2E] mb-2"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    Upload Documents (Optional)
+                    {t("uploadDocuments")}
                   </label>
                   <div className="border-2 border-dashed border-[#543D2E]/30 rounded-xl p-6 text-center hover:border-[#723134]/50 transition-colors duration-300">
                     <Upload className="w-8 h-8 text-[#543D2E]/60 mx-auto mb-2" />
@@ -814,13 +788,13 @@ Sent via Charity Support Form`;
                       className="text-sm text-[#543D2E] mb-2"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      Upload relevant documents (PDF, Word, Images)
+                      {t("uploadText")}
                     </p>
                     <p
                       className="text-xs text-[#543D2E]/60 mb-3"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      Max file size: 10MB, Max files: 5
+                      {t("maxSize")}
                     </p>
                     <input
                       type="file"
@@ -836,7 +810,7 @@ Sent via Charity Support Form`;
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       <FileText className="w-4 h-4 mr-2" />
-                      Choose Files
+                      {t("chooseFiles")}
                     </label>
                   </div>
 
@@ -879,7 +853,7 @@ Sent via Charity Support Form`;
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   <Phone className="w-5 h-5 text-[#723134]" />
-                  <span>Contact Preference</span>
+                  <span>{t("contactPreference")}</span>
                 </h3>
 
                 <div>
@@ -887,20 +861,19 @@ Sent via Charity Support Form`;
                     className="block text-sm font-medium text-[#543D2E] mb-2"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    How would you prefer us to contact you? *
+                    {t("contactMethod")} *
                   </label>
                   <select
                     name="contactPreference"
                     value={formData.contactPreference}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${
-                      errors.contactPreference
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#723134]/50 focus:border-[#723134] transition-all duration-300 ${errors.contactPreference
                         ? "border-red-300 bg-red-50"
                         : "border-[#543D2E]/30 hover:border-[#723134]/50"
-                    }`}
+                      }`}
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    <option value="">Select contact method</option>
+                    <option value="">{t("contactMethod")}</option>
                     {contactPreferences.map((pref) => (
                       <option key={pref.value} value={pref.value}>
                         {pref.label}
@@ -923,7 +896,7 @@ Sent via Charity Support Form`;
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   <Shield className="w-5 h-5 text-[#723134]" />
-                  <span>Consent & Agreement</span>
+                  <span>{t("consentAgreement")}</span>
                 </h3>
 
                 <div className="flex items-start space-x-3">
@@ -937,26 +910,13 @@ Sent via Charity Support Form`;
                   />
                   <div>
                     <label htmlFor="consentGiven" className="sr-only">
-                      Consent & Agreement
+                      {t("consentAgreement")}
                     </label>
                     <p
                       className="text-sm text-[#543D2E]"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      I confirm that the information I’ve provided is accurate and
-                      I consent to{" "}
-                      <span className="font-medium">being contacted</span> via my
-                      selected method. I agree to the{" "}
-                      <a
-                        href="/privacy"
-                        className="underline underline-offset-2 decoration-[#723134] hover:text-[#723134]"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Privacy Policy
-                      </a>{" "}
-                      and understand my data will be processed for the purpose of
-                      handling this request.
+                      {t("consentText")}
                     </p>
                     {errors.consentGiven && (
                       <p className="mt-2 text-sm text-red-600 flex items-center space-x-1">
@@ -966,8 +926,7 @@ Sent via Charity Support Form`;
                     )}
                     <p className="mt-3 text-xs text-[#543D2E]/70 flex items-center gap-1">
                       <Scale className="w-4 h-4" />
-                      Your details are kept confidential and won’t be shared
-                      without permission.
+                      {t("confidentiality")}
                     </p>
                   </div>
                 </div>
@@ -977,37 +936,36 @@ Sent via Charity Support Form`;
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                 <p className="text-xs text-[#543D2E]/70 flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  We usually respond within 1–2 working days.
+                  {t("responseTime")}
                 </p>
                 <div className="flex items-center gap-3 w-full sm:w-auto">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-xl border border-[#723134]/30 text-[#723134] bg-white hover:bg-[#723134]/5 transition"
+                    className="w-full sm:w-auto inline-flex gap-2 items-center justify-center px-5 py-3 rounded-xl border border-[#723134]/30 text-[#723134] bg-white hover:bg-[#723134]/5 transition"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    <X className="w-4 h-4 mr-2" />
-                    Cancel
+                    <X className="w-4 h-4" />
+                    {t("cancel")}
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-xl text-white transition ${
-                      isSubmitting
+                    className={`w-full sm:w-auto inline-flex gap-2 items-center justify-center px-5 py-3 rounded-xl text-white transition ${isSubmitting
                         ? "bg-[#723134]/70 cursor-not-allowed"
                         : "bg-[#723134] hover:bg-[#5d272a]"
-                    }`}
+                      }`}
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                        Sending…
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        {t("sending")}
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4 mr-2" />
-                        Submit via WhatsApp
+                        {t("submit")}
                       </>
                     )}
                   </button>

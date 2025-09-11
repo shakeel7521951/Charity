@@ -34,10 +34,10 @@ const FeaturedCampaignsSection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-[#8a1538]/10 rounded-full text-[#8a1538] font-medium text-sm mb-6">
+          <div className="inline-flex gap-x-3 items-center justify-center px-4 py-1.5 bg-[#8a1538]/10 rounded-full text-[#8a1538] font-medium text-sm mb-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 mr-2"
+              className="h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -174,8 +174,8 @@ const FeaturedCampaignsSection = () => {
                     {t("donateButton")}
                   </motion.button>
 
-                  <div className="mt-4 flex items-center justify-center text-xs text-[#543D2E]/70">
-                    <div className="w-4 h-4 bg-[#8a1538]/10 rounded-full flex items-center justify-center mr-1.5">
+                  <div className="mt-4 flex gap-x-2 items-center justify-center text-xs text-[#543D2E]/70">
+                    <div className="w-4 h-4 bg-[#8a1538]/10 rounded-full flex items-center justify-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-3 w-3 text-[#8a1538]"

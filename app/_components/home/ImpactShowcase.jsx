@@ -184,11 +184,11 @@ const ImpactShowcase = () => {
                   className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition"
                   variants={itemVariants}
                 >
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-4 gap-x-3">
                     <img
                       src={story.image}
                       alt={story.author}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
+                      className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
                       <h4 className="font-semibold text-gray-800">

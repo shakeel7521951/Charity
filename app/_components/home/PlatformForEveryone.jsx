@@ -247,7 +247,7 @@ const PlatformForEveryone = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.2 }}
                   >
-                    <div className="flex gap-2.5 mt-0.5">
+                    <div className="flex gap-2.5 mt-0.5 items-center">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

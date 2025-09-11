@@ -1,5 +1,4 @@
 {
-  "charitySupportForm": {
     "title": "Support Our Mission",
     "subtitle": "Fill out the form below to volunteer, donate, or ask us anything.",
     "personalInfo": "Personal Information",
@@ -101,4 +100,3 @@
       "sentVia": "Sent via Charity Support Form"
     }
   }
-}

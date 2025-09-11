@@ -79,14 +79,15 @@ const FAQs = () => {
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.4 }}
-                className={`flex items-center px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 ${
-                  activeCategory === category.id
+                className={`flex items-center px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 ${activeCategory === category.id
                     ? "bg-gradient-to-r from-[#821435] to-[#B62F5E] text-white shadow-lg"
                     : "bg-white text-gray-700 hover:bg-gray-50 hover:text-[#821435] shadow-md"
-                }`}
+                  }`}
               >
-                <span className="mr-3 text-xl">{category.icon}</span>
-                {category.name}
+                <div className="flex gap-x-2 items-center">
+                  <span className=" text-xl">{category.icon}</span>
+                  <span>{category.name}</span>
+                </div>
               </motion.button>
             ))}
         </motion.div>
@@ -112,9 +113,8 @@ const FAQs = () => {
                       {item.question}
                     </h3>
                     <motion.div
-                      className={`flex-shrink-0 ml-2 transform transition-transform duration-300 ${
-                        openItems[item.id] ? "rotate-180" : ""
-                      }`}
+                      className={`flex-shrink-0 ml-2 transform transition-transform duration-300 ${openItems[item.id] ? "rotate-180" : ""
+                        }`}
                       animate={{ rotate: openItems[item.id] ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >

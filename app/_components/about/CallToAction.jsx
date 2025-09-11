@@ -1,16 +1,18 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function CallToAction() {
   return (
     <section style={{
-    backgroundImage: "linear-gradient(to right, rgba(138, 21, 56, 0.3), rgba(166, 45, 76, 0.6), rgba(138, 21, 56, 0.3)), url('about/CallToAction.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundBlendMode: "overlay",
-  }}
-   className="py-20 px-6 text-center bg-[#8A153] text-white overflow-hidden">
+      backgroundImage: "linear-gradient(to right, rgba(138, 21, 56, 0.3), rgba(166, 45, 76, 0.6), rgba(138, 21, 56, 0.3)), url('about/CallToAction.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundBlendMode: "overlay",
+      backgroundAttachment: "fixed"
+    }}
+      className="py-20 px-6 text-center bg-[#8A1513] text-white overflow-hidden">
       {/* Background decorative shapes */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -58,16 +60,19 @@ export default function CallToAction() {
         transition={{ duration: 1, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <motion.button
-          whileHover={{
-            scale: 1.1,
-            boxShadow: "0px 10px 25px rgba(255,255,255,0.4)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-white text-[#8A1538] px-6 md:px-8 py-3 rounded-lg shadow font-semibold transition"
-        >
-          Donate Now
-        </motion.button>
+        <Link href="/contact">
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0px 10px 25px rgba(255,255,255,0.4)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-[#8A1538] px-6 md:px-8 py-3 rounded-lg shadow font-semibold transition"
+          >
+            Donate Now
+          </motion.button>
+        </Link>
+
 
         <motion.button
           whileHover={{
