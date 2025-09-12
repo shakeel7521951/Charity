@@ -20,7 +20,7 @@ export default function HeroSection() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showConsultationModal, setShowConsultationModal] = useState(false);
-  // const [isVisible, setIsVisible] = useState(true);   
+  const [isVisible, setIsVisible] = useState(true);   
 
   // Auto change slides
   useEffect(() => {

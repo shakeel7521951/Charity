@@ -23,12 +23,15 @@ const MoneyPurs = () => {
   const { t } = useTranslation("donor/MoneyPurs");
 
   const header = t("header", { returnObjects: true });
-  const steps = t("steps", { returnObjects: true }).map((s) => ({
+  const stepsData = t("steps", { returnObjects: true });
+  const steps = Array.isArray(stepsData) ? stepsData.map((s) => ({
     ...s,
     icon: iconMap[s.icon],
-  }));
+  })) : [];
+  
   const videoHeader = t("videoHeader", { returnObjects: true });
-  const videos = t("videos", { returnObjects: true });
+  const videosData = t("videos", { returnObjects: true });
+  const videos = Array.isArray(videosData) ? videosData : [];
 
   return (
     <section className="bg-gradient-to-b from-white to-pink-50 py-16 px-6">

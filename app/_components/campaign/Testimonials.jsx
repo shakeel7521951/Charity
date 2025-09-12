@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 const Testimonials = () => {
   const { t } = useTranslation("campaigns/Testimonials");
   const testimonials = t("testimonials", { returnObjects: true });
+  const testimonialsList = Array.isArray(testimonials) ? testimonials : [];
 
   // Animation variants
   const containerVariants = {
@@ -43,7 +44,7 @@ const Testimonials = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {testimonials.map((tItem, index) => (
+          {testimonialsList.map((tItem, index) => (
             <motion.div
               key={index}
               className="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transform transition-transform duration-300 hover:-translate-y-2"

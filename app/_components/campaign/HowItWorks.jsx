@@ -14,6 +14,7 @@ const HowItWorks = () => {
   ];
 
   const steps = t("steps", { returnObjects: true });
+  const stepsList = Array.isArray(steps) ? steps : [];
 
   // Animation variants (for entry animation only)
   const containerVariants = {
@@ -51,7 +52,7 @@ const HowItWorks = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {steps.map((step, index) => (
+          {stepsList.map((step, index) => (
             <motion.div
               key={index}
               className="p-8 rounded-2xl shadow-md bg-gray-50 hover:shadow-xl transform transition-transform duration-300 hover:-translate-y-2"
