@@ -1,0 +1,21 @@
+{
+  "slides": [
+    {
+      "title": "Give Hope, Save Lives",
+      "msg": "Your small donation can bring food, shelter, and care to those who need it most."
+    },
+    {
+      "title": "Kindness Creates Change",
+      "msg": "Every contribution supports education and healthcare, helping communities build a brighter future."
+    },
+    {
+      "title": "Together for Humanity",
+      "msg": "Stand with us to fight hunger and poverty, and spread compassion across the world."
+    }
+  ],
+  "badge": "Making a Difference",
+  "buttons": {
+    "donate": "Donate Now",
+    "about": "About Us"
+  }
+}

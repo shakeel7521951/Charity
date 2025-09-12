@@ -1,8 +1,29 @@
+"use client";
+
 import React from "react";
 import { FaBuilding, FaHandshake, FaChartLine } from "react-icons/fa";
-
+import { useTranslation } from "react-i18next";
 
 const Corporate = () => {
+  const { t } = useTranslation("donor/Corporate");
+
+  const cards = [
+    {
+      icon: <FaHandshake className="text-[#aa335f] text-2xl" />,
+      title: t("cards.0.title"),
+      text: t("cards.0.text"),
+    },
+    {
+      icon: <FaChartLine className="text-[#aa335f] text-2xl" />,
+      title: t("cards.1.title"),
+      text: t("cards.1.text"),
+    },
+    {
+      icon: <FaBuilding className="text-[#aa335f] text-2xl" />,
+      title: t("cards.2.title"),
+      text: t("cards.2.text"),
+    },
+  ];
 
   return (
     <section className="w-full py-16 bg-gray-50">
@@ -10,69 +31,35 @@ const Corporate = () => {
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Corporate Sponsorship
+            {t("heading")}
           </h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-            Partner with us to create long-lasting social impact. Our corporate
-            sponsorship program provides verified reports, branding visibility,
-            and impactful opportunities for companies to give back.
+            {t("description")}
           </p>
         </div>
 
         {/* Sponsorship Opportunities */}
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 mb-5">
-              <FaHandshake className="text-[#aa335f] text-2xl" />
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition"
+            >
+              <div className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 mb-5">
+                {card.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                {card.title}
+              </h3>
+              <p className="text-gray-600">{card.text}</p>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
-              Sponsorship Opportunities
-            </h3>
-            <p className="text-gray-600">
-              Choose from tailored sponsorship packages that align with your
-              company’s CSR goals while supporting life-changing community
-              initiatives.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div  className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 mb-5">
-              <FaChartLine className="text-[#aa335f] text-2xl" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
-              Verified Impact Reports
-            </h3>
-            <p className="text-gray-600">
-              Access transparent, data-driven reports that show the direct
-              results of your contributions, ensuring accountability and trust.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div  className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 mb-5">
-              <FaBuilding className="text-[#aa335f] text-2xl" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
-              Branding Visibility
-            </h3>
-            <p className="text-gray-600">
-              Showcase your impact with recognition opportunities such as
-              <span className="font-semibold">
-                {" "}
-                “Your company helped build 10 schools”
-              </span>{" "}
-              and highlight your role in creating change.
-            </p>
-          </div>
+          ))}
         </div>
 
         {/* CTA */}
         <div className="text-center mt-12">
           <button className="px-6 py-3 bg-[#aa335f] text-white font-medium rounded-full shadow hover:bg-[#922b52] transition">
-            Become a Corporate Partner
+            {t("cta")}
           </button>
         </div>
       </div>

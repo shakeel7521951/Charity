@@ -1,0 +1,52 @@
+{
+  "header": {
+    "tag": "عملية شفافة",
+    "title": "ماذا يحدث مع <span class='text-[#AA335F]'>تبرعك؟</span>",
+    "desc": "كل مساهمة تمر بعملية مدروسة بعناية لضمان أقصى تأثير وشفافية."
+  },
+  "steps": [
+    {
+      "id": 1,
+      "icon": "FiDollarSign",
+      "title": "أنت تتبرع",
+      "desc": "يتم استلام مساهمتك بأمان من خلال منصتنا."
+    },
+    {
+      "id": 2,
+      "icon": "FiTarget",
+      "title": "التخصيص",
+      "desc": "يتم تخصيص الأموال للحملات الخيرية الموثوقة."
+    },
+    {
+      "id": 3,
+      "icon": "FiTruck",
+      "title": "التوزيع",
+      "desc": "يتم توزيع الأموال لتوفير الغذاء أو المأوى أو الرعاية الصحية."
+    },
+    {
+      "id": 4,
+      "icon": "FiAward",
+      "title": "الأثر",
+      "desc": "يتلقى المتبرعون تحديثات بالصور والقصص والنتائج الحقيقية."
+    }
+  ],
+  "videoHeader": {
+    "tag": "شاهد تأثيرنا",
+    "title": "شاهد <span class='text-[#AA335F]'>الفرق</span>",
+    "desc": "شاهد هذه المقاطع لترى كيف تغير تبرعاتك حياة المجتمعات."
+  },
+  "videos": [
+    {
+      "url": "https://www.youtube.com/embed/Vqvnb2WORhk?si=V9XjE7n1edOXfnoR",
+      "title": "الشفافية في العمل"
+    },
+    {
+      "url": "https://www.youtube.com/embed/ysz5S6PUM-U",
+      "title": "قصص النجاح"
+    },
+    {
+      "url": "https://www.youtube.com/embed/ScMzIvxBSi4",
+      "title": "تأثير المجتمع"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Active Campaigns",
+  "campaigns": [
+    {
+      "name": "Education for All",
+      "desc": "Help underprivileged children get access to quality education."
+    },
+    {
+      "name": "Clean Water Project",
+      "desc": "Providing clean and safe drinking water in rural areas."
+    },
+    {
+      "name": "Medical Aid",
+      "desc": "Support critical medical treatments for those in need."
+    },
+    {
+      "name": "Food for Families",
+      "desc": "Providing essential groceries to struggling families."
+    },
+    {
+      "name": "Disaster Relief",
+      "desc": "Emergency aid for families affected by natural disasters."
+    },
+    {
+      "name": "Housing Support",
+      "desc": "Helping homeless families with safe housing solutions."
+    }
+  ],
+  "labels": {
+    "raised": "Raised",
+    "target": "Target",
+    "donateNow": "Donate Now"
+  }
+}

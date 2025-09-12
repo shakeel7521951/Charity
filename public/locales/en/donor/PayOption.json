@@ -1,0 +1,22 @@
+{
+  "heading": "Choose a Payment Method",
+  "cards": [
+    {
+      "title": "Credit Card",
+      "text": "Make fast and secure payments using your credit card online."
+    },
+    {
+      "title": "Bank Transfer",
+      "text": "Easily transfer funds directly from your trusted bank account."
+    },
+    {
+      "title": "QR Code",
+      "text": "Quickly scan a QR code to complete safe payments."
+    },
+    {
+      "title": "Digital Wallet",
+      "text": "Pay conveniently with PayPal, Apple Pay, or Google Pay services."
+    }
+  ],
+  "cta": "Donate"
+}

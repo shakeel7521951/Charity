@@ -1,0 +1,29 @@
+{
+  "label": "Trust & Transparency",
+  "heading": "Why Choose",
+  "highlight": "Us?",
+  "description": "We are committed to building trust by ensuring transparency, compliance, and security in every step of the donation process.",
+  "trustPoints": [
+    {
+      "title": "Transparency",
+      "desc": "Powered by blockchain and real-time tracking for every donation."
+    },
+    {
+      "title": "Sandi Integration",
+      "desc": "Ensures no duplication of donations and campaign validation."
+    },
+    {
+      "title": "Compliance",
+      "desc": "Fully regulated under RACA guidelines for safe giving."
+    },
+    {
+      "title": "Security",
+      "desc": "Advanced SSL encryption, AML monitoring & fraud detection."
+    }
+  ],
+  "cta": {
+    "title": "Ready to Make a Difference?",
+    "desc": "Your donation can change lives today.",
+    "button": "Donate Now"
+  }
+}

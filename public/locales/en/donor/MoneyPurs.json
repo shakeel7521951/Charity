@@ -1,0 +1,52 @@
+{
+  "header": {
+    "tag": "Transparent Process",
+    "title": "What Happens With Your <span class='text-[#AA335F]'>Donation?</span>",
+    "desc": "Every contribution goes through a carefully managed process to ensure maximum impact and transparency."
+  },
+  "steps": [
+    {
+      "id": 1,
+      "icon": "FiDollarSign",
+      "title": "You Donate",
+      "desc": "Your contribution is securely received through our platform."
+    },
+    {
+      "id": 2,
+      "icon": "FiTarget",
+      "title": "Allocation",
+      "desc": "Funds are allocated to verified charity campaigns."
+    },
+    {
+      "id": 3,
+      "icon": "FiTruck",
+      "title": "Distribution",
+      "desc": "Money is distributed to provide food, shelter, or healthcare."
+    },
+    {
+      "id": 4,
+      "icon": "FiAward",
+      "title": "Impact",
+      "desc": "Donors receive updates with photos, stories, and real outcomes."
+    }
+  ],
+  "videoHeader": {
+    "tag": "See Our Impact",
+    "title": "Witness the <span class='text-[#AA335F]'>Difference</span>",
+    "desc": "Watch these videos to see how your donations transform lives and communities."
+  },
+  "videos": [
+    {
+      "url": "https://www.youtube.com/embed/Vqvnb2WORhk?si=V9XjE7n1edOXfnoR",
+      "title": "Transparency in Action"
+    },
+    {
+      "url": "https://www.youtube.com/embed/ysz5S6PUM-U",
+      "title": "Success Stories"
+    },
+    {
+      "url": "https://www.youtube.com/embed/ScMzIvxBSi4",
+      "title": "Community Impact"
+    }
+  ]
+}
