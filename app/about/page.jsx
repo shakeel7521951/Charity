@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Hero from "../_components/about/Hero";
 import WhoWeAre from "../_components/about/WhoWeAre";
