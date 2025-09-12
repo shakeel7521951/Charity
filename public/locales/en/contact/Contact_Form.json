@@ -1,0 +1,59 @@
+{
+  "heading": "Get In Touch",
+  "subheading": "We'd love to hear from you. Reach out to us with any questions or inquiries.",
+
+  "form": {
+    "title": "Send us a Message",
+    "subtitle": "We'll respond as soon as possible",
+    "placeholders": {
+      "name": "Your Full Name",
+      "email": "Your Email Address",
+      "subject": "Subject",
+      "message": "Your Message"
+    },
+    "topicSelect": {
+      "label": "Choose a Topic",
+      "options": ["Donation Support", "Receipts", "Campaign Info", "General Inquiry"]
+    },
+    "button": "Send Message"
+  },
+
+  "info": {
+    "title": "Contact Information",
+    "items": [
+      {
+        "label": "Email",
+        "value": "support@charity.org",
+        "note": "Typically replies within 24 hours"
+      },
+      {
+        "label": "Phone",
+        "value": "+123 456 7890",
+        "note": "WhatsApp Available (9AM - 5PM)"
+      },
+      {
+        "label": "Office",
+        "value": "123 Charity Street, City, Country",
+        "note": "Visit by appointment only"
+      }
+    ]
+  },
+
+  "quick": {
+    "title": "Quick Support",
+    "links": [
+      {
+        "title": "Download Receipts",
+        "desc": "Access your donation records"
+      },
+      {
+        "title": "Donation History / FAQs",
+        "desc": "View your contributions and common questions"
+      },
+      {
+        "title": "Need Help? Visit FAQs",
+        "desc": "Find answers to common questions"
+      }
+    ]
+  }
+}

@@ -3,11 +3,14 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t, i18n } = useTranslation("contact/Hero");
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  }, [i18n.language]); // Re-initialize AOS when language changes
 
   return (
     <section
@@ -41,7 +44,7 @@ export default function Hero() {
             fontFamily: "'Playfair Display', serif"
           }}
         >
-          We'd love to <span className="text-[#F2EDE9]">hear</span> from you
+          {t("title")} <span className="text-[#F2EDE9]">{t("highlightedTitle")}</span> {t("subtitle")}
         </h1>
 
         {/* Separator */}
@@ -57,8 +60,8 @@ export default function Hero() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Whether it's about donations, receipts, or support — our team is here to help you.{" "}
-          <span className="font-semibold text-[#F2B8C6] bg-gradient-to-r from-[#8A1538]/30 to-[#8A1538]/10 px-2 py-1 rounded-md">We reply within 24 hours</span>.
+          {t("description")}{" "}
+          <span className="font-semibold text-[#F2B8C6] bg-gradient-to-r from-[#8A1538]/30 to-[#8A1538]/10 px-2 py-1 rounded-md">{t("responseTime")}</span>.
         </p>
 
         {/* Buttons */}
@@ -74,7 +77,7 @@ export default function Hero() {
               className="relative bg-gradient-to-r from-[#543D2E] to-[#8A1538] text-white px-7 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#8A1538] to-[#543D2E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              <span className="relative z-10 whitespace-nowrap">View Campaigns</span>
+              <span className="relative z-10 whitespace-nowrap">{t("buttons.viewCampaigns")}</span>
             </button>
           </Link>
 
@@ -84,7 +87,7 @@ export default function Hero() {
             className="relative border-2 border-[#F2EDE9] text-white px-7 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
           >
             <div className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            <span className="relative z-10 whitespace-nowrap">Get Started</span>
+            <span className="relative z-10 whitespace-nowrap">{t("buttons.getStarted")}</span>
           </button>
         </div>
         {/* Scroll indicator */}
